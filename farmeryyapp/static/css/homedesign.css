@@ -1,0 +1,418 @@
+element.style {
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(/media/wysiwyg/home-slider/intro1.jpg);
+    background-size: cover;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    visibility: hidden;
+}
+
+.page {
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+.img-circle {
+
+    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    height: auto;
+}
+timeline>li .timeline-image {
+    left: 0;
+    margin-left: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 100;
+    background-color: #03a585;
+    color: #fff;
+    border-radius: 100%;
+    border: 4px solid #03a585;
+    text-align: center;
+.top-title {
+    color: #fff;
+    padding: 5px;
+    top: 0;
+    z-index: 9999;
+    position: relative;
+    width: 100%;
+    left: 0;
+    background: #03a585;
+    font-size: 11px;
+    font-weight: 700;
+}
+    
+@media (max-width: 767px){
+
+    #rig li {
+        width: 33.333vw !important;
+    }
+
+    .about .wow .col-md-12{
+        display: block;
+        margin: 25px auto !important;
+        width: 340px !important;
+        height: 340px !important;
+        padding: 20px !important;
+        border-radius: 100% !important;
+    }
+
+    img.farmery-bottle{
+        max-height: 500px;
+        width: auto !important;
+    }
+
+    .timeline>li .timeline-panel{
+        width: 100% !important;
+        left: 0 !important;
+        padding: 55px 20px 20px !important;
+        height: auto;
+        border-radius: 5px !important;
+        text-align: center !important;
+        position: relative;
+    }
+    .timeline>li.timeline-inverted>.timeline-panel {
+        float: right;
+        text-align: left;
+        padding: 10px 20px 20px 85px;
+        background: #50a686;
+        color: #fff;
+        border-radius: 0;
+        right: 7%;
+        left: auto;
+    }
+    ul.timeline {
+        margin-top: 40px;
+    }
+    
+    .testimonial.gray-bg h2 {
+        margin-top: 10px;
+    }
+    .testimonial.gray-bg .testimonial-img {
+        max-width: 120px;
+    }
+    
+    .testimonial h4{
+        font-size: 18px;
+    }
+    
+    .timeline-body p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+   
+ 
+    .col1-layout.home-content-container{
+        margin-top: 15px;
+    }
+
+    .timeline>li {
+        margin-bottom: 80px !important;
+        min-height: auto;
+    }
+
+    .timeline>li .timeline-image {
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 100px;
+        top: -50px;
+    }
+    
+    .timeline:before{
+        left: 50% !important;
+    }
+    
+    .timeline>li:last-child .timeline-image h4{
+        margin-top: 6px !important;
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+    }
+    
+    .mobile-app li{
+        padding-left: 20px;
+    }
+    
+    .phone{
+        margin-right: 0px;
+    }
+    
+    footer .footer-widget{
+        padding: 30px 20px 15px !important;
+    }
+    
+    .products-grid .col-xs-12 {
+        width: 50% !important;
+    }
+    
+    #header div.header-logo,
+    .phone{
+    margin-top: 5px !important;
+    }
+    
+    .navbar-toggle{
+        margin-top: 9px !important;
+        margin-right: 0px !important;
+        padding: 9px 4px !important;
+    }
+       
+.header-background-default{
+    margin-top:60px;
+}
+
+}
+
+@media (max-width: 450px){
+   
+    .products-grid .col-xs-12 {
+        width: 100% !important;
+    }
+    
+    .about .wow .col-md-12 h3{
+        font-size: 18px;
+        max-width: 270px;
+        margin: 10px auto 0;
+    }
+}
+
+@media (max-width: 390px){
+    
+    .footer-logo{
+        right:0;
+    }
+    
+    .about .wow .col-md-12 {
+        width: 290px !important;
+        height: 390px !important;
+    }
+    
+}
+
+.col-main {
+    margin-top: 20px;
+}
+
+section.about h2{
+    margin-bottom:10px;
+}
+
+.footer-widget a:hover,
+.footer-widget a:focus,
+a:hover, a:focus{
+    color: #3798dd;
+}
+
+#how-it-works h2.widget-title{
+    margin-top: 0px;
+}
+
+
+span.price-dec {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #ff5151;
+    top: 16px;
+    right: 20px;
+    line-height: 65px;
+}
+
+.landing-nav.navbar-default{
+    background-color: #e7ece8;
+}
+
+
+.landing-nav.navbar-default .navbar-nav{
+    float: right;
+}
+
+.landing-nav.navbar-default .navbar-nav>li>a {
+    color: #03a585;
+    padding: 10px 20px;
+}
+.landing-nav.navbar-default .navbar-nav>li>a:hover,
+.landing-nav.navbar-default .navbar-nav>li>a:focus{
+    color: #3798dd;
+}
+
+.item-product-image-box a .front img{
+    margin: 0 auto;
+    display: block;
+}
+
+.app-download-img{
+    min-width: 150px;
+}
+
+@media (max-width: 640px){
+
+
+}
+.ribbon3{
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    font-size: 8px;
+    background: #dc3f00;
+    color: white;
+    padding: 0px 5px;
+    border-radius: 10px;
+}
+.floating-cart-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#03a585;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 0px 1px 3px #0a0a0a;
+        z-index: 100;
+}
+.my-float{
+	margin-top:18px;
+	margin-left: -10px;
+    font-size: 24px !important;
+}
+.empty-cart{
+	text-align: center;
+    color: #696969;
+    padding: 100px;
+    background: #e7ece8;
+    width: 50%;
+    margin: 40px auto;
+}
+#mini-cart-count{
+	min-width: 21px;
+    background: red;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    border-radius: 10px;
+    right: 10px;
+    top: 10px;
+}
+
+#header p.logo {
+    line-height: 8px;
+}
+
+span.price-dec {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #ff5151;
+    top: 16px;
+    right: 20px;
+    line-height: 65px;
+}
+
+.landing-nav.navbar-default{
+    background-color: #e7ece8;
+}
+
+
+.landing-nav.navbar-default .navbar-nav{
+    float: right;
+}
+
+.landing-nav.navbar-default .navbar-nav>li>a {
+    color: #03a585;
+    padding: 10px 20px;
+}
+.landing-nav.navbar-default .navbar-nav>li>a:hover,
+.landing-nav.navbar-default .navbar-nav>li>a:focus{
+    color: #3798dd;
+}
+
+.item-product-image-box a .front img{
+    margin: 0 auto;
+    display: block;
+}
+
+.app-download-img{
+    min-width: 150px;
+}
+
+@media (max-width: 640px){
+
+
+}
+.ribbon3{
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    font-size: 8px;
+    background: #dc3f00;
+    color: white;
+    padding: 0px 5px;
+    border-radius: 10px;
+}
+.floating-cart-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#03a585;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 0px 1px 3px #0a0a0a;
+        z-index: 100;
+}
+.my-float{
+	margin-top:18px;
+	margin-left: -10px;
+    font-size: 24px !important;
+}
+.empty-cart{
+	text-align: center;
+    color: #696969;
+    padding: 100px;
+    background: #e7ece8;
+    width: 50%;
+    margin: 40px auto;
+}
+#mini-cart-count{
+	min-width: 21px;
+    background: red;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    border-radius: 10px;
+    right: 10px;
+    top: 10px;
+}
+img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+                                                                                                                                                                                                   
+  

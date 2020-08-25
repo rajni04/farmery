@@ -1,0 +1,143 @@
+
+{% extends 'base.html'%}
+{% block main_content %}
+{%load static%}
+<html>
+    
+        <!----My files----->
+        
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}" >
+
+       
+
+
+	
+                <div class="navbar-overlay"></div>
+            </div>
+        </div>
+                <!--<div class="container clearfix">-->
+            <div id="no-solr-search-container">
+    <div class="header-background-default">
+        <div class="header-content-title">
+            <h1>Team</h1>
+        </div>
+        <style> .header-background-default { background-image: url(../img/media/theming/default/farmery-bg-gray_1.jpg); } </style>
+    </div>
+    <div class="novaworks-main-content">
+        <div class="main container">
+            <div class="row columns-layout">
+                <div class="col-left sidebar col-lg-3 col-md-3 col-xs-2">
+                    <div class="block block-blog">
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-xs-10">
+                    <div class="">
+                        <div class="col-main col-md-8">
+                            <style> .bestsllerbrand .shopbybrand-title h1,
+                                .brand-search .shopbybrand-title h1,
+                                .shopbybrand-title h1 {
+                                    background-color: #FFA500;
+                                    color:#FFFFFF;
+                                }
+                                .shopbybrand-list .brands .brandslist .brand-begin-label strong{
+                                    background-color: #3399CC;
+                                    color:#FFFFFF;
+                                }
+                                .shopbybrand-list .charlist a{
+                                    background-color: #eeeeee !important;
+                                    color:#707070 !important;
+                                }
+                                .shopbybrand-list .brands .brandslist .brand-begin-label{
+                                    border-bottom: 1px solid #3399CC  !important;
+                                }
+                                .shopbybrand-list .filterbar #charaters-list ul li.charlist a:hover,
+                                .shopbybrand-list .filterbar #charaters-list ul li.isActiveCate a,
+                                .shopbybrand-list .filterbar #charaters-list ul li.charlist a.isActiveCate{
+                                    background-color: #6f6f6f !important;
+                                    color:#ffffff !important;
+                                }
+                                .shopbybrand-list a{
+                                    color:#3399CC !important;
+                                }
+                                .shopbybrand-list a:hover {
+                                    color:#6f6f6f !important;
+                                }
+                                @media screen and (min-width:768px) and (max-width: 979px) {
+                                    .shopbybrand_sidebar .shopbybrand-title h1,
+                                    .brand-search .shopbybrand-title h1,
+                                    .bestsllerbrand .shopbybrand-title h1{
+                                        background-color: #FFA500 !important;
+                                    }
+                                } 
+                            </style>
+                            <div class="std">
+                                <h2 class="align title"><span style="font-size: x-large;"> Our team</span></h2>
+                                <p class="align title">&nbsp;</p>
+                                <p class="align title"><span>Our team has a rich experience of managing complex operations in sourcing, customer service, technology and logistics. It is managed by experienced and highly qualified professionals who are alums of Nestle, Delhi College of Engineering, Indian School of Business and Accenture Management Consulting. We also have qualified dairy management professionals as our key advisers.</span></p>
+                                <div class="clear">&nbsp;</div>
+                                <div class="clear"><span>&nbsp;</span></div>
+                                <div class="text">
+                                    {% for team in team %}
+                                    <div>
+                                        <div style="float: left; margin-right: 20px;"><span> <img title="nishant gupta" alt="" src="{{team.timg.url}}" /> </span></div>
+                                        <div><span> <strong>{{team.tname}}</strong> </span></div>
+                                        <div><span>{{team.tdesc}}</span></div>
+                                        <div>&nbsp;</div>  
+                                    </div>
+                                    
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-right sidebar col-md-4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!--</div>-->
+        <div id="referafriend-overlay"></div>
+        <div id="referafriend">
+            <div id="rafContent"></div>
+<!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
+        </div>
+        <script data-cfasync="false" src="/js/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<!--        <script type="text/javascript"> var $_Tawk_API = {}, $_Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/5787713f2664db961a875228/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>-->
+
+<!--        <div class="mobile-footer">
+            <div class="col-xs-6"> <a href="javascript:void(0)" class="area-link-mobile open-area" title="Set Your Location">Set Location</a></div>
+            <div class="col-xs-6">
+                <div class="mini-cart-sidebar"></div>
+                <script> jQuery(".shopping-bag").slideToggle();
+                    jQuery('.arrow').toggleClass("down up");
+                </script>
+            </div>
+        </div>-->
+       
+    <div class="modal" id="fruit-intro">
+       <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
+    </div>
+<div>
+    <a href="/cart" class="floating-cart-button">
+    <i class="fa fa-shopping-cart my-float"></i>
+    <span id="mini-cart-count">0</span>
+    </a>
+</div>
+
+<!--End of Tawk.to Script-->
+<!-- Facebook Pixel Code -->
+<!-- End Facebook Pixel Code -->
+    </body>    
+</html>
+{% endblock main_content %}
+

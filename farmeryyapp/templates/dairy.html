@@ -1,0 +1,264 @@
+{% extends 'base.html'%}
+{% block main_content %}
+{% load static %}
+
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       
+        <link rel="stylesheet" href="{% static 'css/styledairy.css' %}">
+      
+       
+        <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
+     
+     
+<form role="form" action="" method="post">
+    
+                <!--<div class="container clearfix">-->
+            <div id="no-solr-search-container">
+    <div class="header-background-default">
+        <div class="header-content-title">
+            <h1>Catalog</h1>
+        </div>
+        <style> .header-background-default { background-image: url(../img/media/theming/default/farmery-bg-gray_1.jpg); } </style>
+        <div class="breadcrumbs">
+            <ul>
+                <li class="home"> <a href="/" title="Go to Home Page">Home</a> <span>/ </span></li>
+                <li class="category40"> <strong>Catalog</strong></li>
+            </ul>
+        </div>
+    </div>
+    <div class="novaworks-main-content">
+        <div class="main container">
+            <div class="columns-layout">
+                <div class="col-main col-lg-12">
+                    <style> .bestsllerbrand .shopbybrand-title h1,
+                        .brand-search .shopbybrand-title h1,
+                        .shopbybrand-title h1 {
+                            background-color: #FFA500;
+                            color:#FFFFFF;
+                        }
+                        .shopbybrand-list .brands .brandslist .brand-begin-label strong{
+                            background-color: #3399CC;
+                            color:#FFFFFF;
+                        }
+                        .shopbybrand-list .charlist a{
+                            background-color: #eeeeee !important;
+                            color:#707070 !important;
+                        }
+                        .shopbybrand-list .brands .brandslist .brand-begin-label{
+                            border-bottom: 1px solid #3399CC  !important;
+                        }
+                        .shopbybrand-list .filterbar #charaters-list ul li.charlist a:hover,
+                        .shopbybrand-list .filterbar #charaters-list ul li.isActiveCate a,
+                        .shopbybrand-list .filterbar #charaters-list ul li.charlist a.isActiveCate{
+                            background-color: #6f6f6f !important;
+                            color:#ffffff !important;
+                        }
+                        .shopbybrand-list a{
+                            color:#3399CC !important;
+                        }
+                        .shopbybrand-list a:hover {
+                            color:#6f6f6f !important;
+                        }
+                        .product-info{height: auto;}
+                        span.price-dec{
+                            line-height: 14px;
+                            padding: 23px 10px;
+                            width: 75px;
+                            height: 75px;
+                            background-color: #50a686;
+                            font-size: 17px;
+                            font-weight: 400;
+                        }
+                        small{font-size: 70% !important}
+                        h4.product-summary{
+                            margin: 6px 0px;
+                            font-size: 15px;
+                        }
+                        h4.product-summary span{
+                            color: #50a686;
+                            font-size: 120%;
+                        }
+                        .item .product{
+                            background: #e7ece8;
+                            padding: 0px;
+                        }
+                        h4.product-name{
+                            border-bottom: 1px solid #fff;
+                        }
+                        .product-name a{
+                            font-size: 18px;
+                            font-weight: 600;
+                            color: #50a686;
+                        }
+                        .item-product-image-box a .front img{
+                            width: 100%
+                        }
+                        .item-product-image-box a .front{
+                            height: 282px;
+                        }
+                        .product-hover-box span{
+                            font-size: 13px;
+                            font-weight: 400;
+                        }
+                        .product-hover-box div.text-left{
+                            padding: 0px 10px;
+                        }
+                        .product-hover-box div{
+                            text-align: left;
+                        }
+                        .product-hover-box h4{
+                            padding-left: 10px;
+                        }
+                        .product-hover-box{
+                            background: rgba(255,255,255,.8);
+                            color: #000;
+                        }
+                        @media screen and (min-width:768px) and (max-width: 979px) {
+                            .shopbybrand_sidebar .shopbybrand-title h1,
+                            .brand-search .shopbybrand-title h1,
+                            .bestsllerbrand .shopbybrand-title h1{
+                                background-color: #FFA500 !important;
+                            }
+                        }
+                        @media (max-width: 640px){
+                            .desc-ser {
+                                    min-height: auto;
+                            }
+                            h4.product-summary{
+                                text-align: center;
+                            }
+                            .grid-price {
+                                padding: 0px;
+                            }
+                            .category-products .products-grid [class^=col-], .category-products .products-grid [class*=" col-"]{
+                                padding: 0px
+                            }
+                            .item .product{
+                                margin-bottom: 30px;
+                                float: left;
+                                width: 100%;
+                            }
+                        }
+
+                    </style>
+                    <div class="category-products">
+                        <ul class="load_product products-grid row list-2col-3">
+                           
+                            {% for product in products %}   
+                                   
+                                    <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                       
+                                        <div class="product">
+                                            <div class="item-product-image-box">
+                                                 
+                                                <a href="/catalog/cow-milk-5-days-trial" title="Cow Milk" class="product-image">
+                                                    <div class="front margin-image">
+                                                     <img src="{{product.img.url}}" alt="Cow Milk" />
+                                                     </div>
+                                                    <span class="price-dec">₹ {{product.price}}<br><small>{{product.quantity}}</small></span>
+                                                    <div class="product-intification-box"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+                                                    <div class="product-hover-box">
+                                                        <div>
+                                                            <h4>{{product.productname}}</h4>
+                                                            <span>
+                                                                <div class="text-left">
+                                                                <p class="text-left">{{product.desc}}</p>  </div>
+                                                            </span>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                   
+                                                </a>
+                                            </div>
+                                           
+                                            <div class="product-info">
+                                                <h4 class="product-name"> <a data-toggle="tooltip" data-placement="bottom" href="/catalog/cow-milk-5-days-trial" title="Cow Milk 5 Days Trial" class='product-name-link'> <span>{{product.productname}}</span> </a></h4>
+                                                <div class="rating-product"></div>
+                                                <div class="">
+                                                    <div class="desc-ser">
+                                                       
+                                                    </div>
+                                                </div>
+                                                <div class="novaworks-quick-act grid-price">
+                                                    <div class="col-sm-9 text-left">
+                                                        <div class="desc-ser row">
+                                                            <h4 class="product-summary">{{product.discountdesc}} <span class="price">₹<strike style='color:#000'>{{product.oldprice}}</strike>{{product.newdiscount}}</span></h4>
+                                                            
+                                                  </div>
+                                                  
+                                               
+                                                        
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                         <a href="{% url 'trial' %}" button type="button"class="btn btn-primary" title="Book Now">Book Now </button></a>
+                                                    </div>
+                                                      
+                                                    {% endfor %}  
+                                                </div>
+                                               
+                                            </div>
+                                            
+                                    </li>       
+                                         
+                                   
+                   </ul>
+                    </div>
+                <div class="col-right sidebar col-lg-3 col-md-2">
+                    <div class="mini-cart-sidebar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!--</div>-->
+       
+                  
+        <div id="referafriend-overlay"></div>
+        <div id="referafriend">
+            <div id="rafContent"></div>
+<!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
+        </div>
+      
+    
+    <div class="modal" id="fruit-intro">
+       <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
+    </div>
+<div>
+    <a href="/cart" class="floating-cart-button">
+    <i class="fa fa-shopping-cart my-float"></i>
+    <span id="mini-cart-count">0</span>
+    </a>
+</div>
+
+
+    </body>    
+</html>
+{% endblock main_content %}
+
+<script>
+
+   function getPosts(){
+    console.log('ok1')
+    
+   fetch('http://127.0.0.1:8000/api/product/')
+   .then(data=>{
+   // console.log(data.json())
+    return data.json()    //returning the data to data2 thatsy we wrote seconf then
+
+   }).then(data2 =>{
+       console.log(data2)
+   })
+    
+    
+} 
+console.log('ok1')  
+
+
+
+</script>
+

@@ -1,0 +1,94 @@
+
+footer {
+    position: relative;
+    background: #363636;
+    background-image: initial;
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: rgb(54, 54, 54);
+    margin-top: 250px;
+}
+strong {
+    font-weight: 700;
+}
+
+b, strong {
+    font-weight: 700;
+}
+footer.common-footer:before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: 0;
+    width: 900px;
+    height: 200px;
+    background: url(../images/farm-frame-gray.jpg);
+    background-size: 100%;
+}
+body {
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-family: open sans,sans-serif;
+    font-weight: lighter;
+}
+.footer-widget {
+    color: #eee;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+    width: 100%;
+    max-width: 1045px;
+    min-width: 755px;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    position: static!important;
+    padding-top: 50px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 24px;
+}
+.contact-footer {
+    padding-top: 10px;
+}
+.footer-base {
+    background: #292929;
+    color: #fff;
+    margin-top: 20px!important;
+    padding-top: 20px!important;
+    padding-bottom: 40px!important;
+}
+footer .footer-widget{
+    padding: 30px 20px 15px !important;
+}
+div {
+    display: block;
+}
+
+
+   
+    
+    
+    
+       
+
+
+.footer-widget a:hover,
+.footer-widget a:focus,
+a:hover, a:focus{
+    color: #3798dd;
+}
+
+

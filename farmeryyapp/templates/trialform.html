@@ -1,0 +1,146 @@
+{% extends 'base.html'%}
+{% block main_content %}
+{%load static%}
+
+
+<link rel="stylesheet" href="{% static 'css/trialstyle.css' %}">
+
+<div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <h4 class="modal-title"><img src="static/img/farmery-logo.png" alt="logo"></h4>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+    </div>
+    <form method="post" class="trial-form">
+        <input type="hidden" name="referrar_id" id="referrar_id" value="">
+        <!-- Modal body -->
+        <div class="first-form">
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <p class="text-center">
+                        Fill in your details below to start your trial 
+                        pack. You'll receive a confirmation call 
+                        before the first delivery arrives.
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder="Your Name *" value="" required="required">
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">  
+                        <div class="form-group">
+                            <input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Mobile Number *" value="" required="required">
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group" id="email-field-wrap">
+                            <input type="text" id="email_id" name="email_id" class="form-control" placeholder="Email *" value="" required="required">
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group" id="otp-field-wrap" style="display: none;">
+                            <input type="text" id="otp" name="otp" class="form-control" placeholder="OTP *" value="" required="required">
+                            <span class="err_msg"></span>
+                        </div>
+                                                        </div>
+                </div>
+
+                <div class="row">    
+                    <div class="col-sm-6"> 
+                        <div class="form-group">
+                            <select id="city" name="city" required="required">
+                                <option value=""> Choose City </option>
+                            <option value="1">Delhi</option><option value="2">Gurugram</option><option value="3">Ghaziabad</option><option value="4">Noida</option><option value="5">Greater Noida </option></select>
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6"> 
+                        <div class="form-group choose_area">                                        
+                            <select id="area" name="area" class="form-control">
+                                <option value=""> Choose Area </option>
+                            </select>
+                            <span class="err_msg"></span>                                        
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8"> 
+                        <div class="form-group">
+                            <input type="text" id="address" name="address" class="form-control" placeholder="Address *" value="">
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">    
+                    <!--div class="col-sm-6"> 
+                    <div class="form-group">
+                        <select id="subarea" name="subarea">
+                            <option value=""> Choose Subarea </option>
+                        </select>
+                        <span class="err_msg"></span>
+                    </div>
+                </div-->
+
+                    <div class="col-sm-6"> 
+                        <div class="form-group">
+                            <select id="start_date" name="start_date">
+                                <option value=""> Choose Start Date </option>
+                            <option value="9 Aug 2020" selected="selected">Start from: 9 Aug 2020</option><option value="10 Aug 2020">Start from: 10 Aug 2020</option><option value="11 Aug 2020">Start from: 11 Aug 2020</option><option value="12 Aug 2020">Start from: 12 Aug 2020</option><option value="13 Aug 2020">Start from: 13 Aug 2020</option></select>
+                            <span class="err_msg"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">  
+                        <div class="form-group">
+<!--                                        <input type="checkbox" id="is_reference_number" name="is_reffered" value="1">  -->
+                            <div class="form-group-2">
+                                <input type="checkbox" id="is_reffered_checkbox" name="is_reffered" class="is_reference_number" value="1">
+                                <label for="is_reffered_checkbox">Is Referred?</label>
+                            </div>
+                            <div class="" id="reference_number-wrap" style="display: none">  
+                                <div class="form-group">
+                                    <input type="text" id="reference_number" name="reference_number" class="form-control" placeholder="Reference Mob Number" value="">
+                                    <span class="err_msg"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                </div>
+                <div class="form-group">
+                    <p style="text-align:left;"> Your Trial pack costs INR 300/- Kindly pay to proceed.</p>
+                </div>                
+                <div class="form-group" id="payment-options">
+                                                        <div class="radiobtn">
+                            <input type="radio" id="pay_later" name="payment" value="pay_later">
+                            <label for="pay_later">Pay On Delivery</label>
+                        </div>
+                    
+                    <div class="radiobtn">
+                        <input type="radio" id="pay_now" name="payment" value="pay_now">
+                        <label for="pay_now">Pay Online</label>
+                    </div>
+                </div>
+                <span class="err_msg"></span>
+            </div>
+            <input type="hidden" id="order_id" value="">
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <a id="start_trial" href="#" class="bttn-white fadeInUp">I AGREE. LETS BEGIN</a>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock main_content %}

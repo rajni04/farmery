@@ -1,0 +1,76 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+    <link rel="stylesheet"  type="text/css" href="{% static 'stdregis.css'%}" >
+</head>
+<body>
+   
+
+
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <h1><marquee> REGISTRATION</marquee></h1>
+        <table>
+            
+
+            
+            <tr>
+                <td>
+                    FIRST_NAME
+                </td>
+                <td>
+                    <input type="text" name="first_name" placeholder="FIRST NAME"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LAST NAME
+                </td>
+                <td>
+                    <input type="text" name="last_name" placeholder="LAST NAME"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    EMAIL-ID 
+                </td>
+                <td>
+                    <input type="email" name="email" placeholder=" EMAIL"><br>
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    MOBILE NO
+                </td>
+                <td>
+                    <input type="text" name="phno" placeholder="Mobile no"><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    REFERENCE MOB NO
+                </td>
+                <td>
+                    <input type="text" name="refphno" placeholder=" REFERENCE MOBILE NUMBER"><br>
+                </td>
+            </tr>
+        </table>
+     
+        <input type="Submit">
+
+    </form>
+
+   <!---- <div>
+       {%for message in messages%}
+        <h3>
+            {{message}}
+        </h3>
+        {% endfor%}
+    </div>  -->
+</body>
+</html>
