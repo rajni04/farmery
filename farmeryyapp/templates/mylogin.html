@@ -1,48 +1,79 @@
+{% extends 'base2.html'%}
+{% block main_content %}
+{% load static %}
+<html>
 
-{% load static %}<html>
     <head>
         <meta charse="utf-8">
-        <link rel="stylesheet" href="{%static 'css/styleadmin.css'%}" >
-       
+        <link rel="stylesheet" href="{%static 'css/loginstyle.css'%}" >
+
         
+    
+        <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}">
+
 </head>
+    <script type="text/javascript">
+     function validation()
+     {
+       var password=document.getElementById("pass")
 
-
+       if(password.value.trim().length<3)
+       {
+           alert("Password too short")
+           return false;
+       }
+       else{
+           return true;
+       }
+     }
+    
+    
+    </script>
+         
 
         <body>
-            
-            <form action="" method="post" >
+
+            <form  onsubmit="return validation();" action="login" method="post" >
                 {% csrf_token %}
 
             <div class="loginbox">
-              
-            
-                  <H1>LOGIN</H1>
+                
+             <H1  style="color:rgb(120, 23, 230)" ><B>LOGIN</B></H1>
             <form>
                 <p><B>USERNAME<B></p>
                     <input type="text" placeholder="Enter Username" name="username" required >
                 
                 
                 <P>PASSWORD</P>
-                    <input type="password" placeholder="Enter Password" name="password" required > <BR>
-                                                                                                       
-                                
-             <!----  <p>OPERATOR</p>
-                <select id="OPERATOR">
-                <option value="OPERATOR">Select user</option>
-                   <option value="ADMIN">ADMIN</option> 
-                 <option value="STUDENT">STUDENT</option>
-                    
-                </select>   -->    
-                <BR>             
-
-               
+                    <input type="password" placeholder="Enter Password" name="password" id="pass" required > <br>
+                                                                                                          
                <BR>
                      <input type="submit" name="" value= "Sign in">
+                     <div class="col-12  text-center">
+                
+                     
+                <div class="col-12  text-center">
+                    <a href="#"><B style="color: blue;">NEW USER</B></a>
+                    <div><a href="#"><B  style="color: blue;">FORGET PASSWORD</></a> </div>
             
-                <a href="{% url 'loginform'%}">Register if new.</a>
+
+                </div>
+
+                {% if messages %}
+                <div class="col-12">
+                   {% for message in messages %}
+                   {% if message.tags == 'error' %}
+                   <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                   {% endif %}
+                   {% endfor %}
+                 </div>
+                 {% endif %}
+
             </FORM>
             </div>
         </body>
+       
 
-</html>
+           
+
+        {% endblock main_content %}

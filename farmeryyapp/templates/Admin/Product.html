@@ -1,0 +1,108 @@
+{% extends 'Admin/base_template.html' %}
+{% block page_title %}
+ <B>PRODUCT</B>
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    {%load static %}
+
+    <!-- Main content -->
+    
+    <link rel="stylesheet" >
+
+    <!-- Main content -->
+    <div class="container register-form">
+      <div class="card card-body">
+      <div class="form">
+        <div class="note">
+          
+        </div>
+        <div class="card card-default">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label>Product NAME</label>
+                    <input type="text" class="form-control" placeholder="Product Name" name="productname" >
+                  </div>
+                 
+                   <div class="form-group">
+                    <label>CATEGORY</label>
+                    <input type="text" class="form-control" placeholder="category" name="category" >
+                  </div>
+                  <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" placeholder="Description" name="desc"  >
+                  </div>
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" class="form-control" placeholder=" Price " name="price ">
+                  </div>
+                </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                        <label>QUANTITY </label>
+                        <input type="TEXT" class="form-control" name="quantity" placeholder="QUANTITY" >
+                      </div>
+
+                      <div class="form-group">
+                        <label> Discount Desc</label>
+                        <input type="text" class="form-control" name="discountdesc" placeholder="DESC">
+                      </div>
+
+                      <div class="form-group">
+                        <label>OLD PRICE</label>
+                        <input type="text" class="form-control" name="oldprice" placeholder="OLD PRICE">
+                      </div>
+
+
+                      <div class="form-group">
+                        <label>NEW DISCOUNT</label>
+                        <input type="text" class="form-control" placeholder="newdiscount" name="newdiscount">
+                      </div>
+                       
+                       
+                     
+                       
+                      <div class="form-group">
+                        <label>IMAGE</label>
+                        <input type="file" class="form-control" placeholder="Upload image" name="img">
+                      </div>
+                    </div>
+      
+                    <!------------------------------------------------------------------>
+                                       <div class="form-group">
+                                          {% if messages %}
+                                            {% for message in messages %}
+                                            {% if message.tags == 'error' %}
+                                            <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% if message.tags == 'success' %}
+                                            <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% endfor %}
+                                          {% endif %}
+                                        </div>
+                        
+                                    <!-- /.card-body -->
+                    
+                                    <div class="card-footer">
+                                      <button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+                                    </div>
+                                    <div class="card-footer">
+                                      <a href=""  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
+                                    </div>
+                                    </form>
+                                </div>
+                                <!-- /.card -->
+                    </div>
+                    
+                    
+                              </div>
+                              </div>
+                          </div>
+                        </section>
+                        <!-- /.content -->
+                    {% endblock main_content %}
+                    
+                    

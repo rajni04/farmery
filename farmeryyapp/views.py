@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from rest_framework import viewsets
-from farmeryyapp.models import Info
+from farmeryyapp.models import Info,Product
 from farmeryyapp.serializers import InfoSerializer, UserSerializer
 from django.http import HttpResponse,JsonResponse
 from rest_framework.parsers import JSONParser
@@ -89,6 +89,35 @@ def loginform(request):
 def reg(request):
     return render(request,'reg.html')
 
+"""def myloginn(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect("admin")
+        else:
+             messages.info(request,'invalid credentials')
+             return redirect('mylogin')    
+    else:
+        return render(request,'mylogin.html')"""
+
+def homeadmin_template(request):
+   
+    return render(request,'Admin/homeadmin_template.html')
+
+def product(request):
+   
+    return render(request,'Admin/product.html')
+
+
+
+
+class OTPAdmin(OTPAdminSite):
+    pass
+
 def myloginn(request):
     if request.method=='POST':
         username=request.POST['username']
@@ -97,12 +126,13 @@ def myloginn(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect("/")
+            if user.user_type =="1":
+                 return redirect('Admin/homeadmin_template')
+            
+            elif user.user_type =="2":
+                 return redirect('customer_home')
         else:
-             messages.info(request,'invalid credentials')
-             return redirect('mylogin')    
+             messages.error(request,"Invalid Login Details")
+             return redirect('mylogin.html')    
     else:
-        return render(request,'mylogin.html')
-
-class OTPAdmin(OTPAdminSite):
-    pass
+        return render(request,'mylogin.html')      

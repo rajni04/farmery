@@ -8,12 +8,11 @@
 <html>
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-       
         <link rel="stylesheet" href="{% static 'css/styledairy.css' %}">
       
        
         <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
-     
+        
      
 <form role="form" action="" method="post">
     
@@ -23,15 +22,18 @@
         <div class="header-content-title">
             <h1>Catalog</h1>
         </div>
-        <style> .header-background-default { background-image: url(../img/media/theming/default/farmery-bg-gray_1.jpg); } </style>
+       
         <div class="breadcrumbs">
             <ul>
                 <li class="home"> <a href="/" title="Go to Home Page">Home</a> <span>/ </span></li>
                 <li class="category40"> <strong>Catalog</strong></li>
             </ul>
         </div>
+       
+
+        </div>
     </div>
-    <div class="novaworks-main-content">
+    <div class="novaworks-main-content" id ="list">
         <div class="main container">
             <div class="columns-layout">
                 <div class="col-main col-lg-12">
@@ -146,9 +148,37 @@
                         }
 
                     </style>
+                
                     <div class="category-products">
                         <ul class="load_product products-grid row list-2col-3">
-                           
+
+
+                            <script type="text/javascript">
+
+                                function getPosts(){
+                                    console.log('ok1')
+                                    
+                                   fetch('http://127.0.0.1:8000/api/product/',{
+                                    method: 'GET',  
+                                    headers:
+                                    {
+                                
+                                    'Content-Type':'application/json',
+                                    'Authorization':'Token b76f5047e9bce7ed2a48cb71275ef7b69e40e973'
+                                    }
+                                })
+                                   .then(response => response.json())
+                                   .then(function(data){
+                                    console.log(data)
+                                   
+                                   })
+                                    
+                                    console.log('ok2')   
+                                } 
+                                getPosts();
+
+                            
+                            </script>
                             {% for product in products %}   
                                    
                                     <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -207,7 +237,8 @@
                                          
                                    
                    </ul>
-                    </div>
+                  
+                </div>
                 <div class="col-right sidebar col-lg-3 col-md-2">
                     <div class="mini-cart-sidebar"></div>
                 </div>
@@ -223,10 +254,12 @@
             <div id="rafContent"></div>
 <!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
         </div>
-      
-    
+ 
+        
+
+        
     <div class="modal" id="fruit-intro">
-       <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
+       <a class="" href="/shop" title="Fruits"> <img src=""></a>
     </div>
 <div>
     <a href="/cart" class="floating-cart-button">
@@ -234,11 +267,10 @@
     <span id="mini-cart-count">0</span>
     </a>
 </div>
-
-
+           
     </body>    
 </html>
-{% endblock main_content %}
+
 
 <script>
 
@@ -252,13 +284,26 @@
 
    }).then(data2 =>{
        console.log(data2)
+   }).catch(err=>{
+       console.log(err)
    })
     
     
 } 
 console.log('ok1')  
 
-
-
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock main_content %}
