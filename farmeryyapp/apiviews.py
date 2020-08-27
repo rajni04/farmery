@@ -118,7 +118,7 @@ class ProductViewSet(viewsets.ModelViewSet):
             dict_response={"error":False,"message":"User Data Save Successfully"}
         except:
             dict_response={"error":True,"message":"Error During Saving Data"}
-        return Response(dict_response)
+        return Response(request,"Admin/Product.html",dict_response)
 
     def update(self,request,pk=None):
         try:
@@ -131,8 +131,8 @@ class ProductViewSet(viewsets.ModelViewSet):
         except:
             dict_response={"error":True,"message":"Error During Updating C Data"}
 
-        return Response(dict_response)
-
+        return Response(request,"Admin/EditProduct.html",dict_response)
+  
     def retrieve(self,request,pk=None):
         queryset=Product.objects.all()
         product=get_object_or_404(queryset,pk=pk)

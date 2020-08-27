@@ -34,7 +34,7 @@ urlpatterns=[
    # path('',include('rest_framework.urls')),
     path("homeadmin_template",views.homeadmin_template, name="homeadmin_template"),
     path('about',views.about, name="about"),
-     path('product',views.product, name="product"),
+  
     path('admine/', admin_site.urls),
     path('how-it-works',views.work, name="how-it-works"),
     path('catalog/',views.catalog, name="catalog"),
@@ -49,6 +49,16 @@ urlpatterns=[
     path('mylogin',views.myloginn, name="mylogin"),
    # path('loginform',views.loginform, name="loginform"),
     path('loginform',views.loginform, name="loginform"),
+
+
+#product producr product 
+    path('product',views.product, name="product"),
+    path('viewproduct',views.viewproduct, name="viewproduct"),
+    path('delete/<str:product_id>/', views.delete_product, name="delete"),
+   # path('edit_product/<str:product_id>/', views.edit_product, name="edit_product"),
+
+
+
 
 
 #-----------------------------------------------------------------------------------------------------------------------------------------

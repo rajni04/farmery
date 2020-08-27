@@ -33,7 +33,7 @@
 
         <body>
 
-            <form  onsubmit="return validation();" action="login" method="post" >
+            <form  onsubmit="return validation();" action="homeadmin_template" method="post" >
                 {% csrf_token %}
 
             <div class="loginbox">
@@ -72,7 +72,23 @@
             </FORM>
             </div>
         </body>
-       
+       <script>
+        
+
+        function gettoken(body){
+            console.log('ok1')
+            
+          return fetch('http://127.0.0.1:8000/api/auth/',{
+           method: "POST",
+           headers:{
+               'Content-type':'application/json'
+           },
+           body:JSON.stringify(body)
+        }). then(resp=>resp.json())
+    }console.log("ok")
+          
+
+       </script>
 
            
 

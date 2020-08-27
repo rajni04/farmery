@@ -34,11 +34,11 @@ MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 STATIC_URL="/static/"
 STATIC_ROOT=os.path.join(BASE_DIR,"static")
 
-CORS_ORIGIN_WHITELIST = [
+"""CORS_ORIGIN_WHITELIST = [
     
     "http://localhost:8000",
     
-]
+]"""
 
 # Application definition
 
@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken', 
     'django_otp',
     'django_otp.plugins.otp_totp', 
-    'corsheaders', 
+   # 'corsheaders', 
     
 ]
 
@@ -163,5 +163,3 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-

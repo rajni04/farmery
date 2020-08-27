@@ -1,8 +1,10 @@
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator,MinValueValidator
 
 # Create your models here.
+
 
 
 class Info(models.Model):
@@ -69,3 +71,4 @@ class Rating(models.Model):
     class Meta:
         unique_together=(('user','product_id'),)  #if same user give rating to one movie 2 times it will be rejected
         index_together=(('user','product_id'),)
+

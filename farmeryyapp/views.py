@@ -112,7 +112,14 @@ def product(request):
    
     return render(request,'Admin/product.html')
 
+def viewproduct(request):
+    product=Product.objects.all()
+    return render(request,"Admin/ViewProduct.html",{'product': product})
 
+def delete_product(request,product_id):
+   product=Product.objects.get(id=product_id)
+   product.delete()
+   return redirect("/viewproduct")
 
 
 class OTPAdmin(OTPAdminSite):
@@ -136,3 +143,4 @@ def myloginn(request):
              return redirect('mylogin.html')    
     else:
         return render(request,'mylogin.html')      
+
