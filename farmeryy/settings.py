@@ -36,7 +36,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,"static")
 
 """CORS_ORIGIN_WHITELIST = [
     
-    "http://localhost:8000",
+    "http://localhost:3000",
     
 ]"""
 
@@ -77,7 +77,7 @@ MIDDLEWARE = [
 
 
 
-REST_FRAMEWORK = {
+"""REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
     
         'rest_framework.authentication.TokenAuthentication',
@@ -88,7 +88,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
         'rest_framework.permissions.IsAuthenticated',
     ]
-}
+}"""
 
 ROOT_URLCONF = 'farmeryy.urls'
 

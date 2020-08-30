@@ -88,7 +88,7 @@ user_create=InfoViewSet.as_view({"post":"create"})
 
 
 class LoginViewSet(viewsets.ViewSet):
-    serializer_class= AuthTokenSerializer
+   # serializer_class= AuthTokenSerializer
     def create(self,request):
         return ObtainAuthToken().post(request)
 
@@ -96,15 +96,15 @@ class LoginViewSet(viewsets.ViewSet):
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    authentication_classes=[TokenAuthentication] 
-    permission_classes=[IsAuthenticated]
+    #authentication_classes=[TokenAuthentication] 
+    #permission_classes=[IsAuthenticated]
     renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'trial.html'
+  #  template_name = 'trial.html'
     def list(self,request):  
         product=Product.objects.all()
         serializer=ProductSerializer(product,many=True,context={"request":request})
         response_dict={"error":False,"message":"All Product List Data","data":serializer.data}
-        return Response(response_dict)
+        return render(request,"Admin/ViewProduct.html",response_dict)
     
 
     def create(self,request):

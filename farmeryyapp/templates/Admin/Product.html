@@ -1,6 +1,6 @@
 {% extends 'Admin/base_template.html' %}
 {% block page_title %}
- <B>PRODUCT</B>
+<B>PRODUCT</B>
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -8,7 +8,8 @@
 
     <!-- Main content -->
     
-    <form role="form" action="/api/product/" method="post">
+    <form role="form"  method="post" >
+      {% csrf_token %}
 
     <!-- Main content -->
     <div class="container register-form">
@@ -87,7 +88,7 @@
                                     <!-- /.card-body -->
                     
                                     <div class="card-footer">
-                                      <button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+                                      <button type="submit" id="createProduct" class="btn btn-primary btn-block">SUBMIT</button>
                                     </div>
                                     <div class="card-footer">
                                       <a href="/viewproduct"  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
@@ -102,7 +103,28 @@
                               </div>
                           </div>
                         </section>
-                        <!-- /.content -->
-                    {% endblock main_content %}
+                        <!-- /.content --> 
+
+
+<script>
+
+    
+      function createProduct(body){
+        return fetch('http://127.0.0.1:8000/api/product/',{
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json',
+           
+          },
+          body:JSON.stringify(body)
+        }).then(resp=>resp.json())
+
+        
+      }
+
+
+</script>
+
+  {% endblock main_content %}
                     
                     

@@ -1,0 +1,103 @@
+.widget-title {
+    font-size: 40px;
+    line-height: 42px;
+    padding-bottom: 30px;
+    color: #03a585!important;
+    text-align: center;
+    font-weight: 700;
+
+}
+.section h2 {
+    margin-top: 50px;
+}
+
+.span.price-dec {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+    color: #fff;
+    border-radius: 100%;
+    background-color: #ff5151;
+    top: 16px;
+    right: 20px;
+    line-height: 65px;
+}
+
+.landing-nav.navbar-default{
+    background-color: #e7ece8;
+}
+
+
+.landing-nav.navbar-default .navbar-nav{
+    float: right;
+}
+
+.landing-nav.navbar-default .navbar-nav>li>a {
+    color: #03a585;
+    padding: 10px 20px;
+}
+.landing-nav.navbar-default .navbar-nav>li>a:hover,
+.landing-nav.navbar-default .navbar-nav>li>a:focus{
+    color: #3798dd;
+}
+
+.item-product-image-box a .front img{
+    margin: 0 auto;
+    display: block;
+}
+
+.app-download-img{
+    min-width: 150px;
+}
+
+@media (max-width: 640px){
+
+
+}
+.ribbon3{
+    position: absolute;
+    top: -3px;
+    right: 0px;
+    font-size: 8px;
+    background: #dc3f00;
+    color: white;
+    padding: 0px 5px;
+    border-radius: 10px;
+}
+.floating-cart-button{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#03a585;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 0px 1px 3px #0a0a0a;
+        z-index: 100;
+}
+.my-float{
+	margin-top:18px;
+	margin-left: -10px;
+    font-size: 24px !important;
+}
+.empty-cart{
+	text-align: center;
+    color: #696969;
+    padding: 100px;
+    background: #e7ece8;
+    width: 50%;
+    margin: 40px auto;
+}
+#mini-cart-count{
+	min-width: 21px;
+    background: red;
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    border-radius: 10px;
+    right: 10px;
+    top: 10px;
+}
