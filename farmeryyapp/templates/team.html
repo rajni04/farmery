@@ -21,7 +21,7 @@
         <div class="header-content-title">
             <h1>Team</h1>
         </div>
-        <style> .header-background-default { background-image: url(../img/media/theming/default/farmery-bg-gray_1.jpg); } </style>
+       
     </div>
     <div class="novaworks-main-content">
         <div class="main container">
@@ -79,7 +79,7 @@
                                 <div class="text">
                                     {% for team in team %}
                                     <div>
-                                        <div style="float: left; margin-right: 20px;"><span> <img title="nishant gupta" alt="" src="{{team.timg.url}}" /> </span></div>
+                                        <div style="float: left; margin-right: 20px;"><span> <img src="{{team.timg}}" /> </span></div>
                                         <div><span> <strong>{{team.tname}}</strong> </span></div>
                                         <div><span>{{team.tdesc}}</span></div>
                                         <div>&nbsp;</div>  
@@ -102,28 +102,7 @@
             <div id="rafContent"></div>
 <!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
         </div>
-        <script data-cfasync="false" src="/js/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<!--        <script type="text/javascript"> var $_Tawk_API = {}, $_Tawk_LoadStart = new Date();
-            (function () {
-                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = 'https://embed.tawk.to/5787713f2664db961a875228/default';
-                s1.charset = 'UTF-8';
-                s1.setAttribute('crossorigin', '*');
-                s0.parentNode.insertBefore(s1, s0);
-            })();
-        </script>-->
-
-<!--        <div class="mobile-footer">
-            <div class="col-xs-6"> <a href="javascript:void(0)" class="area-link-mobile open-area" title="Set Your Location">Set Location</a></div>
-            <div class="col-xs-6">
-                <div class="mini-cart-sidebar"></div>
-                <script> jQuery(".shopping-bag").slideToggle();
-                    jQuery('.arrow').toggleClass("down up");
-                </script>
-            </div>
-        </div>-->
-       
+      
     <div class="modal" id="fruit-intro">
        <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
     </div>

@@ -1,0 +1,953 @@
+{% extends 'base.html'%}
+{% block main_content %}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+
+     
+        <link rel="stylesheet" href="{% static 'css/trial.css' %}">
+
+
+       
+                <!--<div class="container clearfix">-->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+
+</head>
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-content -->
+    
+    <header class="home-area overlay" id="home_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-5">
+                    <figure class="mobile-image wow fadeInUp" data-wow-delay="0.2s">
+                                                    <img src="{{product.img.url}}"  alt="Farmery Cow Milk">
+                                            </figure>
+
+                    <div class="products">
+                                                    <img src="static/img/4.jpg" alt="farmery product">
+                            <img src="static/img/1.jpg" alt="farmery product">
+                            <img src="static/img/2.jpg" alt="farmery product">
+                            <img src="static/img/3.jpg" alt="farmery product">
+                                            </div>
+
+                </div>
+                <div class="col-xs-12 col-md-7 header-para">
+                    <div class="space-80 hidden-xs"></div>
+                    <div class="book-trial">
+                        <h2>Book Your Five Days Trial of</h2>
+                    </div>
+                    <h1 class="wow fadeInUp" data-wow-delay="0.4s">{{product.productname}}</h1>                    
+                    <div class="space-20"></div>
+                    <div class="desc wow fadeInUp" data-wow-delay="0.6s">
+                        <p class="text-left">Farmery delivers pure, farm fresh sourced from local cattle-owners to over 7000+ families in New Delhi, NCR every morning. </p>
+
+                        <p class="text-left">Our milk is <strong>free of any chemicals,</strong> pesticides, growth enhancer or preservatives. With traditional brands, your milk spends 4-5 days in the supply chain and is heavily processed to bring consistency. Farmery only provides <strong>“Raw Unprocessed Chilled Milk”.</strong></p>
+
+                        <p class="text-left">And of course, prompt customer support, when you need help.</p>
+                                                <!--p class="price">Get 5 deliveries of 1 Ltr pack @ <strike style='color:#000'>₹350</strike> ₹ 300/-</p>   
+                        <p class="Vegetarian">Regular Price: <strike style='color:#000'>₹70</strike>&nbsp;&nbsp;|&nbsp;&nbsp;Discounted Trial Price: ₹ 60&nbsp;&nbsp;|&nbsp;&nbsp;Pack Size: 1 Ltr </p-->
+
+                        <p class="price">Special Trial Price: <strike style='color:#000'>₹70</strike> ₹60/-</p>
+                        <p class="Vegetarian">Trial Pack Cost: <strike style='color:#000'>₹350</strike> ₹300&nbsp;&nbsp;|&nbsp;&nbsp;Pack Size: 1 Ltr x Five Days </p>
+
+                    </div>
+                    <div class="space-20"></div>
+                    <a href="{% url 'trialform' %}" class="bttn-white wow fadeInUp open-trial-popup" data-toggle="modal" data-target="#myModal">Start my trial</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About-Area -->
+    <section class="section-padding" id="about_page">
+        <div class="container">
+            <div class="container-inn">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 col-md-offset-2">
+                        <div class="page-title text-center">
+                            <div class="space-20"></div>
+                            <div class="founder"><img src="/static/img/vivek.jpg" alt="founder farmery" class="img-responsive"></div>
+                            <h5 class="title mb_40">I started Farmery</h5>
+
+                            <div class="space-30"></div>
+                            <p>to bring fresh, pure milk for my own kids. I remember my mother used to get milk delivered to our home, from the local milkman. He was cooperative, understood our family’s needs, and over time became like an extended family member we could rely upon. Sadly, in the past decade or so, this trusted network of local milkmen has disappeared. </p>
+                            <p>My team and I are building Farmery to bring back that local milk supply chain. We have partnered with cattle-owners, in the vicinity of New Delhi. Every morning, farm fresh milk is delivered to your home from these cattle farms, within hours of milking. </p>
+                            <p>It’s like having a cattle-shed in the backyard of your urban home. Just like the old days. </p>
+                            <div class="space-20"></div>
+                            <h4><strong>Vivek -</strong> <span>Founder & CEO, Farmery</span></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <!-- About-Area-End -->
+
+    <!-- Testimonial-Area -->
+
+    <div class="row padding-none">
+        <div class="col-xs-12">
+            <div class="page-title text-center">
+                <h5 class="title">Reviews</h5>
+                <h6 class="title-2">100+ Reviews on Facebook, Google </h6>
+                <div class="space-60"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="testimonial-area" id="testimonial_page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="team-slide">
+                        <div class="team-box">
+                            <h4>Kusum Gill</h4>
+                            <h6 class="review">Google Reviews 4/5 </h6>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star unchecked"></span>
+                            <p class="message">Very professional and quick to respond to our needs regarding delivery and requirements. Milk is good in quality and fresh. Thanks for being there for our families!!</p>
+
+                        </div>
+                        <div class="team-box">
+
+                            <h4>Mona Arora</h4>
+                            <h6 class="review">Google Reviews 5/5 </h6>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+
+                            <p class="message" style="font-size: 15px;line-height: 20px;">I am thankful to farmery team  for  the best quality milk and best services. The delivery boys are very polite. I am 43 year old single woman, sufferings from arthritis. I have been looking for best quality milk. The delivery boy is so helpful, i can't run to open the door coz of my health. They are so patient and polite. I can't wait for them to start supplying ghee and cheese. Well if you are concern about your health, you can trust farmery. I have encouraged many of my relatives and friends to buy milk from farmery.</p>
+
+                        </div>                            
+                        <div class="team-box">
+                            <h4>Sidd Mohan</h4>
+                            <h6 class="review">Facebook Reviews 5/5 </h6>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <p class="message" style="font-size: 15px">My family has been a buyer of Farmery's milk for over a year now. I think these guys are doing a great job of delivering what they promise. I like how easy it is to update your order when you are planning to be out of town. And the deliveries reach on time. The few times we were unhappy with the milk they were quick to take corrective measures. Well done Farmery team.</p>
+
+                        </div>
+                        <div class="team-box">
+                            <h4>Palki Sharma</h4>
+                            <h6 class="review">Facebook Reviews 5/5 </h6>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <p class="message">You guys are too awesome. Providing purest form of milk. Taste itself justifies everything about the product. :)</p>
+
+                        </div>
+                        <div class="team-box">
+                            <h4>Nina Arora</h4>
+                            <h6 class="review">Facebook Reviews 5/5 </h6>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <p class="message">Very satisfied customer, excellent milk quality that tastes so pure and healthy as compared to other packaged milk, must try!</h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial-Area-End -->
+	    <!--Questions-Area -->
+    <section id="questions_page" class="questions-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-title text-center">
+                        <h5 class="title">FAQ</h5>
+                        <h6 class="title-2">&nbsp; </h6>
+                        <div class="space-60"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="toggole-boxs">
+                        
+                            <div class="toggole-boxs-inn">
+                                <h3>Where is my milk Coming from? </h3>
+                                <div>
+                                    <p>Your milk comes from local, mid-sized cattle farms nearby New Delhi. These are typically cattle owners with 30-40 cows. We have partnered with such farms and closely monitor their setup. Cows are milked, the milk is chilled, packed into glass bottles, and delivered to your home within hours of milking. If you wish to, we’d be happy to arrange a visit to our farms nearby :)
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="toggole-boxs-inn">
+                                <h3>No Pesticides, No Growth Enhancers. No Chemicals. Right? </h3>
+                                <div>
+                                    <p>Of course. We closely monitor and test every partner farm continuously. You can be assured that Farmery Milk is free of any chemicals, pesticides, growth enhancers, preservatives, antibiotics or anything unwanted. For the past 3 years, our milk samples have been continuously tested by Farelabs Food Analysis &amp; Research Laboratory, in Gurgaon. You can request for the latest reports, with a message on facebook. </p>
+                                    <p>It’s simple. It’s just Milk. Nothing more. Nothing less. </p>
+                                </div>
+                            </div>
+                            <div class="toggole-boxs-inn">
+                                <h3>Can I visit any of your farms?
+                                </h3>
+                                <div>
+                                    <p>Of course. Every month, we have people visiting our farms to spend time with the cows, see the process behind their milk and know the people who the #DairyFarms. You could drop us a word on Facebook or Instagram and we’ll help you plan a trip. </p>
+                                </div>
+                            </div>
+
+                            <div class="toggole-boxs-inn">
+                                <h3>What if my area is not listed in the signup form?
+
+                                </h3>
+                                <div>
+                                    <p>Don’t worry. We are slowly building our delivery network all over New Delhi. In case you see a nearby region listed, please drop a message on Facebook. We’ll quickly check with our hub manager and see if any exception can be made for you. Otherwise, we’ll drop you a message as soon as we begin in your area :) </p>
+                                </div>
+                            </div>
+                        
+                         
+
+
+                        <!--                          <div class="toggole-boxs-inn">
+                                                    <h3>Why is buffalo milk not in bottles? </h3>
+                                                    <div>
+                                                        <p>We are in the process of setting up a bottle delivery system for Buffalo milk too. Right now if we use bottles, the prices of buffalo milk touch Rs 75/- per liter, compared to the Rs 65/-. That’s why when we started with Buffalo milk, we asked our community if they’d be okay to use receive milk packets and give us some time to figure out a bottle system for buffalos without increasing the prices.  </p>
+                                                    </div>
+                                                </div>-->
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="space-20 hidden visible-xs"></div>
+                    <div class="toggole-boxs">
+
+                        
+                            <div class="toggole-boxs-inn">
+                                <h3>What does one liter of cow milk cost after the trial? </h3>
+                                <div>
+                                    <p>One liter of Farmery Cow Milk costs Rs 70/- once you have used the trial. We are completely committed to providing clean, farm-fresh milk. At this price point, we are able to pay the dairy farmer fair income, feed the cows a rich diet and set up a reliable delivery network. </p>
+                                </div>
+                            </div>
+
+                            <div class="toggole-boxs-inn">
+                                <h3>I have a young kid. Should I try #FarmeryMilk? </h3>
+                                <div>
+                                    <p>Sure, that’s the whole purpose of #FarmeryMilk; to help parents find the cleanest milk possible. 9 out of 10 kids immediately like the natural taste of our milk. If you’re weaning your kid, you may want to dilute the milk with an equal volume of water for the first couple of days. #FarmeryMilk is thick, and that'll help your child get accustomed to milk.</p>
+                                </div>
+                            </div>
+
+                            <div class="toggole-boxs-inn">
+                                <h3>When will I receive my milk, if I start the trial pack? </h3>
+                                <div>
+                                    <p>You can choose the first day of your trial. If you can signup for a trial before 8 PM, your first bottle of milk can be delivered on the very next morning. You may receive a call from our delivery team to confirm the details of your address.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="toggole-boxs-inn">
+                                <h3>Where can I learn more about #FarmeryMilk?</h3>
+                                <div>
+                                    <p>It’s simple. You can follow our Facebook or Instagram page. We share videos every day, from our farms. You’ll discover the way we treat our cattle, what the cows eat, the daily routine of calves and so much more. Alternatively, if you have questions, you can message us anytime. We’ll reply within 24 hours :)
+
+                                    </p>
+                                </div>
+                            </div>
+                        
+                                            </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!--Questions-Area-End -->
+    <section id="bottom-top-footer">
+        <div class="container">
+            <h4>Book Your Cow Milk 5 Days Trial</h4>
+            <a href="#" class="bttn-white fadeInUp open-trial-popup" data-toggle="modal" data-target="#myModal">Start my trial</a>
+        </div>
+    </section>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title"><img src="/img/logo.png" alt="logo"></h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form method="post" class="trial-form">
+                    <input type="hidden" name="referrar_id" id="referrar_id" value=""/>
+                    <!-- Modal body -->
+                    <div class="first-form">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <p class="text-center">
+                                    Fill in your details below to start your trial 
+                                    pack. You'll receive a confirmation call 
+                                    before the first delivery arrives.
+                                </p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Name *" value="" required="required" >
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">  
+                                    <div class="form-group">
+                                        <input type="text" id="mobile_number" name="mobile_number" class="form-control" placeholder="Mobile Number *" value="" required="required" >
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group" id="email-field-wrap">
+                                        <input type="text" id="email_id" name="email_id" class="form-control" placeholder="Email *" value="" required="required" >
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="form-group" id="otp-field-wrap" style="display: none;">
+                                        <input type="text" id="otp" name="otp" class="form-control" placeholder="OTP *" value="" required="required">
+                                        <span class="err_msg"></span>
+                                    </div>
+                                                                    </div>
+                            </div>
+
+                            <div class="row">    
+                                <div class="col-sm-6"> 
+                                    <div class="form-group">
+                                        <select id="city" name="city" required="required" >
+                                            <option value=""> Choose City </option>
+                                        </select>
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6"> 
+                                    <div class="form-group choose_area">                                        
+                                        <select id="area" name="area" class="form-control" >
+                                            <option value=""> Choose Area </option>
+                                        </select>
+                                        <span class="err_msg"></span>                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12"> 
+                                    <div class="form-group">
+                                        <input type="text" id="address" name="address" class="form-control" placeholder="Address *" value="" >
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">    
+                                <!--div class="col-sm-6"> 
+                                <div class="form-group">
+                                    <select id="subarea" name="subarea">
+                                        <option value=""> Choose Subarea </option>
+                                    </select>
+                                    <span class="err_msg"></span>
+                                </div>
+                            </div-->
+
+                                <div class="col-sm-6"> 
+                                    <div class="form-group">
+                                        <select id="start_date" name="start_date">
+                                            <option value=""> Choose Start Date </option>
+                                        </select>
+                                        <span class="err_msg"></span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">  
+                                    <div class="form-group">
+<!--                                        <input type="checkbox" id="is_reference_number" name="is_reffered" value="1">  -->
+                                        <div class="form-group-2">
+                                            <input type="checkbox" id="is_reffered_checkbox" name="is_reffered" class="is_reference_number" value="1">
+                                            <label for="is_reffered_checkbox">Is Referred?</label>
+                                        </div>
+                                        <div class="" id="reference_number-wrap" style="display: none">  
+                                            <div class="form-group">
+                                                <input type="text" id="reference_number" name="reference_number" class="form-control" placeholder="Reference Mob Number" value="">
+                                                <span class="err_msg"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                            </div>
+                            <div class="form-group">
+                                <p style="text-align:left;"> Your Trial pack costs INR 300/- Kindly pay to proceed.</p>
+                            </div>                
+                            <div class="form-group" id="payment-options">
+                                                                    <div class="radiobtn">
+                                        <input type="radio" id="pay_later" name="payment" value="pay_later" />
+                                        <label for="pay_later">Pay On Delivery</label>
+                                    </div>
+                                
+                                <div class="radiobtn">
+                                    <input type="radio" id="pay_now" name="payment" value="pay_now" />
+                                    <label for="pay_now">Pay Online</label>
+                                </div>
+                            </div>
+                            <span class="err_msg"></span>
+                        </div>
+                        <input type ="hidden" id="order_id" value="" />
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <a id="start_trial" href="#" class="bttn-white fadeInUp">I AGREE. LETS BEGIN</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+	<script src="/js/jquery-1.12.4.min.js?1569172834"></script>
+	<script src="/js/bootstrap.min.js?1569172834"></script>
+	<script src="/js/owl.carousel.min.js?1569172834"></script>
+	<script src="/js/main.js?1569172834"></script>
+	<script src="/admin/app-assets/vendors/js/forms/select/select2.full.min.js?1569172833"></script>
+	<script src="/admin/app-assets/js/scripts/forms/select/form-select2.js?1569172833"></script>
+    <script>
+        var csrfToken = 'fad6b862e25b25bdfe6b6a12d6ea31ee3c225216e86b1708b23d7dce4a00e9401bdfe7e1630e65b1dbcba16e70102bcc99c4a6ac8be5c507ca6ce11c3a6e03f4';
+        var trial_id = '3';
+        var productId = '887';
+        var leadTime = '210';
+    </script>
+    <script>
+    function setLoginUserByType(loginType, mobileNumber, customerId, sessionKey){
+        jQuery.ajax({
+             url: "/home/login-with-related-data",
+             data: {"mobile_number" : mobileNumber, "login_type" : loginType, "customer_id" : customerId, "session_key" : sessionKey},
+             type: 'POST',
+             beforeSend: function (xhr) {
+                 xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+             },
+             success: function (result) {
+                 var resultData = JSON.parse(result);
+                 if (!resultData.error) {
+                     if(loginType == 'mobile'){
+                         window.localStorage.setItem('loginuser', JSON.stringify(resultData.data));
+                     } else {
+                         window.location.reload();
+                     }
+                 } else {
+                     alert(resultData.message);
+                 }
+             },
+             error: function () {
+             }
+         });
+     }
+</script>
+    <script>
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            }
+        }
+    };
+
+    function formatDate(date) {
+        var monthNames = [
+            "Jan", "Feb", "Mar",
+            "Apr", "May", "Jun", "Jul",
+            "Aug", "Sep", "Oct",
+            "Nov", "Dec"
+        ];
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+        return day + ' ' + monthNames[monthIndex] + ' ' + year;
+    }
+    
+    $(document).ready(function () {        
+        var API_URL = '/';
+        var cityLoaded = false;
+        var city = getUrlParameter('city');
+        var cityId = '';
+        var subAreaId = '';
+        var mobileNumber = '';
+        if(cityId != '' && subAreaId != '')
+        {
+            loadCityList();
+        }
+        
+         //Login in browser if browser app is login
+        var loggedInUser = window.localStorage.getItem('loginuser');
+        if(loggedInUser != null && "" == ""){
+            var loggedInUserParseData = JSON.parse(loggedInUser);
+            setLoginUserByType('browser', loggedInUserParseData.telephone, loggedInUserParseData.customer_id, loggedInUserParseData.session_id);
+        }
+        
+//            $('input[name="payment"]').change(function(){
+//              var paymentOption = $("input[name='payment']:checked").val();
+//              if(paymentOption == 'pay_now'){
+//                  // if payment mode is online show email field
+//                  $('#email-field-wrap').show();
+//              }else{
+//                  $('#email-field-wrap').hide();
+//              }
+//            });
+//            
+        $('input[name="is_reffered"]').change(function () {
+            var is_referred = $("input[name='is_reffered']:checked").val();
+            if (is_referred == 1) {
+                // if payment mode is online show email field
+                $('#reference_number-wrap').show();
+            } else {
+                $('#reference_number-wrap').hide();
+            }
+        });
+
+        // load city dropdown
+        $('.open-trial-popup').click(function () {
+            loadCityList();
+        });
+        // load area on change of city
+        $('#city').change(function () {
+            loadAreaList($(this).val());
+        });
+        
+        function loadCityList()
+        {
+            if (cityLoaded == false) {
+                var dataString = 'product_id=' + productId;
+                $.ajax({
+                    url: API_URL + "home/getCities",
+                    data: dataString,
+                    dataType: 'json',
+                    type: "GET"
+                })
+                .done(function (res) {
+                    $.each(res, function (key, value) {
+                        var option = $("<option></option>")
+                                .attr("value", key)
+                                .text(value);
+                        if (city == value || cityId == key) {
+                            $(option).attr("selected", "selected");
+                        }
+                        $('#city')
+                                .append(option);
+                    });
+                    cityLoaded = true;
+                    if(subAreaId != '')
+                    {
+                        loadAreaList(cityId, subAreaId);                        
+                    }
+
+                })
+                .fail(function () {
+                    alert("Oops! Some error occured. Please try again.");
+                })
+                .always(function () {
+                    //alert("complete");
+                });
+            }
+        }
+        
+        function loadAreaList(city, subArea = null) {
+            var dataString = 'product_id=' + productId + '&city_id=' + city;
+            $.ajax({
+                url: API_URL + "home/getAreaAndSubArea",
+                dataType: 'json',
+                type: "GET",
+                data: dataString
+            })
+                    .done(function (res) {
+                        $('#area').empty().append($("<option></option>")
+                                .attr("value", '')
+                                .text('Choose Area'));
+                        //$('#subarea').empty();
+                        $.each(res, function (key, value) {
+                            if(subArea == key)
+                            {
+                                $('#area').append($("<option selected></option>").attr("value", key).text(value));
+                            }
+                            else
+                            {
+                                $('#area').append($("<option></option>").attr("value", key).text(value));
+                            }
+                        });
+                    })
+                    .fail(function () {
+                        alert("Oops! Some error occured. Please close popup and try again to open.");
+                    })
+                    .always(function () {
+                        //alert("complete");
+                    });
+        }
+        
+        // send OTP
+        var otp_sent = false;
+        var otp_varified = false;
+        $('#mobile_number').keyup(function () {
+            otp_sent = false;
+        });
+        $('#mobile_number').change(function () {
+            if (!$(this).val().match('[0-9]{10}')) {
+                $('#mobile_number').next('.err_msg').html('Please put 10 digit mobile number');
+                return;
+            } else {
+                if (otp_sent == false) {
+                    $('#mobile_number').next('.err_msg').html('');
+                    $.ajax({
+                        url: API_URL + "Home/sendRegisterOtp?mobile_number=" + encodeURI($(this).val()),
+                        dataType: 'json'
+                    })
+                            .done(function (res) {
+                                otp_sent = true;
+                                alert(res.message);
+                                if (res.status == false) {
+                                    $('#otp-field-wrap').hide();
+                                } else {
+                                    $('#otp-field-wrap').show();
+                                }
+                            })
+                            .fail(function () {
+                                alert("Oops! Some error occured. Please close popup and try again to open.");
+                            })
+                            .always(function () {
+                                //alert("complete");
+                            });
+                }
+            }
+        });
+        
+        $('#otp').change(function () {
+            if (!$(this).val().match('[0-9]{4}')) {
+                $('#otp').next('.err_msg').html('Please put valid otp.');
+                return;
+            } else {
+                if (otp_varified == false) {
+                    $('#otp').next('.err_msg').html('');
+                    $.ajax({
+                        url: API_URL + "Home/varifyOtp?mobile_number=" + encodeURI($('#mobile_number').val()) + "&otp=" + encodeURI($(this).val()),
+                        dataType: 'json'
+                    })
+                    .done(function (res) {
+                        otp_varified = true;
+                        if(res.error == 0)
+                        {
+                            $('#name').val(res.customer_detail.name).prop('readonly', true);
+                            $('#email_id').val(res.customer_detail.email_id).prop('readonly', true);
+                            $('#city').val(res.customer_detail.city_id).attr('readonly', true);
+                            loadAreaList(res.customer_detail.city_id, res.customer_detail.sub_area_id);
+                            $('#area').attr('readonly', true);
+                            $('#address').val(res.customer_detail.street).prop('readonly', true);
+                        }
+                    })
+                    .fail(function () {
+                        alert("Oops! Some error occured. Please close popup and try again to open.");
+                    })
+                    .always(function () {
+                        //alert("complete");
+                    });
+                }
+            }
+        });
+
+        // create date dropdown
+        var dayaArr = [];
+        var today = new Date();
+        dayaArr.push(formatDate(new Date(today.getTime() + (parseInt(24+(leadTime/60)) * 60 * 60 * 1000))));
+        dayaArr.push(formatDate(new Date(today.getTime() + (parseInt(48+(leadTime/60)) * 60 * 60 * 1000))));
+        dayaArr.push(formatDate(new Date(today.getTime() + (parseInt(72+(leadTime/60)) * 60 * 60 * 1000))));
+        dayaArr.push(formatDate(new Date(today.getTime() + (parseInt(96+(leadTime/60)) * 60 * 60 * 1000))));
+        dayaArr.push(formatDate(new Date(today.getTime() + (parseInt(120+(leadTime/60)) * 60 * 60 * 1000))));
+        $.each(dayaArr, function (key, value) {
+            var option = $("<option></option>")
+                    .attr("value", value)
+                    .text("Start from: " + value);
+            if (key == 0) {
+                $(option).attr("selected", "selected");
+            }
+            $('#start_date')
+                    .append(option);
+
+        });
+        var order_id;
+        $('#start_trial').click(function () {
+            $('.err_msg').html('');
+            var error = false;
+            var name = $('#name').val();
+            if (name == '') {
+                $('#name').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            var mobile_number = $('#mobile_number').val();
+            if (mobile_number == '') {
+                $('#mobile_number').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            var otp = encodeURI($('#otp').val());
+            if (otp == '' && mobileNumber == '') {
+                $('#otp').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            var city = $('#city').val();
+            if (city == '') {
+                $('#city').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            var area = $('#area').val();
+            if (area == '') {
+                $('#area').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            /*var subarea = encodeURI($('#subarea').val());
+             if (subarea == '') {
+             $('#subarea').next('.err_msg').html('This field is required.');
+             error = true;
+             }*/
+            var address = $('#address').val();
+            if (address == '') {
+                $('#address').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+            var start_date = $('#start_date').val();
+            if (start_date == '') {
+                $('#start_date').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+
+            if ($('input[name="payment"]:checked').length == 0) {
+                $('#payment-options').next('.err_msg').html('Please select payment method');
+                error = true;
+            }
+//                var paymentOption = $("input[name='payment']:checked").val();
+//                if (paymentOption == 'pay_now') {
+            var email = $('#email_id').val();
+            if (email == '') {
+                $('#email_id').next('.err_msg').html('This field is required.');
+                error = true;
+            }
+//                }
+            var is_reffered = $("input[name='is_reffered']:checked").val();
+            if (is_reffered == 1) {
+                var reference_number = $('#reference_number').val();
+                if (reference_number == '') {
+                    $('#reference_number').next('.err_msg').html('This field is required.');
+                    error = true;
+                }
+            }
+            var referrar_id = $('#referrar_id').val();
+            if (error == false) {
+                $('#start_trial').html("Processing...");
+                $.ajax({
+                    url: API_URL + "home/createCustomerAndTrial",
+                    data: {mobile_number: mobile_number, start_date: start_date, name: name, product_id: trial_id, delivery_cycle: 'daily', address: address, sub_area_id: area, otp: otp, city_id: city, email_id: email, refrence_id: referrar_id},
+//                    data: {mobile_number: mobile_number, start_date: start_date, name: name, product_id: , delivery_cycle: 'daily', address: address, sub_area_id: area, otp: otp, city_id: city, email_id: email, refrence_id: referrar_id},
+                    dataType: 'json',
+                    method: "GET"
+                })
+                        .done(function (res) {
+                            if (res.success == false) {
+                                alert(res.message);
+                            } else {
+                                var order_id = res.order_id;
+                                $("#order_id").val(order_id);
+                                setLoginUserByType('mobile', mobile_number, res.customer_id, null);
+                                var paymentVal = $("input[name='payment']:checked").val();
+                                if (paymentVal == 'pay_later') {
+                                    window.location.href = '/home/success';
+                                } else {
+                                    window.location.href = '/invoice/pay/' + res.order_id;
+                                }
+
+                            }
+                        })
+                        .fail(function () {
+                            alert("Oops! Some error occured. Please close popup and try again to open.");
+                        })
+                        .always(function () {
+                            $('#start_trial').html("I AGREE. LETS BEGIN");
+                            //alert("complete");
+                        });
+            }
+
+        });
+
+        $("#reference_number").on("keyup", function () {
+            if (this.value.length == '10') {
+                if (!$(this).data('triggered')) {
+                    $("#referrarId").val('');
+                    // set the 'triggered' data attribute to true
+                    $(this).data('triggered', true);
+                    var number = $(this).val();
+
+                    if (number) {
+                        var dataString = 'mobile=' + number;
+                        $.ajax({
+                            dataType: 'json',
+                            type: "GET",
+                            url: '/home/get-referrer',
+                            data: dataString,
+                            cache: false,
+                            beforeSend: function (xhr) { // Add this line
+                                xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+                            },
+                            success: function (html) {
+                                $.each(html, function (key, value) {
+                                    $("#reference_number").val(value);
+                                    $("#referrar_id").val(key);
+                                });
+                            }
+                        });
+                    }
+                }
+            } else {
+                $(this).data('triggered', false);
+            }
+        });
+    });
+</script>
+    <style>
+
+        .form-group-2 {
+            display: inline-block;
+            margin-bottom: 5px;
+            text-align: left;
+            font-size: 13px;
+            margin-top: 6px;
+            float: left;
+        }
+
+        .form-group-2 input {
+            padding: 0;
+            height: initial;
+            width: initial;
+            margin-bottom: 0;
+            display: none;
+            cursor: pointer;
+        }
+
+        .form-group-2 label {
+            position: relative;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .form-group-2 label:before {
+            content: '';
+            -webkit-appearance: none;
+            background-color: transparent;
+            border: 1px solid #9c9c9c;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            padding: 6px;
+            display: inline-block;
+            position: relative;
+            vertical-align: middle;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .form-group-2 input:checked + label:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 5px;
+            height: 9px;
+            border: solid #7b7b7b;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        #reference_number-wrap{
+            float: left;
+            width: -webkit-calc(100% - 90px);
+            width:    -moz-calc(100% - 90px);
+            width:         calc(100% - 90px);
+            margin-left: 5px;
+        }
+        #reference_number-wrap input{
+            margin-right:0px;
+            padding: 6px 7px;
+        }
+
+        @media (max-width: 767px){
+            .col-sm-6 {
+                width: 100%;
+            }
+
+            #myModal .modal-dialog{
+                margin: 40px auto 20px;
+            }
+            #about_page{
+                float: left;
+                width: 100%
+            }
+            .book-trial{
+                margin-top: 30px;
+            }
+            .home-area{
+                min-height: 1200px;
+            }
+        }
+
+        footer.common-footer:before{
+            display: none;
+        }
+
+        footer{
+            margin-top: 0px;
+        }
+
+    </style>
+
+</body>
+</html>
+        <!--</div>-->
+       
+              
+                      
+        <div id="referafriend-overlay"></div>
+        <div id="referafriend">
+            <div id="rafContent"></div>
+<!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
+        </div>
+        
+    <div class="modal" id="fruit-intro">
+       <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
+    </div>
+<div>
+    <a href="/cart" class="floating-cart-button">
+    <i class="fa fa-shopping-cart my-float"></i>
+    <span id="mini-cart-count">0</span>
+    </a>
+</div>
+
+
+    </body>    
+</html>
+{% endblock main_content %}

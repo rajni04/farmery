@@ -1,0 +1,162 @@
+{% extends 'Admin/base_template.html' %}
+{% block page_title %}
+<B>FRUITS AND GROCERY</B>
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    {%load static %}
+
+    <!-- Main content -->
+    
+    <form role="form"  method="post"  action="/fruitGrocery_save"  enctype="multipart/form-data">
+      {% csrf_token %}
+
+
+
+      <script>
+        
+        function select(val) {
+          url=window.location.origin +  `/fetch_api/${val}`;
+          var request_get = new XMLHttpRequest();
+          console.log(url)
+          // Open a new connection, using the GET request_get on the URL endpoint
+          request_get.open("GET", url, true);
+          request_get.onload = () => {
+            if (request_get.status >= 200 && request_get.status < 400) {
+              str = request_get.responseText
+              console.log(str)
+              var json = JSON.parse(request_get.responseText.substring(0,str.length));
+              elem=document.getElementById('form-grp');
+              n=''
+              json.forEach((elem)=>{
+                console.log(elem)
+                n+=`<option value="${elem.id}">${elem.subcategory_name} </option>`
+              })
+              elem.innerHTML=`<label>SUBCATEGORY</label>
+              <select class="form-control" name="subcategory_name">
+                ${n}
+              </select>
+              `;
+              return json;
+            } else console.log(request_get.status, "error");
+          };
+          request_get.send();
+          console.log(val)
+          
+        }
+       </script>
+       {% with cat=category.0 %}
+
+    <!-- Main content -->
+    <div class="container register-form">
+      <div class="card card-body">
+      <div class="form">
+        <div class="note">
+          
+        </div>
+        <div class="card card-primary">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                    <label> NAME</label>
+                    <input type="text" class="form-control" placeholder="Product Name" name="proname" >
+                  </div>
+                 
+                   <div class="form-group">
+                    <label>CATEGORY</label>
+                    <select class="form-control" name="category" onchange="select(value)">
+                        {% for category in category %}
+                          <option value="{{ category.id }}">{{ category.cattype}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group" id ='form-grp'>
+                    <label>SUBCATEGORY</label>
+                    <select class="form-control" name="subcategory_name">
+                      {% for subcategory in cat.subcategory_set.all %}
+                        <option value="{{subcategory.id }}">{{subcategory.subcategory_name}}</option>
+                      {% endfor %}
+                  </select>
+                  {% endwith %}
+                  </div>
+                  <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" class="form-control" placeholder=" Price " name="pric">
+                  </div>
+                  <div class="form-group">
+                    <label>QUANTITY </label>
+                    <input type="TEXT" class="form-control" name="quant" placeholder="QUANTITY" >
+                  </div>
+                </div>
+              <div class="col-md-6">
+                
+
+                      <div class="form-group">
+                        <label> FARMER NAME</label>
+                        <input type="text" class="form-control" name="farmer_name" placeholder="DESC">
+                      </div>
+
+                      <div class="form-group">
+                        <label>ORCHARD</label>
+                        <input type="text" class="form-control" name="orchard" placeholder="OLD PRICE">
+                      </div>
+
+
+                      <div class="form-group">
+                        <label>EXPECTED DELIVERY</label>
+                        <input type="date" class="form-control" placeholder="expted_delivery" name="expted_delivery">
+                      </div>
+                       
+                      <div class="form-group">
+                        <label>PRE DELIVERY</label>
+                        <input type="date" class="form-control" placeholder="pre_delivery" name="pre_delivery">
+                      </div>
+                       
+                     
+                       
+                      <div class="form-group">
+                        <label>IMAGE</label>
+                        <input type="file" class="form-control" placeholder="Upload image" name="img">
+                      </div>
+                    </div>
+      
+                    <!------------------------------------------------------------------>
+                                       <div class="form-group">
+                                          {% if messages %}
+                                            {% for message in messages %}
+                                            {% if message.tags == 'error' %}
+                                            <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% if message.tags == 'success' %}
+                                            <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% endfor %}
+                                          {% endif %}
+                                        </div>
+                        
+                                    <!-- /.card-body -->
+                    
+                                    <div class="card-footer">
+                                      <button type="submit" id="createProduct" class="btn btn-primary btn-block">SUBMIT</button>
+                                    </div>
+                                    <div class="card-footer">
+                                      <a href="/viewproduct"  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
+                                    </div>
+                                    </form>
+                                </div>
+                                <!-- /.card -->
+                    </div>
+                    
+                    
+                              </div>
+                              </div>
+                          </div>
+                        </section>
+                        <!-- /.content --> 
+
+
+
+  {% endblock main_content %}
+                    
+                    

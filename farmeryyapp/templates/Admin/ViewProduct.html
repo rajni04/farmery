@@ -36,6 +36,7 @@
                         <th>QUANTITY</th>
                         <th>DISCOUNT DESC</th>
                         <th>OLD PRICE</th>
+                        <th>NEW DISCOUNT</th>
                      
                         <th>IMAGE</th>
                         
@@ -49,13 +50,14 @@
                         <td>{{ product.id }}</td>
                         <td>{{product.productname }}</td>
                         <td>{{product.category }}</td>
+                        <td>{{product.desc }}</td>
                        
                       
-                        <td>{{product.price }}</td>
+                        <td>₹ {{product.price }}</td>
                         <td>{{product.quantity }}</td>
                         <td>{{product.discountdesc }}</td>
-                        <td>{{product.oldprice}}</td>
-                        <td>{{product.newdiscount }}</td>
+                        <td>₹ {{product.oldprice}}</td>
+                        <td> ₹ {{product.newdiscount }}</td>
                      
                        
                         <td><img src="{{product.img }}"></td>

@@ -11,10 +11,11 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from django.contrib.auth.models import User,auth
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django_otp.admin import OTPAdminSite
 from .models import *
-
+from django.http import HttpResponse,HttpResponseRedirect
 
 
 class InfoViewSet(viewsets.ModelViewSet):
@@ -45,7 +46,7 @@ def index(request):
     return render(request,'home.html')
 
 def trial(request):
-    return render(request,'trial.html')
+    return render(request,'productdetail.html')
 def trialform(request):
     return render(request,'trialform.html')
 
@@ -71,7 +72,7 @@ def shop(request):
     context= {'product2':product2,'producttype':producttype,'cate':cate}
     return render(request,'shop.html',context)
 
-def team(request):
+def teamHome(request):
     team =Team.objects.all()
     context={'team':team}
     return render(request,'team.html',context)
@@ -143,4 +144,11 @@ def myloginn(request):
              return redirect('mylogin.html')    
     else:
         return render(request,'mylogin.html')      
+
+
+def loogout(request):
+    logout(request)
+    return HttpResponseRedirect("/")
+
+     
 

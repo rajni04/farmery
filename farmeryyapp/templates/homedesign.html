@@ -4,6 +4,7 @@
 
 
     <head>
+        <link rel="stylesheet" href="{% static 'css/styleabout.css' %}">
         <link rel="stylesheet" href="{% static 'css/all.min.css' %}"><!--- fontawsome---->
         <link rel="stylesheet" href="{% static 'css/homedesign.css' %}">
        
@@ -51,45 +52,9 @@
 
    
     <script src= "{% static 'js/all.min.js' %}"></script><!--- fontawsome---->
-	<script src="/js/prototype/prototype.js?1569172834"></script>
-	<script src="/js/lib/ccard.js?1569172834"></script>
-	<script src="/js/prototype/validation.js?1569172834"></script>
-	<script src="/js/scriptaculous/builder.js?1569172834"></script>
-	<script src="/js/scriptaculous/effects.js?1569172834"></script>
-	<script src="/js/scriptaculous/dragdrop.js?1569172834"></script>
-	<script src="/js/scriptaculous/controls.js?1569172834"></script>
-	<script src="/js/scriptaculous/slider.js?1569172834"></script>
-	<script src="/js/varien/js.js?1569172834"></script>
-	<script src="/js/varien/form.js?1569172834"></script>
-	<script src="/js/varien/menu.js?1569172834"></script>
-	<script src="/js/mage/translate.js?1569172834"></script>
-	<script src="/js/mage/cookies.js?1569172834"></script>
-	<script src="/js/novaworks/jquery-1.9.1.min.js?1569172834"></script>
-	<script src="/js/novaworks/jquery-noconflict.js?1569172834"></script>
-	<script src="/js/novaworks/jquery.transit.min.js?1569172834"></script>
-	<script src="/js/novaworks/waypoints.min.js?1569172834"></script>
-	<script src="/js/novaworks/bootstrap.min.js?1569172834"></script>
-	<script src="/js/novaworks/lib/owl-carousel/owl.carousel.min.js?1569172834"></script>
-	<script src="/js/novaworks/jquery.megamenu.js?1569172834"></script>
-	<script src="/js/novaworks/jquery.slicknav.min.js?1569172834"></script>
-	<script src="/js/novaworks/novaworks.js?1569172834"></script>
-	<script src="/js/aw_raf/invite.js?1569172834"></script>
-	<script src="/js/solarium/autocomplete.js?1569172834"></script>
-	<script src="/js/novaworks/jquery.ui.totop.min.js?1569172834"></script>
-	<script src="/css/skin/frontend/novaworks/eda_theme/lib/colorbox/jquery.colorbox.js?1569172834"></script>
-	<script src="/css/skin/frontend/novaworks/eda_theme/js/custom.js?1569172834"></script>
-	<script src="/admin/app-assets/vendors/js/forms/select/select2.full.min.js?1569172833"></script>
-	<script src="/admin/app-assets/js/scripts/forms/select/form-select2.js?1569172833"></script>
-                                        <script type="text/javascript">
-            var csrfToken = 'cfdb3f95cc7080f463bb4b17b080c421f486bc34b3604ac75fd94fbdc756978b0c98421a11709fd796baa737db8df04d527ad0f809694e9f66e7940736fdaebf';
-        </script>
+	
                 
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/boxed-layout.css?1569172833"/>
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/responsive.css?1573135760"/>
-
-        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Signika:400,600,700' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	
         <style type="text/css"> .cloud-zoom-lens {
                 border: 1px solid #CCCCCC;
                 margin:-1px;	/* Set this to minus the border thickness. */
@@ -111,21 +76,15 @@
                             <div class="col-lg-3 col-md-12 col-xs-12 text-left no-padding"> <span><a href="https://www.farmery.in/myaccount/#/app/faqs"><i class="fa fa-question-circle"></i> FAQ</a></span> <span><i class="fa fa-phone"></i> 9899779559 &nbsp;&nbsp;</span> <span><a href='https://www.farmery.in/myaccount/#/app/serviceable-areas'><i class="fa fa-truck"></i> Service Areas</a></span></div>
                             <div class="col-lg-9 col-md-12 col-xs-12 text-right">
                                 <span>
-                                    <i class="fal fa-tachometer-alt"  aria-hidden="true"></i>
-                                    <a href="https://www.farmery.in/myaccount/#/app/purity-meter">Purity Meter</a>
+                                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                    <a href="">Purity Meter</a>
                                 </span>
-<!--                                <span>
-                                    <i class="fa fa-users" aria-hidden="true"></i>
-                                    <a class="" href="invite.html">Invite &amp; Earn</a>
-                                </span>-->
+
                                 <span>
                                     <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    <a href="https://www.farmery.in/myaccount/#/app/payment-history">Account &amp; Payment</a>
+                                    <a href="">Account &amp; Payment</a>
                                 </span>
-<!--                                <span>
-                                    <i class="fa fa-map-marker"></i>
-                                    <a href="javascript:void(0)" class="area-link open-area" title="Change Location">Set Location</a>
-                                </span>-->
+
                                 <input type="hidden" class="area-link" value="0" id='my_area' />
                                 <input type="hidden" class="area-link" value="0" id='my_zone' />
                                 <span class="my-account-menu" style="display:none;">
@@ -134,7 +93,7 @@
                                 </span>
                                 <span class="menu-login">
                                     <i class="fa fa-user"></i>
-                                    <a href="{% url 'mylogin' %}" title="Login">Login</a>
+                                    <a href="mylogin" title="Login">Login</a>
                                 </span>
                             </div>
                         </div>
@@ -143,32 +102,29 @@
                         <div class="col-lg-2 col-md-3 col-sm-3  col-xs-4">
                             <div class="header-logo">
                                 <div class="clearfix" id="logo">
-                                    <p class="logo"> <a href="/"> <img alt="Farmery" src="/static/img/farmery-logo.png"
-                                        
-                                          class="standard"> <img alt="Farmery" src="/img/media/theming/default/farmery-footer_1.jpg" class="retina"> </a></p>
+                                    <p class="logo"> <a href="/"> <img alt="Farmery" src="/static/img/farmery-logo.png" class="standard"> <img alt="Farmery" src="" class="retina"> </a></p>
                                     <p class="tag-line"></p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
-                            <a class="phone" href="https://www.farmery.in/myaccount/#/app/payment-history"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
+                            <a class="phone" href=""><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
                             <button class="navbar-toggle" id="sideMenu" data-toggle="collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button> 
                             <nav class="navbar navbar-default navbar-collapse landing-nav" role="navigation">
                                 <div class="mobile-nav-scroll"> 
                                 <ul class="nav navbar-nav">
                                     <li><a class="" href="/about" title="About Farmery">About Farmery</a></li>
                                     <li><a class="" href="/how-it-works" title="How it Works">How it Works</a></li>
-                                    <li><a class="" href="/api/product" title="Catalogs">Dairy</a></li>
+                                    <li><a class="" href="/catalog" title="Catalogs">Dairy</a></li>
                                     <li><a class="" href="/shop" title="Shop">Fruits and Grocery</a><span class="ribbon3"></span></li>
-                                    <li><a class="" href="/team" title="Team">Our Team</a></li>
-                                    <li><a class="" href="https://blog.farmery.in/" title="Blog">Blog</a></li>
+                                    <li><a class="" href="/teamHome" title="Team">Our Team</a></li>
+                                    <li><a class="" href="" title="Blog">Blog</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav account">
-                                    <li class="menu-login"><a href="https://www.farmery.in/myaccount/#/app/login" title="Login"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
+                                    <li class="menu-login"><a href="login" title="loginn"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
                                     <li class="my-account-menu" style="display: none;"><a href="https://www.farmery.in/myaccount/#/app/home_2" title="My Account"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
 
-                                    <!--<li><a class="" href="invite.html" style="white-space: nowrap;"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Invite &amp; Earn</a></li>-->
-                                    <!--<li><a class="" href="pay.html" style="white-space: nowrap;"><i class="fa fa-money" aria-hidden="true"></i>&nbsp; Quick Recharge</a></li>-->
+                                   
                                     <li><a class="" href="https://www.farmery.in/myaccount/#/app/purity-meter"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp; Purity Meter</a></li>
                                     <li><a class="" href="https://www.farmery.in/myaccount/#/app/serviceable-areas" style="white-space: nowrap;"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Service Areas</a></li>
                                     <li><a class="" href="tel:+919899779559"><i class="fa fa-phone"></i>&nbsp; Call</a></li>
@@ -178,11 +134,9 @@
                         </div>
                     </div>
                 </header>
-                <div class="navbar-overlay"></div>
+                
             </div>
-        </div>
-                <!--<div class="container clearfix">-->
-            <div class="top-container">
+        </div>          <div class="top-container">
     <div id='rev_slider_1_wrapper' class='rev_slider_wrapper fullwidthbanner-container' style='margin:0px auto;background-color:#E7ECE8;padding:0px;margin-top:0px;margin-bottom:0px;max-height:710px;'>
         <div id='rev_slider_1' class='rev_slider fullwidthabanner' style='display:none;max-height:710px;height:710px;'>
             <ul>

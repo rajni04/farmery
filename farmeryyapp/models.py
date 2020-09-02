@@ -20,8 +20,8 @@ class Info(models.Model):
 
 
 class Product(models.Model):
-	
-    productname = models.CharField(max_length=30)        
+    id=models.AutoField(primary_key=True)
+    productname = models.CharField(max_length=30,null=False)        
     category= models.CharField(max_length=20, blank=True)
     desc= models.CharField(max_length=30)
     price = models.IntegerField(default=0)
@@ -32,25 +32,34 @@ class Product(models.Model):
     newdiscount = models.CharField(max_length=10,blank=True)
     objects=models.Manager()
 
+    def __str__(self):
+        return self.productname
+
 class Category1(models.Model):
     id=models.AutoField(primary_key=True)
     cattype = models.CharField(max_length=20)
     objects=models.Manager()
 
+class Subcategory(models.Model):
+    id=models.AutoField(primary_key=True)
+    subcategory_name = models.CharField(max_length=30)
+    category1_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
+    
 
 class ProductType(models.Model):
     id=models.AutoField(primary_key=True)
     protype = models.CharField(max_length=30)
-   
+    
+
 class Product2(models.Model):
     id=models.AutoField(primary_key=True)
     category1_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
+    subcategroy_id=models.ForeignKey(Subcategory,on_delete=models.CASCADE)
     proname=models.CharField(max_length=30) 
     pric=models.IntegerField()
     quant=models.IntegerField()
     farmer_name=models.CharField(max_length=30,blank=True) 
     orchard= models.CharField(max_length=40,blank=True)
-    producttype_id=models.ForeignKey(ProductType,on_delete=models.DO_NOTHING)
     expted_delivery=models.DateField()
     pre_delivery=models.DateField()
     proimg= models.ImageField(null=True, blank=True)
@@ -72,3 +81,6 @@ class Rating(models.Model):
         unique_together=(('user','product_id'),)  #if same user give rating to one movie 2 times it will be rejected
         index_together=(('user','product_id'),)
 
+class Productview(models.Model):
+    product_id=models.ForeignKey(Product,on_delete=models.CASCADE)
+    trialdays=models.CharField(max_length=255)

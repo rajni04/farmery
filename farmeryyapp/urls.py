@@ -10,7 +10,7 @@ from django.urls import path,include
 from .apiviews import user_list,product_list,user_create,category_list,producttype_list,product2_list,rating_list
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
-from farmeryyapp import apiviews
+from farmeryyapp import apiviews,adminviews
 from farmeryyapp.apiviews import InfoViewSet, UserViewSet,LoginViewSet,ProductSerializer,Category1ViewSet,ProductTypeViewSet,Product2ViewSet,RatingViewSet
 
 router=routers.DefaultRouter()
@@ -41,7 +41,7 @@ urlpatterns=[
     path('shop',views.shop, name="shop"),
     path('trial',views.trial, name="trial"),
     path('trialform',views.trialform, name="trialform"),
-    path('team',views.team, name="team"),
+  
     path('info/cre',user_create ,name="info/cre"),
     #path('info/',views.user_list, name="info"),
     #path('register',views.register, name="register"),
@@ -80,5 +80,37 @@ urlpatterns=[
 
 
     path('info/',user_list , name="info"),
-   
+
+
+
+    #-------------------------------adminviews.py.....................................................
+
+
+
+    path('product',adminviews.product, name="product"),
+    path('product_save',adminviews.product_save, name="product_save"),
+    path('product_details/<str:myid>/',adminviews.product_details, name="product_details"),
+    path('edit_product/<str:product_id>/',  adminviews.edit_product,name="edit_product"),
+    path('product_edit_save', adminviews.product_edit_save),
+    path('delete_product/<str:product_id>/', adminviews.delete_product),
+    path('team',adminviews.team, name="team"),
+    path('team_save', adminviews.team_save),
+    path('viewteam',adminviews.viewteam, name="viewteam"),
+    path('teamHome',views.teamHome, name="team"),
+
+    path('category',adminviews.category, name="category"),
+    path('category_save', adminviews.category_save),
+    path('viewcategory',adminviews.viewcategory, name="viewcategory"),
+    path('edit_category/<str:category_id>/',  adminviews.edit_category,name="edit_category"),
+    path('edit_category_save', adminviews.edit_category_save),
+    path('delete_category/<str:category_id>/', adminviews.delete_category),
+    path('subcategory',adminviews.subcategory, name="subcategory"),
+    path('subcategory_save',adminviews.subcategory_save, name="subcategory_save"),
+    path('viewsubcategory',adminviews.viewsubcategory, name="viewsubcategory"),
+    path('fruitGrocery',adminviews.fruitGrocery, name="fruitGrocery"),
+    path('fruitGrocery_save', adminviews.fruitGrocery_save),
+    path('fetch_api/<category_id>', adminviews.fetch_api, name="fetch_api"),
+    path('edit_subcategory/<str:subcategory_id>/',adminviews.edit_subcategory, name="edit_subcategory"),
+    path('delete_subcategory/<str:subcategory_id>/',adminviews.delete_subcategory, name="delete_subcategory"),
+    path('loogout', views.loogout,name="loogout"),
     ]

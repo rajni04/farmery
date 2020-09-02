@@ -186,9 +186,9 @@
                                         <div class="product">
                                             <div class="item-product-image-box">
                                                  
-                                                <a href="/catalog/cow-milk-5-days-trial" title="Cow Milk" class="product-image">
+                                                <a href="/catalog/cow-milk-5-days-trial" class="product-image">
                                                     <div class="front margin-image">
-                                                     <img src="{{product.img.url}}" alt="Cow Milk" />
+                                                     <img src="{{product.img}}"  />
                                                      </div>
                                                     <span class="price-dec">₹ {{product.price}}<br><small>{{product.quantity}}</small></span>
                                                     <div class="product-intification-box"><i class="fa fa-circle-o-notch fa-spin"></i></div>
@@ -225,7 +225,7 @@
                                                         
                                                     </div>
                                                     <div class="col-sm-3">
-                                                         <a href="{% url 'trial' %}" button type="button"class="btn btn-primary" title="Book Now">Book Now </button></a>
+                                                         <a href="/product_details/{{ product.id }}" button type="button"class="btn btn-primary" title="Book Now">Book Now </button></a>
                                                     </div>
                                                       
                                                     {% endfor %}  

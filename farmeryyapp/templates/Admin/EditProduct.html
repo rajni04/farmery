@@ -1,6 +1,6 @@
 {% extends 'Admin/base_template.html' %}
 {% block page_title %}
- <B>PRODUCT</B>
+<B>PRODUCT</B>
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -8,7 +8,8 @@
 
     <!-- Main content -->
     
-    <form role="form" action="/api/product/" method="put">
+    <form role="form"  method="post"  action="/product_edit_save"  enctype="multipart/form-data">
+      {% csrf_token %}
 
     <!-- Main content -->
     <div class="container register-form">
@@ -17,37 +18,38 @@
         <div class="note">
           
         </div>
-        <div class="card card-default">
+        <div class="card card-primary">
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
                     <label>Product NAME</label>
                     <input type="text" class="form-control" placeholder="Product Name" name="productname" value="{{product.productname }}" >
+                    <input type="hidden"  name="product_id"  value="{{product.id}}">
                   </div>
                  
                    <div class="form-group">
                     <label>CATEGORY</label>
-                    <input type="text" class="form-control" placeholder="category" name="category"  value="{{product.category }}">
+                    <input type="text" class="form-control" placeholder="category" name="category" value="{{product.category }}" >
                   </div>
                   <div class="form-group">
                     <label>Description</label>
-                    <input type="text" class="form-control" placeholder="Description" name="desc"  value="{{product.productname }}" >
+                    <input type="text" class="form-control" placeholder="Description" name="desc" value="{{product.desc}}" >
                   </div>
                   <div class="form-group">
                     <label>Price</label>
-                    <input type="text" class="form-control" placeholder=" Price " name="price " value="{{product.price }}">
+                    <input type="text" class="form-control" placeholder=" Price " name="price" value="{{product.price}}">
                   </div>
                 </div>
               <div class="col-md-6">
                 <div class="form-group">
                         <label>QUANTITY </label>
-                        <input type="TEXT" class="form-control" name="quantity" placeholder="QUANTITY" value="{{product.quantity }}" >
+                        <input type="TEXT" class="form-control" name="quantity" placeholder="QUANTITY" value="{{product.quantity}}">
                       </div>
 
                       <div class="form-group">
                         <label> Discount Desc</label>
-                        <input type="text" class="form-control" name="discountdesc" placeholder="DESC" value="{{product.discountdesc }}">
+                        <input type="text" class="form-control" name="discountdesc" placeholder="DESC" value="{{product.discountdesc}}">
                       </div>
 
                       <div class="form-group">
@@ -58,7 +60,7 @@
 
                       <div class="form-group">
                         <label>NEW DISCOUNT</label>
-                        <input type="text" class="form-control" placeholder="newdiscount" name="newdiscount" value="{{product.newdiscount }}">
+                        <input type="text" class="form-control" placeholder="newdiscount" name="newdiscount" value="{{product.newdiscount}}">
                       </div>
                        
                        
@@ -66,7 +68,7 @@
                        
                       <div class="form-group">
                         <label>IMAGE</label>
-                        <input type="file" class="form-control" placeholder="Upload image" name="img" value="{{product.img }}">
+                        <input type="file" class="form-control" placeholder="Upload image" name="img" value="{{product.img}}">
                       </div>
                     </div>
       
@@ -87,14 +89,12 @@
                                     <!-- /.card-body -->
                     
                                     <div class="card-footer">
-                                      <button type="submit" class="btn btn-primary btn-block">SUBMIT</button>
+                                      <button type="submit" id="createProduct" class="btn btn-primary btn-block">SUBMIT</button>
                                     </div>
                                     <div class="card-footer">
-                                      <a href=""  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
-                                    </div>  
-                                
-                                
-    </form>
+                                      <a href="/viewproduct"  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
+                                    </div>
+                                    </form>
                                 </div>
                                 <!-- /.card -->
                     </div>
@@ -104,7 +104,28 @@
                               </div>
                           </div>
                         </section>
-                        <!-- /.content -->
-                    {% endblock main_content %}
+                        <!-- /.content --> 
+
+
+<script>
+
+    
+      function createProduct(body){
+        return fetch('http://127.0.0.1:8000/api/product/',{
+          method: 'POST',
+          headers:{
+            'Content-Type':'application/json',
+           
+          },
+          body:JSON.stringify(body)
+        }).then(resp=>resp.json())
+
+        
+      }
+
+
+</script>
+
+  {% endblock main_content %}
                     
                     
