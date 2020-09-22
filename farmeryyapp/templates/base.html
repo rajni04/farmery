@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-      
+
+
+        <meta charset="utf-8"/>        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/all.min.css' %}"><!--- fontawsome---->
       
         <link rel="stylesheet" href="{% static 'css/homedesign.css' %}">
@@ -46,7 +48,7 @@
                                 </span>
                                 <span class="menu-login">
                                     <i class="fa fa-user"></i>
-                                    <a href="mylogin" title="Login">Login</a>
+                                    <a href="{% url 'mylogin' %}" title="Login">Login</a>
                                 </span>
                             </div>
                         </div>
@@ -66,12 +68,12 @@
                             <nav class="navbar navbar-default navbar-collapse landing-nav" role="navigation">
                                 <div class="mobile-nav-scroll"> 
                                 <ul class="nav navbar-nav">
-                                    <li><a class="" href="/about" title="About Farmery">About Farmery</a></li>
+                                    <li><a class="" href="/" title="About Farmery">HOME</a></li>
                                     <li><a class="" href="/how-it-works" title="How it Works">How it Works</a></li>
                                     <li><a class="" href="/catalog" title="Catalogs">Dairy</a></li>
                                     <li><a class="" href="/shop" title="Shop">Fruits and Grocery</a><span class="ribbon3"></span></li>
                                     <li><a class="" href="/teamHome" title="Team">Our Team</a></li>
-                                    <li><a class="" href="" title="Blog">Blog</a></li>
+                                    <li><a class="" href="/blog" title="Blog">Blog</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav account">
                                     <li class="menu-login"><a href="https://www.farmery.in/myaccount/#/app/login" title="Login"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
@@ -100,14 +102,14 @@
 
 
         <!--</div>-->
-        <footer class="common-footer">
+        <footer class="common-footer" style="background-color: black;">
             <div class="row padding-none" style="margin:0px;"> 
             <div class="columns-layout">
                 <div class="footer-widget">
                     <div class="col-sm-6">
                         <strong>About Farmery</strong>
                         <p>Farmery is a brand which stands for providing really good quality farm fresh food. We ensure that our food products do not have presence of any harmful substance which are widely present in our food today. We conduct strict quality tests through FSSAI accredited laboratories to ensure that there are no traces of any pesticides, chemicals or preservatives in our food products.</p>
-                        <p>Our journey has started with one of the most essential and important part of our daily diet - Milk and Dairy products. We are using our knowledge and expertise in building complex supply chains to make this possible on a daily basis. We aim to take these good quality food products to more and more households. In future we look to bringing more farm fresh products to your dining table.</p>
+                        <p>Our journey has started with one of the most essential and important part of our daily diet - Milk and Dairy products. We are using our knowledge and expertise in building complex supply chains to make this possible on a daily basis. We aim to take these good quality food products to more and more households.</p>
                         <div class="contact-footer">
                             <span>Feel free contact us :</span>
                             <ul>

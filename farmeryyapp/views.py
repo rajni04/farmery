@@ -53,6 +53,11 @@ def trialform(request):
 
 def home(request):
     return render(request,'homedesign.html')
+    #return render(request,'NewDesign/home.html')
+
+def home1(request):
+    #return render(request,'homedesign.html')
+    return render(request,'NewDesign/home.html')
 
 def about(request):
     return render(request,'about1.html')
@@ -75,7 +80,13 @@ def shop(request):
 def teamHome(request):
     team =Team.objects.all()
     context={'team':team}
-    return render(request,'team.html',context)
+    return render(request,'team1.html',context)
+
+
+def blog(request):
+    #team =Team.objects.all()
+   # context={'team':team}
+    return render(request,'blog.html')
 
 def register(request):
     return render(request,'register.html')
@@ -115,7 +126,7 @@ def product(request):
 
 def viewproduct(request):
     product=Product.objects.all()
-    return render(request,"Admin/ViewProduct.html",{'product': product})
+    return render(request,"Admin/table.html",{'product': product})
 
 def delete_product(request,product_id):
    product=Product.objects.get(id=product_id)

@@ -1,448 +1,408 @@
+{% extends 'base.html'%}
+{% block main_content %}
 {% load static %}
-<!DOCTYPE html>
-<html>
 
+<head>
 
     <head>
-        <link rel="stylesheet" href="{% static 'css/styleabout.css' %}">
-        <link rel="stylesheet" href="{% static 'css/all.min.css' %}"><!--- fontawsome---->
-        <link rel="stylesheet" href="{% static 'css/homedesign.css' %}">
-       
-        
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
-       
-    
-        <link rel="stylesheet" href="{% static 'css/fudfill.css' %}">
-       
-        <link rel="stylesheet" href="{% static 'css/megamenu.css' %}">
         <meta charset="utf-8"/>        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Farmery Farm Fresh Cow's Milk is an honest attempt to serve nutritious, chemical-free and preservative-free milk. It's an equivalent of serving fresh whole milk from your own farm while being present in an urban living">
-        <meta name="keywords" content="Pure Cow Milk,100% Pure Milk,Fresh Milk Gurgaon, Milk Gurgaon, Milk Delhi, Fresh Milk Delhi,, 100% Pure Milk Delhi, 100% Pure Milk Gurgaon, Farm Fresh Cow Milk, Farm Fresh Cow Milk Delhi, Farm Fresh Cow Milk Gurgaon, Farm Fresh Milk, Farm fresh milk online, Farm Fresh Pure Cow Milk, Fresh Pure Cow Milk, Organic Milk Delhi, Organic Milk Gurgaon, Fresh Organic cow milk, Fresh milk delivery Gurgaon, Fresh milk delivery Delhi, Organic Fresh cow milk online, 100% Healthy Cow Milk,  Fresh cow milk online, Fresh milk delivery, Organic fresh milk, Farm fresh milk delivery, Organic Milk, Healthy Milk, Healthy Cow Milk, Wise cow, 4s foods, 4s cow milk, Binsar farms, trumilk, back2basics,  dairylac, whytefarms, farm milk, Fruits, Fresh Fruits">    
-        <meta name="robots" content="INDEX,FOLLOW" />
-        <link href="{% static "img/favicon.png" %}" type="image/x-icon" rel="icon"/><link href="/favicon.png?1569172834" type="image/x-icon" rel="shortcut icon"/>        <meta property="og:title" content="Farmery Farm Fresh Organic Milk, Pure Cow Milk, Raw Cow Milk, Gurgaon, Delhi, Ghaziabad" />
-        <meta property="og:description" content="Farmery Farm Fresh Cow's Milk is an honest attempt to serve nutritious, chemical-free and preservative-free milk.
-              It's an equivalent of serving fresh whole milk from your own farm while being present in an urban living" />
-        <meta property="og:image" content="http://www.farmery.in/media/wysiwyg/farmery-profile.jpg" />
-        <title>Farmery Farm Fresh Organic Milk, Pure Cow Milk, Raw Cow Milk, Gurgaon, Delhi, Ghaziabad</title>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:300,300italic,400,400italic,700,700italic,900,900italic|Raleway:300,300italic,400,400italic,700,700italic,900,900italic" type="text/css" media="screen" />
-        <!--- Custom css---->
-        
-	
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/lib/owl-carousel/owl.theme.css?1569172834"/>
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/fonts.css?1569172833"/>
-	
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/styles.css?1575014467"/>
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/fudfill.css?1570261849"/>
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/megamenu.css?1569172833"/>
-    <link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/slicknav.css?1569172833"/>
+<link rel="stylesheet" href="{%static 'css/mainhome.css'%}" >
+<link rel="stylesheet" href="{%static 'css/sliderproduct.css'%}" >
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+ 
+ 
+</head>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<div id="carousel-example" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example" data-slide-to="1"></li>
+      <li data-target="#carousel-example" data-slide-to="2"></li>
+    </ol>
+  
+    <div class="carousel-inner">
+      <div class="item active">
+        <a href="#"><img src="/static/img/vegefoods.png" style="height:450px" width="100%"></a>
+        <div class="carousel-caption">
+          <h3 class="animate__backInLeft">Meow</h3>
+          <p>Just Kitten Around</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="#"><img src="/static/img/images4.png"    style="height:450px" width="100%" /></a>
+        <div class="carousel-caption">
+          <h3>Meow</h3>
+          <p>Just Kitten Around</p>
+        </div>
+      </div>
+      <div class="item">
+        <a href="#"><img src="/static/img/fresh_fruit.jpg"style="height:450px" width="100%"  /></a>
+        <div class="carousel-caption">
+          <h3>Meow</h3>
+          <p>Just Kitten Around</p>
+        </div>
+      </div>
+    </div>
+  
+    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+
+</div>
+  <script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("#carousel-example");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 1000); // Change image every 2 seconds
+    }
+    </script>
+
+
+
+    <div id="no-solr-search-container" style="background-color: #e9e8b0;">
       
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-	<link rel="stylesheet" href="/css/skin/frontend/novaworks/eda_theme/css/imagezoom.css?1569172833"/>
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+          <div class="header-content-title">
+              <h1><b>About Farmery</b></h1>
+          </div>
+  
+          <p class="btmspace-50 justified">Enim neque nec placerat risus suscipit vitae volutpat nisi sit amet turpis molestie ut sodales nisi efficitur duis id ex eros vivamus ac vehicula nibh non luctus ipsum suspendisse dolor metus varius in facilisis vitae euismod nec ex donec ullamcorper eros vel molestie sagittis libero augue elementum libero cursus euismod sem leo sed augue praesent condimentum odio sit amet nulla tempor sollicitudin lacinia mauris vestibulum cras euismod accumsan dolor et convallis praesent porttitor maximus viverra proin fermentum scelerisque neque quis consequat mauris rutrum eget proin
+             fringilla nisi libero in tincidunt tortor porttitor sed phasellus vitae molestie massa suspendisse.</p>
+  </div>
 
-     
-    <!---my files-->
-    <link rel="stylesheet" href="{% static 'js/bootstrap.js' %}">
-    <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}">
-   <link rel="stylesheet" href="{% static 'js/jquery.js' %}">
+  <div class="container">
+    <div class="row">  
+       <div class="col-md-12 col-sm-12">
+           <h2 class="widget-title">Farmery Cow Milk</h2>
+           <p>Farmery Farm Fresh Cow's Milk is an honest attempt to serve nutritious, chemical-free and preservative-free milk.<br>It's an equivalent of serving fresh whole milk from your own farm while being present in an urban living</p>
+       </div>
+       <div class="row">
+       <div class=" col-12 col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+           <div class="col-md-12 col-sm-12" style="background: #ca370a; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px; transition-property:1s,3s; transition-timing-function: ease-in;">
+               
+               <h3>Real Fresh A-Grade Whole Milk</h3>
+               <hr>
+               <p>We serve "Raw Unprocessed Chilled Milk" milked within 12-24 hours before delivery. This is quite unique unlike other brands where milk is 4-5 days old and heavily processed for consistency. We have no middleman, and source directly from co-managed farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br><br></p>
+           </div>
+           <div class="col-md-12 col-sm-12" style="background: #3ec1fe; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
+               <img alt="" src="/img/media/wysiwyg/no-injection1.jpg">
+               <h3>No manipulation with Natural Milking Cycle</h3>
+               <hr>
+               <p>The cows are not given any hormonal injections to boost the milk yield. Studies have linked the consumption of milk contaminated with oxytocin to the early onset of puberty in children, which is on an alarming rise these days.</p>
+           </div>
+       </div>
+       <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;" data-wow-delay="0.9s"><img class="farmery-bottle" style="width: 85%; margin-top: 80px; margin-bottom:20px;" alt="farmery-bottle.jpg" src="/static/img/farmery-milk-bottle-front.png" data-src="" /></div>
+       <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+           <div class="col-md-12 col-sm-12" style="background: #fe3ea8; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
+               <img alt="" src="/img/media/wysiwyg/no-chemical1.jpg">
+               <h3>No Preservatives And Adulterants</h3>
+               <hr>
+               <p>The milk obtained from the cows is unadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
+               &nbsp;
+           </div>
+           <div class="col-md-12 col-sm-12" style="background: #fea43e; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
+               <img alt="" src="/img/media/wysiwyg/recycle1.jpg">
+               <h3>Environment Friendly</h3>
+               <hr>
+               <p>Glass is one of the safest materials, non-toxic and non-reactive, as compared to other packaging materials such as plastic, which can leach into food products. Our brand values don’t go with plastic or anti-environment materials, thus we use glass bottles for packaging.</p>
+           </div>
+       </div>
+   </div>
+  </div>
+  </div>
 
-   
-    <script src= "{% static 'js/all.min.js' %}"></script><!--- fontawsome---->
-	
-                
-	
-        <style type="text/css"> .cloud-zoom-lens {
-                border: 1px solid #CCCCCC;
-                margin:-1px;	/* Set this to minus the border thickness. */
-                background-color: #FFFFFF;
-            }
-            .cloud-zoom-big {
-                border: 1px solid #CCCCCC;
-            } 
-        </style>
 
-
-    </head>
-    <body>
-        <div class="back-diagonals page no-background">
-            <div class="logo-fade" id="header-section">
-                <header class="clearfix" id="header">
-                    <div class="top-title hidden-xs">
-                        <div class="container">
-                            <div class="col-lg-3 col-md-12 col-xs-12 text-left no-padding"> <span><a href="https://www.farmery.in/myaccount/#/app/faqs"><i class="fa fa-question-circle"></i> FAQ</a></span> <span><i class="fa fa-phone"></i> 9899779559 &nbsp;&nbsp;</span> <span><a href='https://www.farmery.in/myaccount/#/app/serviceable-areas'><i class="fa fa-truck"></i> Service Areas</a></span></div>
-                            <div class="col-lg-9 col-md-12 col-xs-12 text-right">
-                                <span>
-                                    <i class="fa fa-tachometer" aria-hidden="true"></i>
-                                    <a href="">Purity Meter</a>
-                                </span>
-
-                                <span>
-                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    <a href="">Account &amp; Payment</a>
-                                </span>
-
-                                <input type="hidden" class="area-link" value="0" id='my_area' />
-                                <input type="hidden" class="area-link" value="0" id='my_zone' />
-                                <span class="my-account-menu" style="display:none;">
-                                    <i class="fa fa-user"></i>
-                                    <a href="https://www.farmery.in/myaccount/#/app/home_2" class="area-link open-area" title="My Account">My Account</a>
-                                </span>
-                                <span class="menu-login">
-                                    <i class="fa fa-user"></i>
-                                    <a href="mylogin" title="Login">Login</a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="main-header" class="container navbar-main ">
-                        <div class="col-lg-2 col-md-3 col-sm-3  col-xs-4">
-                            <div class="header-logo">
-                                <div class="clearfix" id="logo">
-                                    <p class="logo"> <a href="/"> <img alt="Farmery" src="/static/img/farmery-logo.png" class="standard"> <img alt="Farmery" src="" class="retina"> </a></p>
-                                    <p class="tag-line"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
-                            <a class="phone" href=""><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
-                            <button class="navbar-toggle" id="sideMenu" data-toggle="collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button> 
-                            <nav class="navbar navbar-default navbar-collapse landing-nav" role="navigation">
-                                <div class="mobile-nav-scroll"> 
-                                <ul class="nav navbar-nav">
-                                    <li><a class="" href="/about" title="About Farmery">About Farmery</a></li>
-                                    <li><a class="" href="/how-it-works" title="How it Works">How it Works</a></li>
-                                    <li><a class="" href="/catalog" title="Catalogs">Dairy</a></li>
-                                    <li><a class="" href="/shop" title="Shop">Fruits and Grocery</a><span class="ribbon3"></span></li>
-                                    <li><a class="" href="/teamHome" title="Team">Our Team</a></li>
-                                    <li><a class="" href="" title="Blog">Blog</a></li>
-                                </ul>
-                                <ul class="nav navbar-nav account">
-                                    <li class="menu-login"><a href="login" title="loginn"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
-                                    <li class="my-account-menu" style="display: none;"><a href="https://www.farmery.in/myaccount/#/app/home_2" title="My Account"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
-
-                                   
-                                    <li><a class="" href="https://www.farmery.in/myaccount/#/app/purity-meter"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp; Purity Meter</a></li>
-                                    <li><a class="" href="https://www.farmery.in/myaccount/#/app/serviceable-areas" style="white-space: nowrap;"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Service Areas</a></li>
-                                    <li><a class="" href="tel:+919899779559"><i class="fa fa-phone"></i>&nbsp; Call</a></li>
-                                </ul>
-                            </div> 
-                            </nav>
-                        </div>
-                    </div>
-                </header>
-                
-            </div>
-        </div>          <div class="top-container">
-    <div id='rev_slider_1_wrapper' class='rev_slider_wrapper fullwidthbanner-container' style='margin:0px auto;background-color:#E7ECE8;padding:0px;margin-top:0px;margin-bottom:0px;max-height:710px;'>
-        <div id='rev_slider_1' class='rev_slider fullwidthabanner' style='display:none;max-height:710px;height:710px;'>
-            <ul>
-                <li data-transition='fade' data-slotamount='7' data-masterspeed='500' data-link='/fruits'  data-saveperformance='off'><img src='js/am/revslider/rs-plugin/images/dummy.png' data-lazyload='/static/img/fruit-home-banner.png' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' /></li>
-                <li data-transition='fade' data-slotamount='7' data-masterspeed='500' data-saveperformance='off'><img src='js/am/revslider/rs-plugin/images/dummy.png' data-lazyload='/static/img/intro1.png' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' /></li>
-                <li data-transition='fade' data-slotamount='7' data-masterspeed='500' data-saveperformance='off'><img src='js/am/revslider/rs-plugin/images/dummy.png' data-lazyload='/static/img/farmer-milk-bottle-front.jpg' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' /></li>
-                <li data-transition='fade' data-slotamount='7' data-masterspeed='500' data-link='/myaccount' data-saveperformance='off'><img src='js/am/revslider/rs-plugin/images/dummy.png' data-lazyload='/img/static/cashback.png' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' /></li>
-                <!--li data-transition='fade' data-slotamount='7' data-masterspeed='500' data-link='/invite' data-saveperformance='off'>
-                    <img src='js/am/revslider/rs-plugin/images/dummy.png' data-lazyload='/media/wysiwyg/home-slider/refer.jpg' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
-                    <div class='tp-caption tp-fade  tp-resizeme  ' data-x='344' data-y='672' data-endspeed='500' data-speed='500' data-start='500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:no-wrap;'>
-                        <div style='-moz-transform:rotate(1deg); -ms-transform:rotate(1deg); -o-transform:rotate(1deg); -webkit-transform:rotate(1deg); transform:rotate(1deg);-moz-transform-origin:50% 50%; -ms-transform-origin:50% 50%; -o-transform-origin:50% 50%; -webkit-transform-origin:50% 50%; transform-origin:50% 50%;' class='tp-layer-inner-rotation '></div>
-                    </div>
-                </li-->
-            </ul>
-        </div>
-    </div>
-    <script type="text/javascript">delete window["console"];</script><script type='text/javascript' src='/js/am/revslider/rs-plugin/js/jquery.themepunch.tools.mind565.js?v=4.5.9'></script> <script type='text/javascript' src='/js/am/revslider/rs-plugin/js/jquery.themepunch.revolution.mind565.js?v=4.5.9'></script>
-    <link type='text/css' rel='stylesheet' href='/js/am/revslider/rs-plugin/css/settingsd565.css?v=4.5.9' />
-    <link type='text/css' rel='stylesheet' href='revslider/index/getCssCaptions/id/1/index.html' />
-   
-    <style type='text/css'>#rev_slider_1_wrapper .tp-loader.spinner3 div{background-color:#FFFFFF !important;}</style>
+ <div class="container">
+  
+          <div class="col-md-12 col-sm-12">
+              <div class="header-content-title" >
+              <h1><b>PRODUCTS</b></h1>
+          </div>
+          </div>
+          <div class="col-md-3">
+              <!-- Controls -->
+            <!----  <div class="controls pull-right hidden-xs">
+                  <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
+                      data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
+                          data-slide="next"></a>
+              </div>-->
+         
+      </div>
+      <div id="carousel-example"   class="carousel slide hidden-xs" data-ride="carousel" >
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+              <div class="item active" id="sss">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="/static/img/images4.png" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Sample Product</h5>
+                                          <h5 class="price-text-color">
+                                              $199.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
+                                      <p class="btn-details">
+                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="/static/img/vegefoods.png" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Product Example</h5>
+                                          <h5 class="price-text-color">
+                                              $249.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="" class="btn btn-warning">Add to cart</a></p>
+                                      <p class="btn-details">
+                                          <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="/static/img/fresh_fruit.jpg"     class="img-responsive" alt="a"  style="height:160px" width="260px"/>
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Next Sample Product</h5>
+                                          <h5 class="price-text-color">
+                                              $149.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
+                                      <p class="btn-details">
+                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Sample Product</h5>
+                                          <h5 class="price-text-color">
+                                              $199.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
+                                      <p class="btn-details">
+                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="item">
+                  <div class="row">
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Product with Variants</h5>
+                                          <h5 class="price-text-color">
+                                              $199.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      <p class="btn-details">
+                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Grouped Product</h5>
+                                          <h5 class="price-text-color">
+                                              $249.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      <p class="btn-details">
+                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Product with Variants</h5>
+                                          <h5 class="price-text-color">
+                                              $149.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      <p class="btn-details">
+                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-3">
+                          <div class="col-item">
+                              <div class="photo">
+                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                              Product with Variants</h5>
+                                          <h5 class="price-text-color">
+                                              $199.99</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
+                                      <p class="btn-details">
+                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
 </div>
-<div class="main-container col1-layout home-content-container">
-    <div id="ie-wrapper">
-        <div class="main">
-            <div class="content a-center">
-                <h1 class="notice">This website requires a newer version of Internet Explorer!</h1>
-                <h3>We recommend you to update your browser to the <a href="http://windows.microsoft.com/en-IN/internet-explorer/download-ie" target="_blank"> latest version</a> or use <a href="https://www.google.com/chrome/browser/desktop/" target="_blank">google chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank"> firefox</a> instead</h3>
-            </div>
-        </div>
-    </div>
-   
-    <div class="novaworks-main-content">
-        <div class="main home-content">
-            <div class="columns-layout">
-                <section class="about">
-                  <div class="container">
-                      <div class="row">  
-                        <div class="col-md-12 col-sm-12">
-                            <h2 class="widget-title">Farmery Cow Milk</h2>
-                            <p>Farmery Farm Fresh Cow's Milk is an honest attempt to serve nutritious, chemical-free and preservative-free milk.<br />It's an equivalent of serving fresh whole milk from your own farm while being present in an urban living</p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;" data-wow-delay="0.6s">
-                            <div class="col-md-12 col-sm-12" style="background: #fed83e; border-radius: 50%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
-                                <img alt="" src="/img/media/wysiwyg/leaf-gray1.jpg" />
-                                <h3>Real Fresh A-Grade Whole Milk</h3>
-                                <hr />
-                                <p>We serve "Raw Unprocessed Chilled Milk" milked within 12-24 hours before delivery. This is quite unique unlike other brands where milk is 4-5 days old and heavily processed for consistency. We have no middleman, and source directly from co-managed farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br /><br /></p>
-                            </div>
-                            <div class="col-md-12 col-sm-12" style="background: #fed83e; border-radius: 50%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
-                                <img alt="" src="/img/media/wysiwyg/no-injection1.jpg" />
-                                <h3>No manipulation with Natural Milking Cycle</h3>
-                                <hr />
-                                <p>The cows are not given any hormonal injections to boost the milk yield. Studies have linked the consumption of milk contaminated with oxytocin to the early onset of puberty in children, which is on an alarming rise these days.</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;" data-wow-delay="0.9s"><img class="farmery-bottle" style="width: 85%; margin-top: 0px;" alt="farmery-bottle.jpg"  img src="{% static "img/farmery-milk-bottle-front.jpg" %}"  data-src="" /></div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" style="visibility: visible; animation-delay: 1s; animation-name: fadeInUp;" data-wow-delay="1s">
-                            <div class="col-md-12 col-sm-12" style="background: #fed83e; border-radius: 50%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
-                                <img alt="" src="/img/media/wysiwyg/no-chemical1.jpg" />
-                                <h3>No Preservatives And Adulterants</h3>
-                                <hr />
-                                <p>The milk obtained from the cows is unadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
-                                &nbsp;
-                            </div>
-                            <div class="col-md-12 col-sm-12" style="background: #fed83e; border-radius: 50%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
-                                <img alt="" src="/img/media/wysiwyg/recycle1.jpg" />
-                                <h3>Environment Friendly</h3>
-                                <hr />
-                                <p>Glass is one of the safest materials, non-toxic and non-reactive, as compared to other packaging materials such as plastic, which can leach into food products. Our brand values don&rsquo;t go with plastic or anti-environment materials, thus we use glass bottles for packaging.</p>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
-                </section>
-                <section class="gallery" style="text-align: center;">
-                    <p>&nbsp;</p>
-                    <ul id="rig">
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery1.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery26.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery25.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery33.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery34.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery35.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery9.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery31.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery7.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery20.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery28.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery29.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery8.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery16.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery13.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery12.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery19.jpg"> </a></li>
-                        <li> <a class="rig-cell" href="gallery.html"> <img class="rig-img" src="/static/img/gallery15.jpg"> </a></li>
-                    </ul>
-                </section>
-                <div class="gray-bg">
-                    <section id="how-it-works" class=" how-it-works">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12 text-center">
-                                    <h2 class="widget-title">How it works</h2>
-                                    <h4>Fresh Cow's Milk from Farm to Table in Few Hours</h4>
-                                    <p>&nbsp;</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <ul class="timeline">
-                                        <li>
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="farm" src="/static/img/1.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Own farm</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Unlike the big brands of milk we do not collect milk from thousands of farmers where cattle feed, health and milking methods are not monitored. We have a single breed of cows housed in select mid-size farms under 50 kms from the city. The fodder and well-being of the cattle is monitored under supervision of trained veterinarians at all times.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="quality" src="/static/img/2.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Quality Checks</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>We keep a stringent check on the cattle quality, fodder and processes at the farm. Samples of our milk are regularly checked and passed by FSSAI accredited labs for any trace of chemicals, pesticides or toxins.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="hygienic milking" src="/static/img/3.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Hygienic Milking Conditions</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>We ensure our cattle sheds and cattle are washed multiple times during the day. The milking of cows is done by automatic milking machine and is untouched by hands</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="chilling" src="/static/img/4.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Chilling before bottling</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Milk is chilled to 2℃ in Bulk Milk Coolers. At this temperature the natural goodness of milk is retained without any harmful bacterial growth</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="bottling" src="/static/img/5.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Packaging / Bottling</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Chilled milk is packed in glass bottles so that the cold temperature is retained for a long duration. The bottles are sealed at the farm to ensure that milk is delivered in tamper proof state</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image"><img class="img-circle img-responsive" alt="delivery" src="/static/img/6.jpg" /></div>
-                                            <div class="timeline-panel">
-                                                <div class="timeline-heading">
-                                                    <h4>Ready for Delivery</h4>
-                                                </div>
-                                                <div class="timeline-body">
-                                                    <p>Bottled milk packed in insulated boxes from farm arrives at our hubs. Dispatches are done to your household within 3-4 hours</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="timeline-inverted">
-                                            <div class="timeline-image">
-                                                <h4>Boiling is <br />recommended within 90 <br />minutes of <br />receipt</h4>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <section class="testimonial gray-bg">
-                    <div class="container">
-                        <p>&nbsp;</p>
-                        <h2 class="widget-title">What our customers are saying</h2>
-                        <div class="row">  
-                        <div class="col-md-12">
-<!--                            <div style="z-index: 1;background:#fff;width:93%;height: 100px;height: 100%;position: absolute;opacity: .6;" class="slider-width-col3">&nbsp;</div>-->
-                            <div id="novaworks_slider_testimonial" class="slider-items-testimonial">
-                                <div class="slider-items slider-width-col3" style="z-index:99;padding-top:10px">
-                                    <div class="item">
-                                        <img class="testimonial-img" alt="Jaya testimonial" src="/static/img/jaya.png" style="opacity: 1;">
-                                        <h4 class="header-dark testimonial-cite mvm">As a mother of two hyper active adolescents - I am not only worried about the nutrition for the children but also my daily diet. I find Farmery milk to be wholesome and fresh which has had a definite impact on my energy levels through the day!</h4>
-                                        <p class="strong text-gray-dark">Jaya M, Vasant Kunj</p>
-                                    </div>
-                                    <div class="item">
-                                        <img class="testimonial-img" alt="Nikhil testimonial" src="/static/img/nikhil.png" style="opacity: 1;">
-                                        <h4 class="header-dark testimonial-cite mvm">The milk is always fresh and delicious, no other brand of milk comes close. They are very reliable on the delivery and have great customer service!!</h4>
-                                        <p class="strong text-gray-dark">Nikhil A, Gurgaon</p>
-                                    </div>
-                                    <div class="item">
-                                        <img class="testimonial-img" alt="Komita testimonial" src="/static/img/komita.png" style="opacity: 1;">
-                                        <h4 class="header-dark testimonial-cite mvm">I was on a lookout for milk for my family where quality was assured. It is re-assuring to see the testing process and lab reports of Farmery milk - they seem to be paying a lot more attention to quality milk than even the big brands!</h4>
-                                        <p class="strong text-gray-dark">Komita S, Dwarka</p>
-                                    </div>
-                                    <div class="item">
-                                        <img class="testimonial-img" alt="Jai Prakash Agrawal testimonial" src="/static/img/jp.png" style="opacity: 1;">
-                                        <h4 class="header-dark testimonial-cite mvm">I was born in Jharkhand and had great quality food available to us while growing up. Farmery milk makes me nostalgic about my childhood - with the same kind of goodness of the fresh milk!</h4>
-                                        <p class="strong text-gray-dark">Jai Prakash K, Gurgaon</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </section>
-                <section class="mobile-app" style="background: #ececec">
-                    <p>&nbsp;</p>
-                    <div class="">
-                        <div class="col-main col-md-12">
-                            <h2 class="widget-title">Self-manage your subscription</h2>
-                            <br />
-                            <div class="col-lg-4 col-md-4 col-sm-12 app-img" style="overflow: hidden;"> <img src="static/img/mobile-app1.gif" alt="Farmery mobile app" style="margin-top: -1px"></div>
-                            <div class="col-lg-8 col-md-8 col-sm-12">
-                                <p> Travelling over the weekend or some guests coming over – changing your milk requirement can now be done in a click. <br /> <br /> You can make modifications a day in advance using any of the methods given below :</p>
-                                <ul>
-                                    <li><b>Use our Android/iOS App</b> &mdash; Install Farmery Android app from the Google Playstore and iOS app from Apple app store and use it to modify your subscription quantity for any given day, pause/resume supply and manage your account.</li>
-                                    <li><b>Use our Website</b> &mdash; Login on the website using your Farmery Registered Mobile Number. Go to your account and make the required modifications to your calendar.</li>
-                                    <li><b>Call / Whatsapp</b> &mdash; Alternatively, just call/ whatsapp at the Farmery Care number, minimum one day in advance if you want more/ less quantity, or want to suspend the deliveries while travelling.</li>
-                                </ul>
-                                <p> <br /> You can also view your monthly subscription invoices and can pay them by multiple payment options. <br /> <br /></p>
-                                <a href="https://play.google.com/store/apps/details?id=com.fudfill" target="_blank"><img src="/css/skin/frontend/novaworks/eda_theme/images/play-store.png" alt="play store icon" class="app-download-img"></a> 
-                                <a href="https://itunes.apple.com/us/app/farmery/id1414220360?ls=1&amp;mt=8" target="_blank"><img src="/css/skin/frontend/novaworks/eda_theme/images/app-store.png" alt="apple store icon" class="app-download-img"></a>
-                            </div>
-                        </div>
-                        <p>&nbsp;</p>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-</div>
-        <!--</div>-->
-        <footer class="common-footer">
-            
-            <div class="row padding-none" style="margin:0px;"> 
-            <div class="columns-layout">
-                <div class="footer-widget">
-                    <div class="col-sm-6">
-                        <strong>About Farmery</strong>
-                        <p>Farmery is a brand which stands for providing really good quality farm fresh food. We ensure that our food products do not have presence of any harmful substance which are widely present in our food today. We conduct strict quality tests through FSSAI accredited laboratories to ensure that there are no traces of any pesticides, chemicals or preservatives in our food products.</p>
-                        <p>Our journey has started with one of the most essential and important part of our daily diet - Milk and Dairy products. We are using our knowledge and expertise in building complex supply chains to make this possible on a daily basis. We aim to take these good quality food products to more and more households. In future we look to bringing more farm fresh products to your dining table.</p>
-                        <div class="contact-footer">
-                            <span>Feel free contact us :</span>
-                            <ul>
-                                <li><i class="fa fa-phone"></i>&nbsp;&nbsp;+91 9899779559</li>
-                                <li><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="2e474048416e484f5c434b5c57004740">[email&#160;protected]</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-sm-push-1">
-                        <strong>Company</strong>
-                        <ul>
-                            <li><a href="/about">About Farmery</a></li>
-                            <li><a href="/how-it-works">How it Works</a></li>
-                            <li><a href="https://www.farmery.in/myaccount/#/app/testreport">Test Reports</a></li>
-                            <li><a href="https://www.farmery.in/myaccount/#/app/faqs">FAQ</a></li>
-                            <li><a href="/term-and-conditions">Terms &amp; Conditions</a></li>
-                            <li><a href="/privacy-policy">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-3 col-sm-push-1">
-                        <strong>Explore</strong>
-                        <ul>
-                            <li><a target="_blank" href="https://play.google.com/store/apps/details?id=com.fudfill">Android App</a></li>
-                            <li><a target="_blank" href="https://apps.apple.com/us/app/farmery/id1414220360?ls=1">iOS App</a></li>
-                        </ul>
-                        Join Us : <a href="https://www.facebook.com/farmagic" target="_blank">&nbsp;&nbsp;<i class="fa fa-facebook"></i></a> <a href="https://twitter.com/fudfill" target="_blank">&nbsp;&nbsp;<i class="fa fa-twitter"></i></a> <img class='footer-logo' alt="" src="/img/media/theming/default/farmery-footer_1.jpg" class="standard" /> <img class='footer-fssai' alt="" src="/img/media/wysiwyg/fssai.png" class="standard" />
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="footer-base grid" style="padding:0;">
-                <p class="col-sm-6">© 2015 Natural Box Retail Pvt Ltd. All Rights Reserved.</p>
-                <div class="join-us push-right"></div>
-            </div>
-        </footer>
-        <div id="referafriend-overlay"></div>
-        <div id="referafriend">
-            <div id="rafContent"></div>
-<!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
-        </div>
-     
-        
-    <div class="modal" id="fruit-intro">
-       <a class="" href="/shop" title="Fruits"> <img src="/media/fruit-intro.jpg"></a>
-    </div>
 
-
-
-    </body>    
-</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock main_content %}

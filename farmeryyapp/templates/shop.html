@@ -4,18 +4,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/fruit.css' %}">              
                                 
-<div id="no-solr-search-container">
-    <div class="header-background-default">
-        <div class="header-content-title">
-            <h3>.</h3>
+        <div class="header-background-default" style="background-color: rgb(247, 213, 102);">
+            <div class="header-content-title">
+                <h1>FRUITS ANG GROCERY</h1>
+            </div>
+           
         </div>
-        <style> .header-background-default {height: 250px; background-image: url(/static/img/Screenshot.png) !important; } #header,.landing-nav.navbar-default{background: #fff;}</style>
 
         
-    </div>
+   
     <style>
         input[type=checkbox]:not(old), input[type=radio]:not(old){
             opacity: inherit;
@@ -63,7 +63,7 @@
         .filter{
             display: block;
             margin-top: 60px;
-            background: #50a686;
+            background: #64ff0a;
             padding: 1px 20px 20px;
         }
         section h3{
@@ -71,6 +71,16 @@
             margin-bottom: 5px;
             margin-top: 20px;
             font-size: 16px;
+        }
+
+        .bestsllerbrand .shopbybrand-title h1, .prod-info-main {
+            margin-bottom: 20px;
+            margin-top: 30px;
+            background: #428bca;
+            -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            font-weight: 400;
         }
         .prod-info-main .product-deatil{
             min-height: 140px;
@@ -85,8 +95,8 @@
 
         }
     </style>
-    <div class="novaworks-main-content">
-        <div class="main home-content container">
+    <div class="novaworks-main-content" style="background-color: rgb(247, 213, 102);">
+        <div class="main home-content container" style="background-color: rgb(247, 213, 102);">
             <div class="row columns-layout">
                 <div class="col-main col-md-12">
                     <div class="std">
@@ -94,7 +104,7 @@
                         <div class="widget widget-static-block">
                             <section class="row">
                                 <div class="lds-ripple-container-full-page" style="display:none;">
-                                    <div class="lds-ripple"><div></div><div></div></div>
+                                    <div class="lds-ripple">
                                 </div>
                                 <div class="filter-switch" id="navbar-mobile">
                                     <i class="fa fa-filter" aria-hidden="true"></i>
@@ -102,7 +112,7 @@
                                 </div>
                                 <div class="col-sm-3" style="padding: 0px">
                                     <div class="filter" id="navbar">
-                                        <form method="get" accept-charset="utf-8" class="product-filter" action="/shop"> <h3>Category</h3>
+                                        <form method="get" accept-charset="utf-8" class="product-filter" action="/shop"> <h3>CATEGORY</h3>
                                  <div class="form-group-2">
                                 <label>
                                   <input type="checkbox"  name="category_id[]" value="fruits"/>
@@ -146,9 +156,9 @@
                                 </div>
 
                               
-                
+                                {% for product2 in product2 %}  
                      <div class="col-sm-9 product-container">      
-                        {% for product2 in product2 %}      
+                       
                      <h2>{{product2.cattype}}Fruit</h2>
                     <div class="row"> 
                      <div class="col-xs-12 col-sm-6 col-md-4">
@@ -218,45 +228,17 @@
                     </div>
                 </div>
                            
-                <div class="homepage-mini-cart">
-                    <div class="mini-cart-sidebar"></div>
-                    <script> jQuery(".shopping-bag").slideToggle();
-                        jQuery('.arrow').toggleClass("down up");
-                    </script>
-                </div>
+               
             </div>
         </div>
     </div>
-</div>
 
-        <!-- Facebook Pixel Code -->
 
-<!-- End Facebook Pixel Code -->
-        <!--</div>-->
-        <div id="referafriend-overlay"></div>
-        <div id="referafriend">
-            <div id="rafContent"></div>
-<!--            <div id="rafLoadMessage"> <img src="/css/skin/frontend/novaworks/eda_theme/images/opc-ajax-loader.gif" class="v-middle" alt="" /> &nbsp; Loading...</div>-->
-        </div>
-     <!---- <script data-cfasync="false" src="/js/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>-->
-
+    
        
-    <div class="modal" id="fruit-intro">
-       <a class="" href="/shop" title="Fruits"> <img src="static/img/fruit-intro.png"></a>
-    </div>
-<!--Start of Tawk.to Script-->
+    
 
-<div>
-    <a href="/cart" class="floating-cart-button">
-    <i class="fa fa-shopping-cart my-float"></i>
-    <span id="mini-cart-count">0</span>
-    </a>
-</div>
 
-<!--End of Tawk.to Script-->
-<!-- Facebook Pixel Code -->
-
-<!-- End Facebook Pixel Code -->
     </body>    
 </html>
 {% endblock main_content %}

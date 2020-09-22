@@ -1,0 +1,117 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}"><!--- fontawsome---->
+      
+        <link rel="stylesheet" href="{% static 'css/homedesign.css' %}">
+       
+       
+        <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
+        <script src= "{% static 'js/all.min.js' %}"></script><!--- fontawsome---->
+        <script src="{%static 'js/jquery.js'%}"></script>
+       
+    
+        <link rel="stylesheet" href="{% static 'css/fudfill.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styleabout.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/megamenu.css' %}">
+
+	
+    </head>
+    <body>
+        <div class="back-diagonals page no-background">
+            <div class="logo-fade" id="header-section">
+                <header class="clearfix" id="header">
+                    <div class="top-title hidden-xs">
+                        <div class="container">
+                            <div class="col-lg-3 col-md-12 col-xs-12 text-left no-padding"> <span><a href="https://www.farmery.in/myaccount/#/app/faqs"><i class="fa fa-question-circle"></i> FAQ</a></span> <span><i class="fa fa-phone"></i> 9899779559 &nbsp;&nbsp;</span> <span><a href='https://www.farmery.in/myaccount/#/app/serviceable-areas'><i class="fa fa-truck"></i> Service Areas</a></span></div>
+                            <div class="col-lg-9 col-md-12 col-xs-12 text-right">
+                                <span>
+                                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                                    <a href="">Purity Meter</a>
+                                </span>
+
+                                <span>
+                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    <a href="">Account &amp; Payment</a>
+                                </span>
+
+                                <input type="hidden" class="area-link" value="0" id='my_area' />
+                                <input type="hidden" class="area-link" value="0" id='my_zone' />
+                                <span class="my-account-menu" style="display:none;">
+                                    <i class="fa fa-user"></i>
+                                    <a href="" class="area-link open-area" title="My Account">My Account</a>
+                                </span>
+                                <span class="menu-login">
+                                    <i class="fa fa-user"></i>
+                                    <a href="mylogin" title="Login">Login</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main-header" class="container navbar-main ">
+                        <div class="col-lg-2 col-md-3 col-sm-3  col-xs-4">
+                            <div class="header-logo">
+                                <div class="clearfix" id="logo">
+                                    <p class="logo"> <a href="/"> <img alt="Farmery" src="/static/img/farmery-logo.png" class="standard"> <img alt="Farmery" src="" class="retina"> </a></p>
+                                    <p class="tag-line"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
+                            <a class="phone" href="https://www.farmery.in/myaccount/#/app/payment-history"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
+                            <button class="navbar-toggle" id="sideMenu" data-toggle="collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button> 
+                            <nav class="navbar navbar-default navbar-collapse landing-nav" role="navigation">
+                                <div class="mobile-nav-scroll"> 
+                                <ul class="nav navbar-nav">
+                                    <li><a class="" href="/about" title="About Farmery">About Farmery</a></li>
+                                    <li><a class="" href="/how-it-works" title="How it Works">How it Works</a></li>
+                                    <li><a class="" href="/catalog" title="Catalogs">Dairy</a></li>
+                                    <li><a class="" href="/shop" title="Shop">Fruits and Grocery</a><span class="ribbon3"></span></li>
+                                    <li><a class="" href="/teamHome" title="Team">Our Team</a></li>
+                                    <li><a class="" href="" title="Blog">Blog</a></li>
+                                </ul>
+                                <ul class="nav navbar-nav account">
+                                    <li class="menu-login"><a href="https://www.farmery.in/myaccount/#/app/login" title="Login"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
+                                    <li class="my-account-menu" style="display: none;"><a href="https://www.farmery.in/myaccount/#/app/home_2" title="My Account"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
+
+                                   
+                                    <li><a class="" href="https://www.farmery.in/myaccount/#/app/purity-meter"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp; Purity Meter</a></li>
+                                    <li><a class="" href="https://www.farmery.in/myaccount/#/app/serviceable-areas" style="white-space: nowrap;"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Service Areas</a></li>
+                                    <li><a class="" href="tel:+919899779559"><i class="fa fa-phone"></i>&nbsp; Call</a></li>
+                                </ul>
+                            </div> 
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+                
+            </div>
+        </div>
+                <!--<div class="container clearfix">-->
+                </div>
+            
+
+                  {% block main_content %} {% endblock main_content %}
+
+
+
+
+        <!--</div>-->
+        
+        
+       
+        <div id="referafriend-overlay"></div>
+        <div id="referafriend">
+            <div id="rafContent"></div>
+
+       
+    <div class="modal" id="fruit-intro">
+       <a class="" href="/shop" title="Fruits"> <img src=""></a>
+    </div>
+
+
+    </body>    
+</html>

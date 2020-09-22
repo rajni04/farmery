@@ -30,6 +30,7 @@ admin_site.register(User)
 admin_site.register(TOTPDevice)
 urlpatterns=[
     path('home',views.index, name='home'),
+    path('home1',views.home1, name='home1'),
     path('',views.home,name='homedesign'),
    # path('',include('rest_framework.urls')),
     path("homeadmin_template",views.homeadmin_template, name="homeadmin_template"),
@@ -94,8 +95,9 @@ urlpatterns=[
     path('product_edit_save', adminviews.product_edit_save),
     path('delete_product/<str:product_id>/', adminviews.delete_product),
     path('team',adminviews.team, name="team"),
+    path('blog',views.blog, name="blog"),
     path('team_save', adminviews.team_save),
-    path('viewteam',adminviews.viewteam, name="viewteam"),
+    path('viewteam',adminviews.viewteam,name="viewteam"),
     path('teamHome',views.teamHome, name="team"),
 
     path('category',adminviews.category, name="category"),

@@ -22,7 +22,7 @@ class Info(models.Model):
 class Product(models.Model):
     id=models.AutoField(primary_key=True)
     productname = models.CharField(max_length=30,null=False)        
-    category= models.CharField(max_length=20, blank=True)
+    categoryy= models.CharField(max_length=20, blank=True,default=1)
     desc= models.CharField(max_length=30)
     price = models.IntegerField(default=0)
     quantity = models.IntegerField()
@@ -43,7 +43,7 @@ class Category1(models.Model):
 class Subcategory(models.Model):
     id=models.AutoField(primary_key=True)
     subcategory_name = models.CharField(max_length=30)
-    category1_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
+    category_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
     
 
 class ProductType(models.Model):
@@ -53,8 +53,8 @@ class ProductType(models.Model):
 
 class Product2(models.Model):
     id=models.AutoField(primary_key=True)
-    category1_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
-    subcategroy_id=models.ForeignKey(Subcategory,on_delete=models.CASCADE)
+    category_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
+    subcategory_id=models.ForeignKey(Subcategory,on_delete=models.CASCADE)
     proname=models.CharField(max_length=30) 
     pric=models.IntegerField()
     quant=models.IntegerField()
@@ -62,13 +62,14 @@ class Product2(models.Model):
     orchard= models.CharField(max_length=40,blank=True)
     expted_delivery=models.DateField()
     pre_delivery=models.DateField()
-    proimg= models.ImageField(null=True, blank=True)
+    img= models.ImageField(null=True, blank=True)
 
 class Team(models.Model):
     id=models.AutoField(primary_key=True)
+    tabt= models.CharField(max_length=100)
     tname= models.CharField(max_length=20)
     timg=models.ImageField(null=True, blank=True)
-    tdesc=models.CharField(max_length=100)
+    tdesc=models.CharField(max_length=255)
     
 
 

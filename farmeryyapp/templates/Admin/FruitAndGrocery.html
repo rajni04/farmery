@@ -10,11 +10,7 @@
     
     <form role="form"  method="post"  action="/fruitGrocery_save"  enctype="multipart/form-data">
       {% csrf_token %}
-
-
-
       <script>
-        
         function select(val) {
           url=window.location.origin +  `/fetch_api/${val}`;
           var request_get = new XMLHttpRequest();
@@ -33,7 +29,7 @@
                 n+=`<option value="${elem.id}">${elem.subcategory_name} </option>`
               })
               elem.innerHTML=`<label>SUBCATEGORY</label>
-              <select class="form-control" name="subcategory_name">
+              <select class="form-control" name="subcategory">
                 ${n}
               </select>
               `;
@@ -41,11 +37,10 @@
             } else console.log(request_get.status, "error");
           };
           request_get.send();
-          console.log(val)
-          
+          console.log(val)       
         }
        </script>
-       {% with cat=category.0 %}
+       {% with cat=categorys.0 %}
 
     <!-- Main content -->
     <div class="container register-form">
@@ -66,14 +61,14 @@
                    <div class="form-group">
                     <label>CATEGORY</label>
                     <select class="form-control" name="category" onchange="select(value)">
-                        {% for category in category %}
+                        {% for category in categorys %}
                           <option value="{{ category.id }}">{{ category.cattype}}</option>
                         {% endfor %}
                     </select>
                   </div>
                   <div class="form-group" id ='form-grp'>
                     <label>SUBCATEGORY</label>
-                    <select class="form-control" name="subcategory_name">
+                    <select class="form-control" name="subcategory">
                       {% for subcategory in cat.subcategory_set.all %}
                         <option value="{{subcategory.id }}">{{subcategory.subcategory_name}}</option>
                       {% endfor %}

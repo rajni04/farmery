@@ -14,59 +14,27 @@
         <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
         
      
-<form role="form" action="" method="post">
+<form role="form" action="product_save" method="post">
     
                 <!--<div class="container clearfix">-->
-            <div id="no-solr-search-container">
-    <div class="header-background-default">
+            <div id="no-solr-search-container" style="background-color: rgb(247, 213, 102);">
+    <div class="header-background-default" style="background-color: rgb(247, 213, 102);">
         <div class="header-content-title">
             <h1>Catalog</h1>
         </div>
        
-        <div class="breadcrumbs">
-            <ul>
-                <li class="home"> <a href="/" title="Go to Home Page">Home</a> <span>/ </span></li>
-                <li class="category40"> <strong>Catalog</strong></li>
-            </ul>
-        </div>
+       
        
 
         </div>
     </div>
-    <div class="novaworks-main-content" id ="list">
+    <div class="novaworks-main-content" id ="list" style="background-color: rgb(247, 213, 102);"  >
         <div class="main container">
             <div class="columns-layout">
                 <div class="col-main col-lg-12">
-                    <style> .bestsllerbrand .shopbybrand-title h1,
-                        .brand-search .shopbybrand-title h1,
-                        .shopbybrand-title h1 {
-                            background-color: #FFA500;
-                            color:#FFFFFF;
-                        }
-                        .shopbybrand-list .brands .brandslist .brand-begin-label strong{
-                            background-color: #3399CC;
-                            color:#FFFFFF;
-                        }
-                        .shopbybrand-list .charlist a{
-                            background-color: #eeeeee !important;
-                            color:#707070 !important;
-                        }
-                        .shopbybrand-list .brands .brandslist .brand-begin-label{
-                            border-bottom: 1px solid #3399CC  !important;
-                        }
-                        .shopbybrand-list .filterbar #charaters-list ul li.charlist a:hover,
-                        .shopbybrand-list .filterbar #charaters-list ul li.isActiveCate a,
-                        .shopbybrand-list .filterbar #charaters-list ul li.charlist a.isActiveCate{
-                            background-color: #6f6f6f !important;
-                            color:#ffffff !important;
-                        }
-                        .shopbybrand-list a{
-                            color:#3399CC !important;
-                        }
-                        .shopbybrand-list a:hover {
-                            color:#6f6f6f !important;
-                        }
-                        .product-info{height: auto;}
+                    <style> 
+                       
+                       
                         span.price-dec{
                             line-height: 14px;
                             padding: 23px 10px;
@@ -78,7 +46,7 @@
                         }
                         small{font-size: 70% !important}
                         h4.product-summary{
-                            margin: 6px 0px;
+                            margin: -20px 0px 0px 6px;
                             font-size: 15px;
                         }
                         h4.product-summary span{
@@ -87,7 +55,10 @@
                         }
                         .item .product{
                             background: #e7ece8;
+                            box-shadow: 1px 1px 8px #03a585;
                             padding: 0px;
+
+                            margin-right: 15px;
                         }
                         h4.product-name{
                             border-bottom: 1px solid #fff;
@@ -120,13 +91,7 @@
                             background: rgba(255,255,255,.8);
                             color: #000;
                         }
-                        @media screen and (min-width:768px) and (max-width: 979px) {
-                            .shopbybrand_sidebar .shopbybrand-title h1,
-                            .brand-search .shopbybrand-title h1,
-                            .bestsllerbrand .shopbybrand-title h1{
-                                background-color: #FFA500 !important;
-                            }
-                        }
+                  
                         @media (max-width: 640px){
                             .desc-ser {
                                     min-height: auto;

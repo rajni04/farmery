@@ -1,0 +1,88 @@
+{% extends 'nofooterbase.html'%}
+{% block main_content %}
+{% load static %}
+
+
+
+<link rel="stylesheet" href="{%static 'css/loginstyle.css'%}" >
+
+
+        <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}">
+
+
+    <form  onsubmit="return validation();" action="homeadmin_template" method="post" >
+        {% csrf_token %}
+        <div class="main home-content container">
+            <div class="row columns-layout"> 
+    <div class="loginbox">
+        
+        
+     <H1  style="color:rgb(120, 23, 230)" ><B>LOGIN</B></H1>
+    
+     
+        <p><B>USERNAME<B></p>
+            <input type="text" placeholder="Enter Username" name="username" required />
+        
+        
+        <P>PASSWORD</P>
+            <input type="password" placeholder="Enter Password" name="password" id="pass" required /> <br>
+                                                                                                  
+       <BR>
+        
+             <input type="submit" name="" value= "Sign in">
+             <div class="col-12  text-center">
+       
+             
+        <div class="col-12  text-center">
+            <a href="#"><B style="color: blue;">NEW USER</B></a>
+           
+            <br>
+            <a href="#"><B  style="color: blue;">FORGET PASSWORD</></a> 
+    </div>
+      
+</div>
+        </div>
+        </div>
+
+        {% if messages %}
+        <div class="col-12">
+           {% for message in messages %}
+           {% if message.tags == 'error' %}
+           <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+           {% endif %}
+           {% endfor %}
+         
+         {% endif %}
+       
+    </FORM>
+   </div>
+</div>
+
+
+<script>
+
+
+function gettoken(body){
+    console.log('ok1')
+    
+  return fetch('http://127.0.0.1:8000/api/auth/',{
+   method: "POST",
+   headers:{
+       'Content-type':'application/json'
+   },
+   body:JSON.stringify(body)
+}). then(resp=>resp.json())
+}console.log("ok")
+  
+
+</script>
+
+
+
+
+
+</div>
+
+           
+
+        {% endblock main_content %}

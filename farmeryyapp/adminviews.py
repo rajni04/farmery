@@ -7,6 +7,9 @@ from django.urls import reverse
 from .models import *
 from farmeryyapp.models import Subcategory
 
+from django.core.exceptions import ObjectDoesNotExist
+
+
 
 from django.views.decorators.csrf import csrf_exempt
 
@@ -35,7 +38,7 @@ def product_save(request):
     else:
     
         productname =request.POST.get("productname")
-        category=request.POST.get("category")
+        categoryy=request.POST.get("categoryy")
         desc=request.POST.get("desc")
         price =request.POST.get("price") 
         quantity =request.POST.get("quantity")
@@ -48,16 +51,16 @@ def product_save(request):
         filename=fs.save(img.name,img)
         img=fs.url(filename)
            
-        try:
-            product=Product(productname=productname,category=category, desc=desc,price=price,quantity=quantity ,discountdesc=discountdesc,oldprice=oldprice,newdiscount=newdiscount,img=img)
+        #try:
+        product=Product(productname=productname,categoryy=categoryy,desc=desc,price=price,quantity=quantity,discountdesc=discountdesc,oldprice=oldprice,newdiscount=newdiscount,img=img)
             
 
-            product.save()
-            messages.success(request,"Successfully Added ")
-            return HttpResponseRedirect("product")
-        except:
-            messages.error(request,"Failed to Add ")
-            return HttpResponseRedirect("product")
+        product.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("product")
+        #except:
+            #messages.error(request,"Failed to Add ")
+            #return HttpResponseRedirect("product")
 
 def product_details(request,myid):
     #Fetch the product using Id
@@ -119,22 +122,23 @@ def team_save(request):
     
         tname =request.POST.get("tname")
         tdesc=request.POST.get("tdesc")
+        tabt=request.POST.get("tabt")
        
         timg=request.FILES['timg']
         fs=FileSystemStorage()
         filename=fs.save(timg.name,timg)
         timg=fs.url(filename)
            
-        try:
-            team=Team(tname=tname,tdesc=tdesc,timg=timg)
+       # try:
+        team=Team(tname=tname,tabt=tabt,tdesc=tdesc,timg=timg)
             
 
-            team.save()
-            messages.success(request,"Successfully Added ")
-            return HttpResponseRedirect("team")
-        except:
-            messages.error(request,"Failed to Add ")
-            return HttpResponseRedirect("team")
+        team.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("team")
+        #except:
+            #messages.error(request,"Failed to Add ")
+            #return HttpResponseRedirect("team")
 
 def viewteam(request):
     team=Team.objects.all()
@@ -208,11 +212,11 @@ def subcategory_save(request):
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
         subcategory_name=request.POST.get("subcategory_name")
-        category1_id=request.POST.get("category")
-        category=Category1.objects.get(id=category1_id)
+        category_id=request.POST.get("category")
+        category=Category1.objects.get(id=category_id)
         
         try:
-            subcategory=Subcategory(subcategory_name=subcategory_name,category1_id=category)
+            subcategory=Subcategory(subcategory_name=subcategory_name,category_id=category)
             subcategory.save()
             messages.success(request,"Successfully Added ")
             return HttpResponseRedirect(reverse("subcategory"))
@@ -228,20 +232,20 @@ def viewsubcategory(request):
 
 
 def fruitGrocery(request):  
-    product2=Product2.objects.all()
+   
     category=Category1.objects.all() 
     subcategory=Subcategory.objects.all()
     
-    return render(request,"Admin/FruitAndGrocery.html",{"product2":product2,'category':category,'subcategory':subcategory})
+    return render(request,"Admin/FruitAndGrocery.html",{'category':category,'subcategory':subcategory})
     
 def fruitGrocery_save(request):
     if request.method!="POST":
         return HttpResponse("Method Not Allowed")
     else:
         category_id=request.POST.get("category")
-        category=Category1.objects.get(id=category_id)
+        category_obj=Category1.objects.get(id=category_id)
         subcategory_id=request.POST.get("subcategory")
-        subcategory=Subcategory.objects.get(id=subcategory_id)
+        subcategory_obj=Subcategory.objects.get(id=subcategory_id)
         proname =request.POST.get("proname")
         pric=request.POST.get("pric")
         quant=request.POST.get("quant")
@@ -256,16 +260,15 @@ def fruitGrocery_save(request):
         filename=fs.save(img.name,img)
         img=fs.url(filename)
            
-        try:
-            product2=Product2(proname=proname,category_id=category,subcategory_id=subcategory,pric=pric,quant=quant , farmer_name=farmer_name,orchard=orchard,expted_delivery=expted_delivery,pre_delivery=pre_delivery,discountdesc=discountdesc,img=img)
-            product2.subcategory_id=subactegory   
-
-            product2.save()
-            messages.success(request,"Successfully Added ")
-            return HttpResponseRedirect("fruitGrocery")
-        except:
-            messages.error(request,"Failed to Add ")
-            return HttpResponseRedirect("fruitGrocery")
+       # try:
+        product2=Product2(proname=proname,category_id=category_obj,subcategory_id=subcategory_obj,pric=pric,quant=quant,farmer_name=farmer_name,orchard=orchard,expted_delivery=expted_delivery,pre_delivery=pre_delivery,img=img)
+       
+        product2.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("fruitGrocery")
+       # except:
+        #messages.error(request,"Failed to Add ")
+        #return HttpResponseRedirect("fruitGrocery")
 
 from django.http import JsonResponse, HttpResponse
 from django.core import serializers
