@@ -1,0 +1,19 @@
+.site-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-header {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: #fff;
+    background: #090a0b no-repeat 50%;
+    background-size: cover;
+}

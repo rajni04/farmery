@@ -2,20 +2,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-      
+
+
+        <meta charset="utf-8"/>        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="{% static 'css/all.min.css' %}"><!--- fontawsome---->
       
-      
+        <link rel="stylesheet" href="{% static 'css/homedesign.css' %}">
        
-        
+       
         <link rel="stylesheet" href="{% static 'css/bootstrapp.css' %}">
         <script src= "{% static 'js/all.min.js' %}"></script><!--- fontawsome---->
-        
+        <script src="{%static 'js/jquery.js'%}"></script>
        
     
         <link rel="stylesheet" href="{% static 'css/fudfill.css' %}">
-     
        
+        <link rel="stylesheet" href="{% static 'css/megamenu.css' %}">
 
 	
     </head>
@@ -29,7 +31,7 @@
                             <div class="col-lg-9 col-md-12 col-xs-12 text-right">
                                 <span>
                                     <i class="fa fa-tachometer" aria-hidden="true"></i>
-                                    <a href="https://www.farmery.in/myaccount/#/app/purity-meter">Purity Meter</a>
+                                    <a href="">Purity Meter</a>
                                 </span>
 
                                 <span>
@@ -45,7 +47,7 @@
                                 </span>
                                 <span class="menu-login">
                                     <i class="fa fa-user"></i>
-                                    <a href="mylogin" title="Login">Login</a>
+                                    <a href="{% url 'mylogin' %}" title="Login">Login</a>
                                 </span>
                             </div>
                         </div>
@@ -60,26 +62,26 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-9 col-sm-9 col-xs-8">
-                            <a class="phone" href=""><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
+                            <a class="phone" href="https://www.farmery.in/myaccount/#/app/payment-history"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Recharge &amp; Payment</a> 
                             <button class="navbar-toggle" id="sideMenu" data-toggle="collapse"> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> <span class="icon icon-bar"></span> </button> 
                             <nav class="navbar navbar-default navbar-collapse landing-nav" role="navigation">
                                 <div class="mobile-nav-scroll"> 
                                 <ul class="nav navbar-nav">
-                                    <li><a class="" href="/about" title="About Farmery">About Farmery</a></li>
+                                    <li><a class="" href="/" title="About Farmery">HOME</a></li>
                                     <li><a class="" href="/how-it-works" title="How it Works">How it Works</a></li>
                                     <li><a class="" href="/catalog" title="Catalogs">Dairy</a></li>
                                     <li><a class="" href="/shop" title="Shop">Fruits and Grocery</a><span class="ribbon3"></span></li>
                                     <li><a class="" href="/teamHome" title="Team">Our Team</a></li>
-                                    <li><a class="" href="" title="Blog">Blog</a></li>
+                                    <li><a class="" href="/blog" title="Blog">Blog</a></li>
                                 </ul>
                                 <ul class="nav navbar-nav account">
-                                    <li class="menu-login"><a href="mylogin" title="Login"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
-                                    <li class="my-account-menu" style="display: none;"><a href="" title="My Account"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
+                                    <li class="menu-login"><a href="https://www.farmery.in/myaccount/#/app/login" title="Login"><i class="fa fa-sign-in"></i>&nbsp; Login</a></li>
+                                    <li class="my-account-menu" style="display: none;"><a href="https://www.farmery.in/myaccount/#/app/home_2" title="My Account"><i class="fa fa-user"></i>&nbsp; My Account</a></li>
 
                                    
                                     <li><a class="" href="https://www.farmery.in/myaccount/#/app/purity-meter"><i class="fa fa-tachometer" aria-hidden="true"></i>&nbsp; Purity Meter</a></li>
-                                    <li><a class="" href="" style="white-space: nowrap;"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Service Areas</a></li>
-                                    <li><a class="" href=""><i class="fa fa-phone"></i>&nbsp; Call</a></li>
+                                    <li><a class="" href="https://www.farmery.in/myaccount/#/app/serviceable-areas" style="white-space: nowrap;"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Service Areas</a></li>
+                                    <li><a class="" href="tel:+919899779559"><i class="fa fa-phone"></i>&nbsp; Call</a></li>
                                 </ul>
                             </div> 
                             </nav>
@@ -99,7 +101,64 @@
 
 
         <!--</div>-->
-      
+        <footer class="common-footer" style="background-color: black;">
+            <div class="row padding-none" style="margin:0px;"> 
+            <div class="columns-layout">
+                <div class="footer-widget">
+                    <div class="col-sm-6">
+                        <strong>About Farmery</strong>
+                        <p>Farmery is a brand which stands for providing really good quality farm fresh food. We ensure that our food products do not have presence of any harmful substance which are widely present in our food today. We conduct strict quality tests through FSSAI accredited laboratories to ensure that there are no traces of any pesticides, chemicals or preservatives in our food products.</p>
+                        <p>Our journey has started with one of the most essential and important part of our daily diet - Milk and Dairy products. We are using our knowledge and expertise in building complex supply chains to make this possible on a daily basis. We aim to take these good quality food products to more and more households.</p>
+                        <div class="contact-footer">
+                            <span>Feel free contact us :</span>
+                            <ul>
+                                <li><i class="fa fa-phone"></i>&nbsp;&nbsp;+91 9899779559</li>
+                                <li><i class="fa fa-envelope"></i>&nbsp;&nbsp;<a href="cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="2e474048416e484f5c434b5c57004740">[email&#160;protected]</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-push-1">
+                        <strong>Company</strong>
+                        <ul>
+                            <li><a href="/about">About Farmery</a></li>
+                            <li><a href="/how-it-works">How it Works</a></li>
+                            <li><a href="https://www.farmery.in/myaccount/#/app/testreport">Test Reports</a></li>
+                            <li><a href="https://www.farmery.in/myaccount/#/app/faqs">FAQ</a></li>
+                            <li><a href="/term-and-conditions">Terms &amp; Conditions</a></li>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3 col-sm-push-1">
+                        <strong>Explore</strong>
+                        <ul>
+                            <li><a target="_blank" href="https://play.google.com/store/apps/details?id=com.fudfill">Android App</a></li>
+                            <li><a target="_blank" href="https://apps.apple.com/us/app/farmery/id1414220360?ls=1">iOS App</a></li>
+                        </ul>
+                        Join Us : <a href="https://www.facebook.com/farmagic" target="_blank">&nbsp;&nbsp;<i class="fa fa-facebook"></i></a> <a href="https://twitter.com/fudfill" target="_blank">&nbsp;&nbsp;<i class="fa fa-twitter"></i></a> <img class='footer-logo' alt="" src="" class="standard" /> <img class='footer-fssai' alt="" src="" class="standard" />
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="footer-base grid" style="padding:0;">
+                <p class="col-sm-6">© 2015 Natural Box Retail Pvt Ltd. All Rights Reserved.</p>
+                <div class="join-us push-right"></div>
+            </div>
+        </footer>
+        <div id="referafriend-overlay"></div>
+        <div id="referafriend">
+            <div id="rafContent"></div>
+
        
+    <div class="modal" id="fruit-intro">
+       <a class="" href="/shop" title="Fruits"> <img src=""></a>
+    </div>
+<div>
+    <a href="/cart" class="floating-cart-button">
+    <i class="fa fa-shopping-cart my-float"></i>
+    <span id="mini-cart-count">0</span>
+    </a>
+</div>
+
+
     </body>    
 </html>

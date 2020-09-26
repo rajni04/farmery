@@ -78,7 +78,7 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgb(170, 182, 4);
+    background: rgb(226, 253, 128);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
@@ -109,8 +109,8 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    min-height: 300px;
-    min-width: 400px;
+    min-height: 280px;
+    min-width: 200px;
 
 }
 
@@ -121,7 +121,7 @@ section .section-title {
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #007b5e !important;
+    color: #fe4f4f !important;
 }
 
 .frontside .card .card-body img {

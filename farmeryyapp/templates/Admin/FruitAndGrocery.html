@@ -40,7 +40,7 @@
           console.log(val)       
         }
        </script>
-       {% with cat=categorys.0 %}
+       {% with cat=category.0 %}
 
     <!-- Main content -->
     <div class="container register-form">
@@ -61,7 +61,7 @@
                    <div class="form-group">
                     <label>CATEGORY</label>
                     <select class="form-control" name="category" onchange="select(value)">
-                        {% for category in categorys %}
+                        {% for category in category %}
                           <option value="{{ category.id }}">{{ category.cattype}}</option>
                         {% endfor %}
                     </select>
@@ -136,7 +136,7 @@
                                       <button type="submit" id="createProduct" class="btn btn-primary btn-block">SUBMIT</button>
                                     </div>
                                     <div class="card-footer">
-                                      <a href="/viewproduct"  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
+                                      <a href="/viewFruitGrocery"  button type="button"  class="btn btn-secondary btn-warning">VIEW </span></a></td>
                                     </div>
                                     </form>
                                 </div>

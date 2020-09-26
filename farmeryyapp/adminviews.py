@@ -6,15 +6,12 @@ from farmeryyapp.models import Product
 from django.urls import reverse
 from .models import *
 from farmeryyapp.models import Subcategory
-
 from django.core.exceptions import ObjectDoesNotExist
-
-
-
+from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from django.views.decorators.csrf import csrf_exempt
-
-
 from django.contrib.auth import authenticate, logout
+from django.core.paginator import Paginator
+
 
 
 def homeadmin_template(request):
@@ -169,9 +166,24 @@ def category_save(request):
             #return HttpResponseRedirect("category")
 
 def viewcategory(request):
-    category=Category1.objects.all()
-    return render(request,"Admin/CategoryView.html",{'category':category})
+    category=Category1.objects.all().order_by('cattype').distinct('cattype')
+    
+    all_cat = Paginator(category,5)# Show 25 contacts per page.
+    
 
+    page = request.GET.get('page')
+    try:
+        # create Page object for the given page
+        page_obj = all_cat.page(page)
+    except PageNotAnInteger:
+        # if page parameter in the query string is not available, return the first page
+        page_obj = all_cat.page(1)
+    except EmptyPage:
+        # if the value of the page parameter exceeds num_pages then return the last page
+        page_obj= all_cat.page(all_cat.num_pages)
+   
+    return render(request,"Admin/CategoryView.html", {'category':category,'page_obj': page_obj})
+    print(page_obj)
 
 def edit_category(request,category_id):
     category=Category1.objects.get(id=category_id)
@@ -226,8 +238,10 @@ def subcategory_save(request):
 
 def viewsubcategory(request):
     subcategory=Subcategory.objects.all()
-    return render(request,"Admin/ViewSubCategory.html",{'subcategory':subcategory})
+    paginate_by = 2
 
+    return render(request,"Admin/ViewSubCategory.html",{'subcategory':subcategory})
+   
 
 
 

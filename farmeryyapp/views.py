@@ -75,7 +75,7 @@ def shop(request):
     producttype=ProductType.objects.all()
     cate=Category1.objects.all()
     context= {'product2':product2,'producttype':producttype,'cate':cate}
-    return render(request,'shop.html',context)
+    return render(request,'fruitngroc.html',context)
 
 def teamHome(request):
     team =Team.objects.all()
@@ -128,6 +128,12 @@ def viewproduct(request):
     product=Product.objects.all()
     return render(request,"Admin/table.html",{'product': product})
 
+def viewFruitGrocery(request):
+    product2=Product2.objects.all()
+    return render(request,"Admin/ViewFruitGrocery.html",{'product2': product2})
+
+
+
 def delete_product(request,product_id):
    product=Product.objects.get(id=product_id)
    product.delete()
@@ -152,9 +158,9 @@ def myloginn(request):
                  return redirect('customer_home')
         else:
              messages.error(request,"Invalid Login Details")
-             return redirect('mylogin.html')    
+             return redirect('mylogin1.html')    
     else:
-        return render(request,'mylogin.html')      
+        return render(request,'mylogin1.html')      
 
 
 def loogout(request):

@@ -1,0 +1,246 @@
+{% extends 'base.html'%}
+{% block main_content %}
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/fruit.css' %}">              
+                                
+        <div class="header-background-default" style="background-color: rgb(247, 213, 102);">
+            <div class="header-content-title">
+                <h1>FRUITS ANG GROCERY</h1>
+            </div>
+           
+        </div>
+
+        
+   
+    <style>
+
+      .header-background-default {
+         height: 250px;
+         background-image: url(/static/img/img2.png) !important;
+}
+        input[type=checkbox]:not(old), input[type=radio]:not(old){
+            opacity: inherit;
+            font-size: inherit;
+            width: 20px !important;
+            cursor: pointer;
+        }
+        .lds-ripple{
+            left: 50%;
+        }
+        .in-cart-label{
+            padding: 8px 10px !important;
+            background-color: #f8d832;
+            color: #3d8167;
+            border-radius: 8px;
+            margin-top: 5px !important;
+        }
+        .container1{
+            margin-top: 45px;
+        }
+        .sticky {
+          position: fixed;
+          top: 0;
+          width: 16.5%;
+        }
+        .sticky-extra{
+            width: 100% !important;
+            z-index: 1000;
+            left: 0;
+            margin-top: 85px !important;
+        }
+        .sticky-mobile {
+            position: fixed;
+            top: 45px !important;
+            width: 100%;
+            height: 45px;
+            z-index: 10000;
+            background: #fff;
+            box-shadow: 0px 3px 4px rgba(0,0,0,.1);
+        }
+        .filter label{
+            font-size: 15px;
+            cursor: pointer;
+        }
+        .filter{
+            display: block;
+            margin-top: 60px;
+            background: #64ff0a;
+            padding: 1px 20px 20px;
+        }
+        section h3{
+            color: #fff !important;
+            margin-bottom: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .bestsllerbrand .shopbybrand-title h1, .prod-info-main {
+            margin-bottom: 20px;
+            margin-top: 30px;
+            background: #428bca;
+            -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+            font-weight: 400;
+        }
+        .prod-info-main .product-deatil{
+            min-height: 140px;
+        }
+        .filter-switch{display: none;padding: 10px}
+        @media (max-width: 768px){
+            .filter{display:none;margin-top:10px;margin-bottom: 30px}
+            .main .col-sm-9{float: left;}
+            .filter-switch{display: block;}
+        }
+        .float-fliter{
+
+        }
+    </style>
+    <div class="novaworks-main-content">
+        <div class="main home-content container">
+            <div class="row columns-layout">
+                <div class="col-main col-md-12">
+                    <div class="std">
+                        <div class="widget widget-static-block">
+                            <section class="row">
+                                <div class="lds-ripple-container-full-page" style="display:none;">
+                                    <div class="lds-ripple"><div></div><div></div></div>
+                                </div>
+                                <div class="filter-switch" id="navbar-mobile">
+                                    <i class="fa fa-filter" aria-hidden="true"></i>
+                                    <span>Filter</span>
+                                </div>
+                                <div class="col-sm-3" style="padding: 0px">
+                                    <div class="filter" id="navbar">
+                                        <form method="get" accept-charset="utf-8" class="product-filter" action="/shop"> <h3>Category</h3>
+                                                        <div class="form-group-2">
+                                                    <label>
+                                                    <input type="checkbox" name="category_id[]" value="fruits">
+                                                        Fruits</label>
+                                                </div>
+                                             <div class="form-group-2">
+                                                        <label>
+                                                    <input type="checkbox" name="category_id[]" value="groceries">
+                                                        Groceries  </label>
+                                                </div>
+                                                    <div class="form-group-2">
+                                                     <label>
+                                                    <input type="checkbox" name="category_id[]" value="vegetables">
+                                                        Vegetables  </label>
+                                                </div>
+                                               <h3>Product Type</h3>
+                                                 <div class="form-group-2">
+                                                    <label>
+                                                     <input type="checkbox" name="quality_type[]" value="organic">
+
+                                                        Organic    </label>
+                                                </div>
+                                             <div class="form-group-2">
+                                                    <label>
+                                                <input type="checkbox" name="quality_type[]" value="chemical-residue-free">
+
+                                                        Chemical residue free   </label>
+                                                </div>
+                                              <div class="form-group-2">
+                                                    <label>
+                                                     <input type="checkbox" name="quality_type[]" value="conventional">
+
+                                                        Conventional </label>
+                                                </div>
+                                                <h3>Pack Type</h3>
+                                                <div class="form-group-2">
+                                                <label>
+                                                    <input type="checkbox" name="product_type[]" value="bundle">
+                                                        Basket  </label>
+                                                </div>
+                                                 <div>
+                                  </div>
+                                        </form>                                    </div>
+                                </div>
+                                <div class="col-sm-9 product-container">
+                             <h2>Fruits</h2>
+                             <div class="row"> 
+
+                        {% for product2 in product2 %}
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <!-- First product box start here-->
+                        <div class="prod-info-main prod-wrap clearfix">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="product-image"> 
+                                        <img src="{{product2.img}}" class="img-responsive"> 
+                                             
+                                         <div class="ribbon">Chemical residue free</div>
+                                        <span class="ribbon live">
+                                            {{product2.pre_delivery}} <sup>*</sup>
+                                            </span> 
+                                         <div class="ribbon2">
+                                        Available TILL Stock Lasts
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="product-deatil">
+                                        <h2 class="name">
+                                            <a href="/shop/detail/507">
+                                               {{product2.proname}}                                       </a>
+                                        </h2>
+                                        <p class="product-from">
+                                            Farmer Name : <a href="javascript://">{{product2.farmer_name}}<span></span> </a> 
+                                        </p>
+                                        <p class="product-from">
+                                            Orchard : <a href="javascript://"><span>{{product2.orchard}} </span> </a> 
+                                        </p>
+                                        <span class="tag1"></span> 
+                                    </div>
+                                    <div class="description">
+                                        <p class="price-container">
+                                            <span>Starts At : ₹</span><strike style="font-size: 14px;color:#666"></strike>{{product2.pric}}/<small>Pack</small> <span class="addtional_weight">(Approx 1kg)</span>
+                                        </p>
+
+                                        <p class="product-from">
+                                                                                            <span> Delivery on: {{product2.expted_delivery}} </span><span class="addtional_weight">(for orders placed till 8 PM)</span>
+                                                                                    </p>
+                                    </div>
+                                    <div class="product-info smart-form">
+                                        <div class="row">
+                                            <div class="col-xs-6"> 
+                                                <a href="/shop/detail/507" class="btn">
+                                                    View Details
+                                                </a>
+                                            </div>
+                                            <div class="col-xs-6"> 
+                                                 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end product -->
+                    </div>
+
+                    {% endfor %}
+                                                                
+                                                        
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+                                    
+            
+       
+    
+
+
+    </body>    
+</html>
+{% endblock main_content %}

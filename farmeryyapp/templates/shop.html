@@ -104,7 +104,7 @@
                         <div class="widget widget-static-block">
                             <section class="row">
                                 <div class="lds-ripple-container-full-page" style="display:none;">
-                                    <div class="lds-ripple">
+                                    <div class="lds-ripple"><div></div><div></div></div>
                                 </div>
                                 <div class="filter-switch" id="navbar-mobile">
                                     <i class="fa fa-filter" aria-hidden="true"></i>
@@ -156,7 +156,7 @@
                                 </div>
 
                               
-                                {% for product2 in product2 %}  
+                              
                      <div class="col-sm-9 product-container">      
                        
                      <h2>{{product2.cattype}}Fruit</h2>
@@ -189,7 +189,7 @@
                                     </div>
                                     <div class="description">
                                         <p class="price-container">
-                                            <span>Starts At : ₹</span> {{product2.pric}}15/<small>Pack</small> <span class="addtional_weight">({{product2.quant}})</span>
+                                            <span>Starts At : ₹</span> {{product2.pric}}/<small>Pack</small> <span class="addtional_weight">({{product2.quant}})</span>
                                         </p>
 
                                         <p class="product-from">
@@ -216,7 +216,7 @@
                 </div>
                       
                 </div>
-                {% endfor %}                              
+                                         
                         
                                     
             </div> 

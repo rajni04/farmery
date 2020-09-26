@@ -103,6 +103,7 @@ urlpatterns=[
     path('category',adminviews.category, name="category"),
     path('category_save', adminviews.category_save),
     path('viewcategory',adminviews.viewcategory, name="viewcategory"),
+    path('viewFruitGrocery',views.viewFruitGrocery, name="viewFruitGrocery"),
     path('edit_category/<str:category_id>/',  adminviews.edit_category,name="edit_category"),
     path('edit_category_save', adminviews.edit_category_save),
     path('delete_category/<str:category_id>/', adminviews.delete_category),
