@@ -27,7 +27,7 @@
 
                         }
 */                        .shopbybrand-list .brands .brandslist .brand-begin-label strong{
-                            background-color: #3399CC;
+                            background-color: #fdff6b;
                             color:#FFFFFF;
                         }
                         .shopbybrand-list .charlist a{
@@ -63,88 +63,68 @@
                             <section id="how-it-works" class=" how-it-works">
                                 <div class="container">
                                     <div class="row">
+                                        
                                         <div class="col-lg-12 text-center">
                                             <h2 class="widget-title">How it works</h2>
                                             <h4>Fresh Cow's Milk from Farm to Table in Few Hours</h4>
                                             <p>&nbsp;</p>
                                         </div>
                                     </div>
+                                   
                                     <div class="row">
+                            
+                                       
+                                   
                                         <div class="col-lg-12">
+                                          
+                                           
+                                            {% for work in work %}
+                                               
                                             <ul class="timeline">
+                                                
+                                                
                                                 <li>
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="farm" src="/static/img/1.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Own farm</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>Unlike the big brands of milk we do not collect milk from thousands of farmers where cattle feed, health and milking methods are not monitored. We have a single breed of cows housed in select mid-size farms under 50 kms from the city. The fodder and well-being of the cattle is monitored under supervision of trained veterinarians at all times.</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="timeline-inverted">
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="quality" src="/static/img/2.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Quality Checks</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>We keep a stringent check on the cattle quality, fodder and processes at the farm. Samples of our milk are regularly checked and passed by FSSAI accredited labs for any trace of chemicals, pesticides or toxins.</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="hygienic milking" src="/static/img/3.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Hygienic Milking Conditions</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>We ensure our cattle sheds and cattle are washed multiple times during the day. The milking of cows is done by automatic milking machine and is untouched by hands</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="timeline-inverted">
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="chilling" src="/static/img/4.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Chilling before bottling</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>Milk is chilled to 2℃ in Bulk Milk Coolers. At this temperature the natural goodness of milk is retained without any harmful bacterial growth</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="bottling" src="/static/img/5.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Packaging / Bottling</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>Chilled milk is packed in glass bottles so that the cold temperature is retained for a long duration. The bottles are sealed at the farm to ensure that milk is delivered in tamper proof state</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="timeline-inverted">
-                                                    <div class="timeline-image"><img class="img-circle img-responsive" alt="delivery" src="/static/img/6.jpg" /></div>
-                                                    <div class="timeline-panel">
-                                                        <div class="timeline-heading">
-                                                            <h4>Ready for Delivery</h4>
-                                                        </div>
-                                                        <div class="timeline-body">
-                                                            <p>Bottled milk packed in insulated boxes from farm arrives at our hubs. Dispatches are done to your household within 3-4 hours</p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="timeline-inverted">
+                                                  
                                                     <div class="timeline-image">
-                                                        <h4>Boiling is <br />recommended within 90 <br />minutes of <br />receipt</h4>
+                                                        <img class="img-circle img-responsive"  src="{{work.wimg}}" />
+                                                    </div>
+                                                    <div class="timeline-panel">
+                                                        <div class="timeline-heading">
+                                                            <h4>{{work.headng}}</h4>
+                                                        </div>
+                                                        <div class="timeline-body">
+                                                            <p>{{work.workdesc}}.</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </li>
+                                             
+                                                <li class="timeline-inverted">
+                                                    
+                                                    <div class="timeline-image">
+                                                        <img class="img-circle img-responsive" alt="quality" src="{{work.wimg2}}" />
+                                                    </div>
+                                                    <div class="timeline-panel">
+                                                        <div class="timeline-heading">
+                                                            <h4>{{work.headng2}}</h4>
+                                                        </div>
+                                                        <div class="timeline-body">
+                                                            <p> {{work.workdesc2}}.</p>     </div>
                                                     </div>
                                                 </li>
+
+                                             
+                                               
+                                               
+                                                {% endfor %}
+                                                
+                                               
                                             </ul>
+                                           
+                                                
                                         </div>
+                                       
+                                        
                                     </div>
                                 </div>
                             </section>

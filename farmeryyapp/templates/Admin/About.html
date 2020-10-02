@@ -1,0 +1,87 @@
+{% extends 'Admin/base_template.html' %}
+{% block page_title %}
+<B>ABOUT</B>
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    {%load static %}
+
+    <!-- Main content -->
+    
+    <form role="form"  method="post"  action="/homeabout_save">
+      {% csrf_token %}
+
+
+      <style>
+
+        .form-controll {
+          border-radius: 1.5rem;
+          height: 130px;
+        
+        }
+
+      </style>
+
+    <!-- Main content -->
+    <div class="container register-form">
+      <div class="card card-body">
+      <div class="form">
+        <div class="note">
+          
+        </div>
+        <div class="card card-primary">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label> ABOUT DESCRIPTION</label>
+                    <input type="text" class="form-controll" placeholder="ABOUT DESCRIPTION" name="h1_desc"  size="60">
+                  </div>
+                   
+                </div>
+              <div class="col-md-6">
+              
+                  <div class="form-group">
+                    <label>FARMERY</label>
+                    <input type="text" class="form-controll" placeholder="FARMERY" name="h2_brief" size="60" >
+                  </div>
+                    </div>
+      
+                    <!------------------------------------------------------------------>
+                                       <div class="form-group">
+                                          {% if messages %}
+                                            {% for message in messages %}
+                                            {% if message.tags == 'error' %}
+                                            <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% if message.tags == 'success' %}
+                                            <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                                            {% endif %}
+                                            {% endfor %}
+                                          {% endif %}
+                                        </div>
+                        
+                                    <!-- /.card-body -->
+                    
+                                    <div class="card-footer">
+                                      <button type="submit" id="createProduct" class="btn btn-primary btn-block">SUBMIT</button>
+                                    </div>
+                                   
+                                    </form>
+                                </div>
+                                <!-- /.card -->
+                    </div>
+                    
+                    
+                              </div>
+                              </div>
+                          </div>
+                        </section>
+                        <!-- /.content --> 
+
+
+
+
+  {% endblock main_content %}
+                    
+                    

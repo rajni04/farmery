@@ -47,6 +47,7 @@ urlpatterns=[
     #path('info/',views.user_list, name="info"),
     #path('register',views.register, name="register"),
     path('login',views.loginn, name="login"),
+    path('loogout', views.loogout,name="loogout"),
     path('mylogin',views.myloginn, name="mylogin"),
    # path('loginform',views.loginform, name="loginform"),
     path('loginform',views.loginform, name="loginform"),
@@ -116,4 +117,26 @@ urlpatterns=[
     path('edit_subcategory/<str:subcategory_id>/',adminviews.edit_subcategory, name="edit_subcategory"),
     path('delete_subcategory/<str:subcategory_id>/',adminviews.delete_subcategory, name="delete_subcategory"),
     path('loogout', views.loogout,name="loogout"),
+    path('howit_work',adminviews.howit_work, name="howit_work"),
+    path('howit_work_save',adminviews.howit_work_save, name="howit_work_save"),
+    path('viewworkdata',adminviews.viewworkdata, name="viewworkdata"),
+    path('delete_viewworkdata/<str:work_id>/', adminviews.delete_viewworkdata,name="delete_viewworkdata"),
+    path('sliderhome',adminviews.sliderhome, name="sliderhome"),
+    path('sliderhome_save',adminviews.sliderhome_save, name="sliderhome_save"),
+    path('delete_slider/<str:sliderhome_id>/', adminviews.delete_slider,name="delete_slider"),
+    path('viewslider',adminviews.viewslider, name="viewslider"),
+
+    path('content',adminviews.content, name="content"),
+    path('content_save',adminviews.content_save, name="content_save"),
+
+    path('contentview',adminviews.contentview, name="contentview"),
+    path('delete_content/<str:content_id>/', adminviews.delete_content),
+
+    path('homeabout',adminviews.homeabout, name="homeabout"),
+    path('offerhomeproduct', adminviews.offerhomeproduct),
+    path('offerhomeproduct_save', adminviews.offerhomeproduct_save),
+
+
+
+
     ]

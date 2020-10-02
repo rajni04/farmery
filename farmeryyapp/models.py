@@ -85,3 +85,52 @@ class Rating(models.Model):
 class Productview(models.Model):
     product_id=models.ForeignKey(Product,on_delete=models.CASCADE)
     trialdays=models.CharField(max_length=255)
+
+class Work(models.Model):
+    headng=models.CharField(max_length=30)
+    headng2=models.CharField(max_length=30)
+    workdesc=models.CharField(max_length=255)
+    workdesc2=models.CharField(max_length=255)
+    wimg=models.ImageField(null=True, blank=True)
+    wimg2=models.ImageField(null=True, blank=True)
+
+
+class Circl(models.Model):
+    cheading=models.CharField(max_length=50)  
+    cdesc=models.CharField(max_length=500)
+    che=models.CharField(max_length=50,null=True,blank=True)
+    cdesc2=models.CharField(max_length=500,null=True,blank=True)
+
+
+class Homedata(models.Model):
+   
+    h1_desc=models.CharField(max_length=800)  
+    h2_brief=models.CharField(max_length=255)
+    
+   
+class Offerproduct(models.Model):
+    oimg=models.ImageField(null=True, blank=True) 
+    oproname=models.CharField(max_length=40)
+    oprice=models.IntegerField()
+
+
+
+
+
+    
+class Sliderhome(models.Model):
+    sheadng=models.CharField(max_length=30)  
+    sdesc=models.CharField(max_length=255)
+    simg=models.ImageField(null=True, blank=True)
+
+
+class Contnt(models.Model):
+    cheadng=models.CharField(max_length=40)  
+    cdes=models.CharField(max_length=555)
+   
+
+
+
+
+
+

@@ -116,22 +116,18 @@
                                 </div>
                                 <div class="col-sm-3" style="padding: 0px">
                                     <div class="filter" id="navbar">
-                                        <form method="get" accept-charset="utf-8" class="product-filter" action="/shop"> <h3>Category</h3>
+                                        <form method="get" accept-charset="utf-8" class="product-filter" ><h3>Category</h3>
+                                                {% for cat in cate %}
+
                                                         <div class="form-group-2">
                                                     <label>
-                                                    <input type="checkbox" name="category_id[]" value="fruits">
-                                                        Fruits</label>
+                                                        <input type="checkbox" name="category_id[]" value="organic">
+
+                                                 {{cat.id}}      {{cat.cattype}}</label>
                                                 </div>
-                                             <div class="form-group-2">
-                                                        <label>
-                                                    <input type="checkbox" name="category_id[]" value="groceries">
-                                                        Groceries  </label>
-                                                </div>
-                                                    <div class="form-group-2">
-                                                     <label>
-                                                    <input type="checkbox" name="category_id[]" value="vegetables">
-                                                        Vegetables  </label>
-                                                </div>
+                                                {% endfor %}
+                                             
+                                                
                                                <h3>Product Type</h3>
                                                  <div class="form-group-2">
                                                     <label>
@@ -151,15 +147,10 @@
 
                                                         Conventional </label>
                                                 </div>
-                                                <h3>Pack Type</h3>
-                                                <div class="form-group-2">
-                                                <label>
-                                                    <input type="checkbox" name="product_type[]" value="bundle">
-                                                        Basket  </label>
-                                                </div>
+                                                
                                                  <div>
                                   </div>
-                                        </form>                                    </div>
+                                        </form>    </div>
                                 </div>
                                 <div class="col-sm-9 product-container">
                              <h2>Fruits</h2>

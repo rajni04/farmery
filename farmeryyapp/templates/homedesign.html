@@ -15,7 +15,7 @@
 
  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
- 
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  
 </head>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -27,42 +27,39 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 <div id="carousel-example" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example" data-slide-to="1"></li>
-      <li data-target="#carousel-example" data-slide-to="2"></li>
-    </ol>
-  
+
+
+    
+    
     <div class="carousel-inner">
-      <div class="item active">
-        <a href="#"><img src="/static/img/img1.png" style="height:450px ; object-fit:cover; width:100%" ></a>
+        {% for rs in sliderhome %}
+       
+      <div class="item {% if forloop.counter0 == 0 %} active {% endif %} ">
+       
+        <a href="#"><img src="{{rs.simg}}" style="height:450px ; object-fit:cover; width:100%" ></a>
         <div class="carousel-caption">
-          <h3 class="animate__backInLeft">Meow</h3>
-          <p>Just Kitten Around</p>
+          <h3 class="animate__backInLeft">{{rs.sheadng}}</h3>
+          <p>{{rs.sdesc}}</p>
         </div>
+       
       </div>
-      <div class="item">
-        <a href="#"><img src="/static/img/img2.png"    style="height:450px" width="100%" /></a>
-        <div class="carousel-caption">
-          <h3>Meow</h3>
-          <p>Just Kitten Around</p>
-        </div>
-      </div>
-      <div class="item">
-        <a href="#"><img src="/static/img/img3.png"style="height:450px" width="100%"  /></a>
-        <div class="carousel-caption">
-          <h3>Meow</h3>
-          <p>Just Kitten Around</p>
-        </div>
-      </div>
+      
+     
+     
+      
+      {% endfor %}
     </div>
-  
+
+    
+     
+   
     <a class="left carousel-control" href="#carousel-example" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
     </a>
     <a class="right carousel-control" href="#carousel-example" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right"></span>
     </a>
+   
   </div>
 
 </div>
@@ -90,51 +87,79 @@
           <div class="header-content-title">
               <h1><b>About Farmery</b></h1>
           </div>
-  
-          <p class="btmspace-50 justified">Enim neque nec placerat risus suscipit vitae volutpat nisi sit amet turpis molestie ut sodales nisi efficitur duis id ex eros vivamus ac vehicula nibh non luctus ipsum suspendisse dolor metus varius in facilisis vitae euismod nec ex donec ullamcorper eros vel molestie sagittis libero augue elementum libero cursus euismod sem leo sed augue praesent condimentum odio sit amet nulla tempor sollicitudin lacinia mauris vestibulum cras euismod accumsan dolor et convallis praesent porttitor maximus viverra proin fermentum scelerisque neque quis consequat mauris rutrum eget proin
-             fringilla nisi libero in tincidunt tortor porttitor sed phasellus vitae molestie massa suspendisse.</p>
+            {% for abt in aboutdata %}
+
+
+          <p class="btmspace-50 justified">
+              
+            {{abt.h1_desc}}.</p>
+
+         
   </div>
 
   <div class="container">
     <div class="row">  
        <div class="col-md-12 col-sm-12">
            <h2 class="widget-title">Farmery Cow Milk</h2>
-           <p>Farmery Farm Fresh Cow's Milk is an honest attempt to serve nutritious, chemical-free and preservative-free milk.<br>It's an equivalent of serving fresh whole milk from your own farm while being present in an urban living</p>
-       </div>
+           <p>{{abt.h2_brief}}.<br></p>
+           {% endfor %}   
+        </div>
+
        <div class="row">
+
        <div class=" col-12 col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+
+         {% for r in content %}
+        
            <div class="col-md-12 col-sm-12" style="background: #ca370a; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px; transition-property:1s,3s; transition-timing-function: ease-in;">
                
-               <h3>Real Fresh A-Grade Whole Milk</h3>
+               <h3>{{r.cheading}}</h3>
                <hr>
-               <p>We serve "Raw Unprocessed Chilled Milk" milked within 12-24 hours before delivery. This is quite unique unlike other brands where milk is 4-5 days old and heavily processed for consistency. We have no middleman, and source directly from co-managed farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br><br></p>
+               <p>{{r.cdesc}} eavily processed for consistency. We have no middleman, and source directly from co-managed farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br><br></p>
            </div>
-           <div class="col-md-12 col-sm-12" style="background: #3ec1fe; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
+           {% endfor %}
+
+      <!----   
+          <div class="col-md-12 col-sm-12" style="background: #3ec1fe; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
                <img alt="" src="/img/media/wysiwyg/no-injection1.jpg">
                <h3>No manipulation with Natural Milking Cycle</h3>
                <hr>
                <p>The cows are not given any hormonal injections to boost the milk yield. Studies have linked the consumption of milk contaminated with oxytocin to the early onset of puberty in children, which is on an alarming rise these days.</p>
-           </div>
+           </div>-->
        </div>
-       <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;" data-wow-delay="0.9s"><img class="farmery-bottle" style="width: 85%; margin-top: 80px; margin-bottom:20px;" alt="farmery-bottle.jpg" src="/static/img/farmery-milk-bottle-front.png" data-src="" /></div>
-       <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+       <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated"
+         style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;"
+         data-wow-delay="0.9s">
+         <img class="farmery-bottle" style="width: 85%; margin-top: 80px; margin-bottom:20px;" alt="farmery-bottle.jpg" src="/static/img/farmery-milk-bottle-front.png" data-src="" /></div>
+         <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+            {% for r in content %}
+        
            <div class="col-md-12 col-sm-12" style="background: #fe3ea8; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
                <img alt="" src="/img/media/wysiwyg/no-chemical1.jpg">
-               <h3>No Preservatives And Adulterants</h3>
+               <h3>{{r.che}}</h3>
                <hr>
-               <p>The milk obtained from the cows is unadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
+               <p>{{r.cdesc2}}tttttttttttttm the cows is unadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
                &nbsp;
            </div>
-           <div class="col-md-12 col-sm-12" style="background: #fea43e; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
-               <img alt="" src="/img/media/wysiwyg/recycle1.jpg">
-               <h3>Environment Friendly</h3>
-               <hr>
-               <p>Glass is one of the safest materials, non-toxic and non-reactive, as compared to other packaging materials such as plastic, which can leach into food products. Our brand values don’t go with plastic or anti-environment materials, thus we use glass bottles for packaging.</p>
-           </div>
+           {% endfor %}
        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+  </div>
+    
    </div>
+  
   </div>
-  </div>
+ 
 
 
  <div class="container">
@@ -143,266 +168,277 @@
               <div class="header-content-title" >
               <h1><b>PRODUCTS</b></h1>
           </div>
-          </div>
-          <div class="col-md-3">
+         
               <!-- Controls -->
             <!----  <div class="controls pull-right hidden-xs">
                   <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
                       data-slide="prev"></a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
                           data-slide="next"></a>
               </div>-->
+       
+     
+   <!----  {% for product, range, nSlides in allProds %}
+       
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" id="owl-demo">
+      
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            {% for i in range %}
+            <li data-target="#demo" data-slide-to="{{i}}" ></li>
+         {% endfor %}
+        
+          
+          
+          <div class="carousel-inner" >
+          
+       
+            
+              <div class="item   active  " id="sss">
+            
+              
+                 
+
+                      <div class="col-xs-3 col-sm-3 col-md-3">
+                          <div class="col-item">
+           
+                              <div class="photo">
+                                  <img src="{{ff.oimg}}" class="img-responsive" alt="a"    style="height:160px" width="100px" />
+                              </div>
+                              <div class="info">
+                                  <div class="row">
+                                      <div class="price col-md-6">
+                                          <h5>
+                                             {{ff.oproname}}t</h5>
+                                          <h5 class="price-text-color">
+
+                                             
+                                             ₹{{ff.oprice}}</h5>
+                                      </div>
+                                      <div class="rating hidden-sm col-md-6">
+                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                          </i><i class="fa fa-star"></i>
+                                      </div>
+                                  </div>
+                                  <div class="separator clear-left">
+                                      <p class="btn-add">
+                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" >Add to cart</a></p>
+                                      <p class="btn-details">
+                                        <a href="http://www.jquery2dotnet.com" >BUY NOW</a></p>
+                                  </div>
+                                  <div class="clearfix">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>  
+
+                      {% for ff in product|slice:"1:" %}
+
+                      <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="col-item">
+         
+                            <div class="photo">
+                                <img src="{{ff.oimg}}" class="img-responsive" alt="a"    style="height:160px" width="100px" />
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="price col-md-6">
+                                        <h5>
+                                           {{ff.oproname}}t</h5>
+                                        <h5 class="price-text-color">
+
+                                           
+                                           ₹{{ff.oprice}}</h5>
+                                    </div>
+                                    <div class="rating hidden-sm col-md-6">
+                                        <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                        </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                        </i><i class="fa fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="separator clear-left">
+                                    <p class="btn-add">
+                                        <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" >Add to cart</a></p>
+                                    <p class="btn-details">
+                                      <a href="http://www.jquery2dotnet.com" >BUY NOW</a></p>
+                                </div>
+                                <div class="clearfix">
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                   
+                    {% endfor %}  
+
+
+                    {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+             </div><div class="carousel-item">
+            {% endif%}
+
+            <a class="carousel-control-prev " href="#demo" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true" ></span>
+               <span class="sr-only">Previous</span>
+             </a>
+             <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="sr-only">Next</span>
+             </a>
+               {% endfor %}
+               </div>
+
+            
+                      
+                     
+                  </div>
+                 
+                 
+              </div>--->
+
+            
+              <section class="text-center mb-4">
+               
+                <!--Grid row-->
+                <div class="row wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                 
+                  <!--Grid column-->
+                  {% for ff in page_objj %}
+                  <!--Card-->
+                  <div class="col-lg-3 col-md-6 mb-4">
+                  
+                    <div class="card">
+        
+                      <!--Card image-->
+                      <div class="view overlay">
+                        <img src="{{ff.oimg}}" class="card-img-top" alt="">
+                        <a>
+                          <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                        </a>
+                      </div>
+                      <!--Card image-->
+        
+                      <!--Card content-->
+                      <div class="card-body text-center">
+                        <!--Category & Title-->
+                        <a href="" class="grey-text">
+                          <h5>{{ff.oproname}}</h5>
+                        </a>
+                        <h5>
+                          <strong>
+                            <a href="" class="dark-grey-text">₹{{ff.oprice}}
+                              <span class="badge badge-pill danger-color">NEW</span>
+                            </a>
+                          </strong>
+                        </h5>
+        
+                        <h4 class="font-weight-bold blue-text">
+                          <strong>₹{{ff.oprice}}</strong>
+                        </h4>
+        
+                      </div>
+                      <!--Card content-->
+        
+                    </div>
+                    <!--Card-->
+                   
+                  </div>
+
+                  {% endfor %}
+                
+        
+                </div>
+                <!--Grid row-->
+        
+                <!--Grid row-->
+             
+                  <!--Grid column-->
+                  
+                  <!--Grid column-->
+        
+                  <!--Grid column-->
+                
+                  <!--Grid column-->
+        
+                  <!--Grid column-->
+                
+        
+                  <!--Fourth column-->
+                 
+        
+                </div>
+                <!--Grid row-->
+        
+              </section>
+            
+              <nav class="d-flex justify-content-center wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                
+                <ul class="pagination pg-blue">
+                  {% if page_objj.has_previous %}
+                 
+                  <!--Arrow left-->
+                  <li class="page-item disabled">
+                    <a class="page-link waves-effect waves-effect" href="?page={{ page_objj.previous_page_number }}" aria-label="Previous">
+                      <span aria-hidden="true">«</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  {% endif %}
+
+        
+                  <li class="page-item active">
+                    <a class="page-link" href="?page={{ page_objj.number }}">{{ page_objj.number }}
+                      <span class="sr-only">(current)</span>
+                    </a>
+                  </li>
+                  {% if page_objj.has_next %}
+                  <li class="page-item">
+                    <a class="page-link" href="?page={{ page_objj.next_page_number }}" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                    <a class="btn btn-outline-info mb-4" href="?page={{ page_objj.paginator.num_pages }}">Last</a>
+                  </li>
+                  {% endif %}
+                </ul>
+              </nav>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+             
+              </div>
+              
+
+          </div>
          
       </div>
-      <div id="carousel-example"   class="carousel slide hidden-xs" data-ride="carousel" >
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-              <div class="item active" id="sss">
-                  <div class="row">
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="/static/img/images4.png" class="img-responsive" alt="a"    style="height:160px" width="100px" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Sample Product</h5>
-                                          <h5 class="price-text-color">
-                                              $199.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
-                                      <p class="btn-details">
-                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="/static/img/vegefoods.png" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Product Example</h5>
-                                          <h5 class="price-text-color">
-                                              $249.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="" class="btn btn-warning">Add to cart</a></p>
-                                      <p class="btn-details">
-                                          <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="/static/img/fresh_fruit.jpg"     class="img-responsive" alt="a"  style="height:160px" width="260px"/>
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Next Sample Product</h5>
-                                          <h5 class="price-text-color">
-                                              $149.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
-                                      <p class="btn-details">
-                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Sample Product</h5>
-                                          <h5 class="price-text-color">
-                                              $199.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="btn btn-warning">Add to cart</a></p>
-                                      <p class="btn-details">
-                                        <a href="http://www.jquery2dotnet.com" class="btn btn-primary">BUY NOW</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="item">
-                  <div class="row">
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Product with Variants</h5>
-                                          <h5 class="price-text-color">
-                                              $199.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                      <p class="btn-details">
-                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Grouped Product</h5>
-                                          <h5 class="price-text-color">
-                                              $249.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                      <p class="btn-details">
-                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Product with Variants</h5>
-                                          <h5 class="price-text-color">
-                                              $149.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                      <p class="btn-details">
-                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-sm-3">
-                          <div class="col-item">
-                              <div class="photo">
-                                  <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
-                              </div>
-                              <div class="info">
-                                  <div class="row">
-                                      <div class="price col-md-6">
-                                          <h5>
-                                              Product with Variants</h5>
-                                          <h5 class="price-text-color">
-                                              $199.99</h5>
-                                      </div>
-                                      <div class="rating hidden-sm col-md-6">
-                                          <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
-                                          </i><i class="fa fa-star"></i>
-                                      </div>
-                                  </div>
-                                  <div class="separator clear-left">
-                                      <p class="btn-add">
-                                          <i class="fa fa-shopping-cart"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">Add to cart</a></p>
-                                      <p class="btn-details">
-                                          <i class="fa fa-list"></i><a href="http://www.jquery2dotnet.com" class="hidden-sm">More details</a></p>
-                                  </div>
-                                  <div class="clearfix">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+      
   </div>
   </div>
 </div>
+</div>
 
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function() { 
+    $("#owl-demo").owlCarousel({ 
+        autoPlay: 3000, //Set AutoPlay to 3 seconds 
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3] 
+    }); 
+  });
+
+</script>
 {% endblock main_content %}

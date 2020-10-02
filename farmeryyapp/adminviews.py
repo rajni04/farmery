@@ -167,10 +167,7 @@ def category_save(request):
 
 def viewcategory(request):
     category=Category1.objects.all().order_by('cattype').distinct('cattype')
-    
     all_cat = Paginator(category,5)# Show 25 contacts per page.
-    
-
     page = request.GET.get('page')
     try:
         # create Page object for the given page
@@ -238,15 +235,10 @@ def subcategory_save(request):
 
 def viewsubcategory(request):
     subcategory=Subcategory.objects.all()
-    paginate_by = 2
-
+   
     return render(request,"Admin/ViewSubCategory.html",{'subcategory':subcategory})
    
-
-
-
 def fruitGrocery(request):  
-   
     category=Category1.objects.all() 
     subcategory=Subcategory.objects.all()
     
@@ -332,3 +324,231 @@ def delete_subcategory(request,subcategory_id):
   subcategory=Subcategory.objects.get(id=subcategory_id)
   subcategory.delete()
   return redirect("/viewsubcategory")
+
+
+def howit_work(request):
+    work=Work.objects.all() 
+    return render(request,"Admin/Howit_work.html",{'work':work})
+
+def howit_work_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        headng =request.POST.get("headng")
+        headng2 =request.POST.get("headng2")
+        workdesc=request.POST.get("workdesc")
+        workdesc2=request.POST.get("workdesc2")
+        wimg=request.FILES['wimg']
+        fs=FileSystemStorage()
+        filename=fs.save(wimg.name,wimg)
+        wimg=fs.url(filename)
+
+
+        wimg2=request.FILES['wimg2']
+        fs=FileSystemStorage()
+        filename=fs.save(wimg2.name,wimg2)
+        wimg2=fs.url(filename)
+           
+        try:
+            work=Work(headng=headng,workdesc=workdesc,wimg=wimg,headng2=headng2,workdesc2=workdesc2,wimg2=wimg2)
+            
+
+            work.save()
+            messages.success(request,"Successfully Added ")
+            return HttpResponseRedirect("howit_work")
+        except:
+            messages.error(request,"Failed to Add ")
+            return HttpResponseRedirect("howit_work")
+
+
+def viewworkdata(request):
+    work=Work.objects.all()
+   
+    return render(request,"Admin/ViewWorkdata.html",{'work':work})
+
+def delete_viewworkdata(request,work_id):    
+    work=Work.objects.get(id=work_id)
+    work.delete()
+    return redirect("/viewworkdata")
+
+
+def product(request):  
+    product=Product.objects.all()
+    return render(request,"Admin/Product.html",{"product":product})
+    
+def product_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        productname =request.POST.get("productname")
+        categoryy=request.POST.get("categoryy")
+        desc=request.POST.get("desc")
+        price =request.POST.get("price") 
+        quantity =request.POST.get("quantity")
+        discountdesc=request.POST.get("discountdesc")
+        oldprice =request.POST.get("oldprice")
+           
+        newdiscount=request.POST.get("newdiscount")
+        img=request.FILES['img']
+        fs=FileSystemStorage()
+        filename=fs.save(img.name,img)
+        img=fs.url(filename)
+           
+        #try:
+        product=Product(productname=productname,categoryy=categoryy,desc=desc,price=price,quantity=quantity,discountdesc=discountdesc,oldprice=oldprice,newdiscount=newdiscount,img=img)
+            
+
+        product.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("product")
+        #except:
+            #messages.error(request,"Failed to Add ")
+            #return HttpResponseRedirect("product")
+
+
+def sliderhome(request):
+    
+    return render(request,"Admin/Homeslider.html")
+
+def sliderhome_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        sheadng=request.POST.get("sheadng")
+        sdesc=request.POST.get("sdesc")
+        simg=request.FILES['simg']
+        fs=FileSystemStorage()
+        filename=fs.save(simg.name,simg)
+        simg=fs.url(filename)
+
+
+       
+        #try:
+        slider=Sliderhome(sheadng=sheadng,sdesc=sdesc,simg=simg)
+            
+
+        slider.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("sliderhome")
+       # except:
+           # messages.error(request,"Failed to Add ")
+           # return HttpResponseRedirect("sliderhome")
+
+
+
+def viewslider(request):
+    slider=Sliderhome.objects.all()
+    return render(request,"Admin/SliderView.html",{'slider':slider})
+
+def delete_slider(request,sliderhome_id):    
+    slider=SliderHome.objects.get(id=sliderhome_id)
+    slider.delete()
+    return redirect("/viewslider")
+
+def delete_category(request,category_id):    
+  category=Category1.objects.get(id=category_id)
+  category.delete()
+  return redirect("/viewcategory")
+
+
+
+def content(request):
+    return render(request,"Admin/Content.html")
+
+def content_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        cheading=request.POST.get("cheading")
+        cdesc=request.POST.get("cdesc")
+
+        che=request.POST.get("che")
+        cdesc2=request.POST.get("cdesc2")
+        #try:
+        content=Circl(cheading=cheading,cdesc=cdesc,che=che,cdesc2=cdesc2)
+        content.save()
+       
+        messages.success(request,"Successfully Added")
+        return HttpResponseRedirect("content")
+        #except:
+        #messages.error(request,"Failed to Add ")
+            #return HttpResponseRedirect("content")
+
+
+
+def contentview(request):
+    content=Circl.objects.all()
+    return render(request,"Admin/ContentView.html",{'content':content})
+
+def delete_content(request,circl_id):    
+    content=Circl.objects.get(id=circl_id)
+    content.delete()
+    return redirect("/contentview")
+
+def get_all_product():
+    return Product2.objects.all()
+
+
+
+def get_all_product_by_Id(category_id):
+    if category_id:
+        return Product2.objects.filter(category=category_id)
+    else:
+        return Product2.get_all_product()
+
+
+def homeabout(request):
+    return render(request,"Admin/About.html")
+
+def homeabout_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        h1_desc=request.POST.get("h1_desc")
+        h2_brief=request.POST.get("h2_brief")
+
+        
+        #try:
+        aboutdata=Homedata(h1_desc=h1_desc,h2_brief=h2_brief)
+        aboutdata.save()
+       
+        messages.success(request,"Successfully Added")
+        return HttpResponseRedirect("homeabout")
+        #except:
+        #messages.error(request,"Failed to Add ")
+            #return HttpResponseRedirect("content")
+
+def offerhomeproduct(request):
+    return render(request,"Admin/HomesliderProduct.html")
+
+
+def offerhomeproduct_save(request):
+    if request.method!="POST":
+        return HttpResponse("Method Not Allowed")
+    else:
+    
+        oproname=request.POST.get("oproname")
+        oprice=request.POST.get("oprice")
+        oimg=request.FILES['oimg']
+        fs=FileSystemStorage()
+        filename=fs.save(oimg.name,oimg)
+        oimg=fs.url(filename)
+
+
+       
+        #try:
+        offpro=Offerproduct(oproname=oproname,oprice=oprice,oimg=oimg)
+            
+
+        offpro.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("offerhomeproduct")
+       # except:
+           # messages.error(request,"Failed to Add ")
+           # return HttpResponseRedirect("sliderhome")
+

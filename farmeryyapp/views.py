@@ -16,6 +16,10 @@ from django.contrib import messages
 from django_otp.admin import OTPAdminSite
 from .models import *
 from django.http import HttpResponse,HttpResponseRedirect
+from math import ceil
+from django.core.paginator import Paginator
+from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
+
 
 
 class InfoViewSet(viewsets.ModelViewSet):
@@ -52,7 +56,28 @@ def trialform(request):
 
 
 def home(request):
-    return render(request,'homedesign.html')
+    content=Circl.objects.all()[:2]
+    sliderhome=Sliderhome.objects.all()
+    offpro=Offerproduct.objects.all()
+    offpro_page = Paginator(offpro,4)# Show 25 contacts per page.
+    page = request.GET.get('page')
+    try:
+        # create Page object for the given page
+        page_objj = offpro_page.page(page)
+    except PageNotAnInteger:
+        # if page parameter in the query string is not available, return the first page
+        page_objj = offpro_page.page(1)
+    except EmptyPage:
+        # if the value of the page parameter exceeds num_pages then return the last page
+        page_objj= offpro_page.page(offpro_page.num_pages)
+   
+   # n=len(offpro)
+    #nSlides=n//4+ ceil((n/4)-(n//4))
+    #allProds=[[ offpro, range(1, len(offpro)), nSlides],[offpro, range(1, len(offpro)), nSlides]]
+   # params={'allProds':allProds }
+
+    aboutdata=Homedata.objects.all().order_by('-id')[:1]   #last data
+    return render(request,'homedesign.html',{'sliderhome':sliderhome,'content':content,'aboutdata':aboutdata,'offpro': offpro,'page_objj': page_objj})
     #return render(request,'NewDesign/home.html')
 
 def home1(request):
@@ -63,7 +88,9 @@ def about(request):
     return render(request,'about1.html')
 
 def work(request):
-    return render(request,'how_it_works.html')
+    work=Work.objects.all().distinct('workdesc')
+    context= {'work':work}
+    return render(request,'how_it_works.html',context)
 
 def catalog(request):
     products = Product.objects.all()
@@ -168,4 +195,10 @@ def loogout(request):
     return HttpResponseRedirect("/")
 
      
+
+def catalog(request):
+    products = Product.objects.all()
+    context= {'products':products}
+    return render(request,'dairy.html', context)
+
 

@@ -1,24 +1,25 @@
 {%load static %}
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #6610f2;">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src= "/static/img/2.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light"><h5><B>ADMIN HOME</B></h5></span>
-    </a>
+  <!-- Brand Logo -->
+  <a href="index3.html" class="brand-link">
+    <img src= "/static/img/2.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+         style="opacity: .8">
+    <span class="brand-text font-weight-light"><h5><B>ADMIN HOME</B></h5></span>
+  </a>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="{% static "img/default.png" %}" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block"><h5 style="color:rgb(230, 179, 15)";> <B>{{username }} LOGIN</B></h5></a>
-        </div>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <!-- Sidebar user panel (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="image">
+        <img src="{% static "img/default.png" %}" class="img-circle elevation-2" alt="User Image">
       </div>
+      <div class="info">
+        <a href="#" class="d-block"><h5 style="color:rgb(230, 179, 15)";> <B>{{username }} LOGIN</B></h5></a>
+      </div>
+    </div>
+
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -30,41 +31,69 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                   <!-- Add icons to the links using the .nav-icon class
                        with font-awesome or any other icon font library -->
-                  <li class="nav-item" >
 
-                    <li class="nav-item">
-                      <a href="/" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p><b>DASHBOARD</b></p>
-                      </a>
-                    </li>
-                   
-                      
-                  <li class="nav-item">
-                    <a href="/viewcategory" class="nav-link">
+
+                       <li class="nav-item" >
+
+                        <li class="nav-item">
+                          <a href="/homeadmin_template" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p><b>DASHBOARD</b></p>
+                          </a>
+                        </li>
+
+
+                            <li class="nav-item" >
+                    <a href="" class="nav-link ">
                       <i class="nav-icon fas fa-th"></i>
-                      <p><b>CATEGORY</b></p>
+                      <p>
+                       HOME
+                        <span  class="right fas fa-angle-left"></i>
+                      </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                      <li class="nav-item">
+                        <a href="/sliderhome" class="nav-link ">
+                          <i class="nav-icon fas fa-th"></i>
+                          <p>
+                            <b>SLIDER HOME PAGE</b>
+                           
+                          </p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/homeabout" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>ABOUT</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="/content" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>CONTENT</p>
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="/offerhomeproduct" class="nav-link">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>OFFER PRODUCT </p>
+                        </a>
+                      </li>
+
+                     
+                    </ul>
                   </li>
-                  
-                    
-                  
-                  <li class="nav-item">
-                    <a href="/viewsubcategory" class="nav-link">
-                      <i class="nav-icon fas fa-th"></i>
-                      <p> <b>SUB CATEGORY</b></p>
-                    </a>
-                  </li>
-                  
-                  <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link">
+                  <li class="nav-item" >
+                    <a href="" class="nav-link active">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
                         PRODUCTS
-                        <i class="right fas fa-angle-left"></i>
+                        <span  class="right fas fa-angle-left"></i>
                       </p>
                     </a>
-                    <ul class="nav nav-treeview" style="display: block;">
+                    <ul class="nav nav-treeview">
                       <li class="nav-item">
                         <a href="/viewproduct" class="nav-link active">
                           <i class="far fa-circle nav-icon"></i>
@@ -80,33 +109,67 @@
                      
                     </ul>
                   </li>
+                  <li class="nav-item">
+                    <a href="/viewcategory" class="nav-link">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p><b>CATEGORY</b></p>
+                    </a>
+                  </li>
 
-
-
-         <!----        <li class="nav-item">
-                    <a href="/dept_view" class="nav-link ">
+                  <li class="nav-item">
+                    <a href="/viewsubcategory" class="nav-link">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p> <b>SUB CATEGORY</b></p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/viewteam" class="nav-link ">
                       <i class="nav-icon fas fa-th"></i>
                       <p>
-                    View Department
+                        <b>TEAM</b>
                        
                       </p>
-                    </a>-->
-                  
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/sliderhome" class="nav-link ">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>
+                        <b>SLIDER HOME PAGE</b>
+                       
+                      </p>
+                    </a>
+                  </li>
 
-          <li class="nav-item">
-            <a href="/viewteam" class="nav-link ">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                <b>TEAM</b>
-               
-              </p>
-            </a>
-          </li>
-         
+
+                  <li class="nav-item">
+                    <a href="/viewteam" class="nav-link ">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>
+                        <b>HOME PAGE</b>
+                       
+                      </p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="/howit_work" class="nav-link ">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>
+                        <b>HOW IT WORKS</b>
+                       
+                      </p>
+                    </a>
+                  </li>
+
+          
+
           
          
-            </ul>
+
           
+          
+        </ul>
       </nav>
       <!-- /.sidebar-menu -->
     </div>
