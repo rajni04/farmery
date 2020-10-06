@@ -11,11 +11,11 @@ from .apiviews import user_list,product_list,user_create,category_list,productty
 from rest_framework import routers
 from rest_framework.authtoken.views import obtain_auth_token
 from farmeryyapp import apiviews,adminviews
-from farmeryyapp.apiviews import InfoViewSet, UserViewSet,LoginViewSet,ProductSerializer,Category1ViewSet,ProductTypeViewSet,Product2ViewSet,RatingViewSet
+from farmeryyapp.apiviews import InfoViewSet,LoginViewSet,ProductSerializer,Category1ViewSet,ProductTypeViewSet,Product2ViewSet,RatingViewSet
 
 router=routers.DefaultRouter()
 router.register('info',apiviews.InfoViewSet,basename="info")
-router.register('users',apiviews.UserViewSet,basename="user")
+#router.register('users',apiviews.UserViewSet,basename="user")
 router.register('login',apiviews.LoginViewSet,basename="login")
 router.register('product',apiviews.ProductViewSet,basename="product")
 router.register('category',apiviews.Category1ViewSet,basename="category")
@@ -47,8 +47,10 @@ urlpatterns=[
     #path('info/',views.user_list, name="info"),
     #path('register',views.register, name="register"),
     path('login',views.loginn, name="login"),
+   # path('indexsign',views.indexsign, name="indexsign"),
     path('loogout', views.loogout,name="loogout"),
-    path('mylogin',views.myloginn, name="mylogin"),
+    path('mylogin',views.mylogin, name="mylogin"),
+    path('register',views.register, name="register"),
    # path('loginform',views.loginform, name="loginform"),
     path('loginform',views.loginform, name="loginform"),
 
@@ -136,6 +138,7 @@ urlpatterns=[
     path('offerhomeproduct', adminviews.offerhomeproduct),
     path('offerhomeproduct_save', adminviews.offerhomeproduct_save),
 
+ 
 
 
 

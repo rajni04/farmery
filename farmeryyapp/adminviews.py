@@ -13,7 +13,6 @@ from django.contrib.auth import authenticate, logout
 from django.core.paginator import Paginator
 
 
-
 def homeadmin_template(request):
     product_count=Product.objects.all().count()
     category_count=Category1.objects.all().count()
@@ -494,9 +493,9 @@ def get_all_product():
 
 
 
-def get_all_product_by_Id(category_id):
+def get_all_product_by_categoryid(category_id):
     if category_id:
-        return Product2.objects.filter(category=category_id)
+        return Product2.objects.filter(id=category_id)
     else:
         return Product2.get_all_product()
 
@@ -551,4 +550,7 @@ def offerhomeproduct_save(request):
        # except:
            # messages.error(request,"Failed to Add ")
            # return HttpResponseRedirect("sliderhome")
+
+
+
 

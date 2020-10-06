@@ -19,9 +19,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.response import Response
 
-class UserViewSet(viewsets.ModelViewSet):
+"""class UserViewSet(viewsets.ModelViewSet):
     queryset=User.objects.all()
-    serializer_class = UserSerializer
+    serializer_class = UserSerializer"""
 
 # Create your views here.
 

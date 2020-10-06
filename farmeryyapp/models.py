@@ -1,11 +1,44 @@
 
 from django.db import models
-from django.contrib.auth.models import User
+
 from django.core.validators import MaxValueValidator,MinValueValidator
 
 # Create your models here.
 
+from django.contrib.auth.models import AbstractUser
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
+from django.core.validators import RegexValidator
+
+
+
+class CustomUser(AbstractUser):
+    user_type_data=((1,"ADMIN"),(2,"CUSTOMER"))
+    user_type=models.CharField(default=1,choices=user_type_data,max_length=10)
+    alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', 'Only alphanumeric characters are allowed.')
+
+    first_name=models.CharField(max_length=10, validators=[alphanumeric])
+    last_name=models.CharField(max_length=10)
+    email=models.EmailField(max_length=20)
+   
+
+class Admin(models.Model):
+    id=models.AutoField(primary_key=True)
+    admin=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now_add=True)
+    objects=models.Manager()
+
+
+class Customer(models.Model):
+    id=models.AutoField(primary_key=True)
+    admin=models.OneToOneField(CustomUser,on_delete=models.CASCADE)
+    address=models.TextField(max_length=50)
+   
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now_add=True)
+    objects=models.Manager()
 
 class Info(models.Model):
     first_name = models.CharField(max_length=20)
@@ -13,7 +46,7 @@ class Info(models.Model):
     email = models.EmailField(max_length=30)
     phno = models.CharField(max_length=12)
     refphno= models.CharField(max_length=12)
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    
     objects=models.Manager()
 
 
@@ -54,7 +87,7 @@ class ProductType(models.Model):
 class Product2(models.Model):
     id=models.AutoField(primary_key=True)
     category_id=models.ForeignKey(Category1,on_delete=models.CASCADE)
-    subcategory_id=models.ForeignKey(Subcategory,on_delete=models.CASCADE)
+    subcategory_id=models.ForeignKey(Subcategory,on_delete=models.CASCADE,blank=True,null=True)
     proname=models.CharField(max_length=30) 
     pric=models.IntegerField()
     quant=models.IntegerField()
@@ -75,12 +108,10 @@ class Team(models.Model):
 
 class Rating(models.Model):
     product_id=models.ForeignKey(Product,on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     stars= models.IntegerField(validators=[MinValueValidator(1),MaxValueValidator(5)])
     review=models.CharField(max_length=255)
-    class Meta:
-        unique_together=(('user','product_id'),)  #if same user give rating to one movie 2 times it will be rejected
-        index_together=(('user','product_id'),)
+    
 
 class Productview(models.Model):
     product_id=models.ForeignKey(Product,on_delete=models.CASCADE)
@@ -122,6 +153,7 @@ class Sliderhome(models.Model):
     sheadng=models.CharField(max_length=30)  
     sdesc=models.CharField(max_length=255)
     simg=models.ImageField(null=True, blank=True)
+    
 
 
 class Contnt(models.Model):
@@ -130,6 +162,23 @@ class Contnt(models.Model):
    
 
 
+
+@receiver(post_save,sender=CustomUser)
+def create_user_profile(sender,instance,created,**kwargs):
+    if created:
+        if instance.user_type==1:
+            Admin.objects.create(admin=instance)
+        if instance.user_type==2:
+            Customer.objects.create(admin=instance,address="")
+       
+
+@receiver(post_save,sender=CustomUser)
+def save_user_profile(sender,instance,**kwargs):
+    if instance.user_type==1:
+        instance.admin.save()
+    if instance.user_type==2:
+        instance.customer.save()
+   
 
 
 

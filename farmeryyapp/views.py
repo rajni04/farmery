@@ -19,8 +19,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 from math import ceil
 from django.core.paginator import Paginator
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
+from django.contrib.auth import get_user_model
 
-
+from django.contrib import messages
 
 class InfoViewSet(viewsets.ModelViewSet):
     authentication_classes=[TokenAuthentication] 
@@ -98,9 +99,18 @@ def catalog(request):
     return render(request,'dairy.html', context)
 
 def shop(request):
-    product2 =Product2.objects.all()
-    producttype=ProductType.objects.all()
+    #product2 =None
+    producttype=ProductType.objects.all();
+    product2=Product2.objects.all();
     cate=Category1.objects.all()
+    print(request.GET)
+    #cate=Category1.objects.all()
+    #categoryID=request.GET['cate']
+    #if categoryID:
+       # product2 = Product2.get_all_product_by_categoryid(categoryID)
+   # else:
+        #product2=Product2.objects.all()
+
     context= {'product2':product2,'producttype':producttype,'cate':cate}
     return render(request,'fruitngroc.html',context)
 
@@ -170,7 +180,7 @@ def delete_product(request,product_id):
 class OTPAdmin(OTPAdminSite):
     pass
 
-def myloginn(request):
+"""def myloginn(request):
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
@@ -187,7 +197,27 @@ def myloginn(request):
              messages.error(request,"Invalid Login Details")
              return redirect('mylogin1.html')    
     else:
-        return render(request,'mylogin1.html')      
+        return render(request,'mylogin1.html')    """
+
+
+def mylogin(request):
+    if request.method=='POST':
+        username=request.POST['username']
+        password=request.POST['password']
+
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            if user.user_type =="1":
+                 return redirect('homeadmin_template')
+            elif user.user_type =="2":
+                 return redirect('homeadmin_template')
+            
+        else:
+             messages.error(request,"Invalid Login Details")
+             return redirect('mylogin')    
+    else:
+        return render(request,'mylogin1.html')  
 
 
 def loogout(request):
@@ -201,4 +231,33 @@ def catalog(request):
     context= {'products':products}
     return render(request,'dairy.html', context)
 
+def register(request):
+     if request.method=='POST':
+        username=request.POST.get("username")
+        email=request.POST.get('email')
+        password1=request.POST.get('password1')
+        password2=request.POST.get('password2') 
+        
+       
+        if password1==password2:
+            if CustomUser.objects.filter(username=username).exists():
+                messages.info(request,'USERNAME TAKEN') 
+                return redirect('register')
+            elif CustomUser.objects.filter(email=email).exists():  
+                messages.info(request,'EMAIL TAKEN')
+                return HttpResponseRedirect(reverse('register'))
 
+            else:
+                user=CustomUser.objects.create_user(username=username,email=email,password=password1,user_type=2)
+                user.save();
+                print('user created')
+                return redirect('mylogin')
+        else:
+            print('password mot matching')
+            return redirect('/')
+
+     return render(request,'mylogin1.html')   
+
+
+
+    

@@ -10,6 +10,27 @@
         <link rel="stylesheet" href="{% static 'css/stylelogin.css' %}" >
 		</head>
 		
+
+		
+
+
+
+			<script type="text/javascript">
+				function validation()
+				{
+				  var password=document.getElementById("pass")
+		   
+				  if(password.value.trim().length<3)
+				  {
+					  alert("Password too short")
+					  return false;
+				  }
+				  else{
+					  return true;
+				  }
+				}
+			   
+		</script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
           <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -23,7 +44,7 @@
 		</div>
 	</div>
 	<body>
-    <form action="homeadmin_template" method="post" >
+    <form action="mylogin" method="post" >
         {% csrf_token %}
 		<div class="novaworks-main-content">
 			<div class="main home-content container">
@@ -51,29 +72,52 @@
 							<h2><b style="color: rgb(124, 0, 0);">LOGIN</b></h2>
 							<input type="text" placeholder="Enter Username" name="username" required />
 							<input type="password" placeholder="Enter Password" name="password" id="pass" required />             
-							<input type="submit" name="" value= "Sign in">
+							<input type="submit"  value= "Sign in">
 							
 							&nbsp;
 							&nbsp;
 							&nbsp;
 							<a href="#"><B  style="color: rgb(119, 0, 0);">FORGET PASSWORD</></a> 
+
+								{% if messages %}
+                <div class="col-12">
+                   {% for message in messages %}
+                   {% if message.tags == 'error' %}
+                   <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                   {% endif %}
+                   {% endfor %}
+                 </div>
+                 {% endif %}
 						</div>
 
 						
 						
 						<div class="register-show">
 							<h2>REGISTER</h2>
-							<input type="text" placeholder="Email">
-							<input type="password" placeholder="Password">
-							<input type="password" placeholder="Confirm Password">
-							<input type="button" value="Register">
+							<input type="text" placeholder="User" name="username">
+							<input type="text" placeholder="Email" name="email">
+							<input type="password" placeholder="Password" name="password1">
+							<input type="password" placeholder="Confirm Password" name="password2">
+							<input type="submit" value="Register">
 						</div>
 					</div>
-				
+
+
+					
 </div>
 </div>
 </div>
-</div>
+
+    {% if messages %}
+                <div class="col-12">
+                   {% for message in messages %}
+                   {% if message.tags == 'error' %}
+                   <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                   {% endif %}
+                   {% endfor %}
+                 </div>
+                 {% endif %}
+
 </div>
 
         <!--</div>-->

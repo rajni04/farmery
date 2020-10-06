@@ -43,7 +43,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,"static")
 # Application definition
 
 INSTALLED_APPS = [
-    'farmeryyapp',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken', 
     'django_otp',
-    'django_otp.plugins.otp_totp', 
+    'django_otp.plugins.otp_totp',
+    'farmeryyapp', 
    # 'corsheaders', 
     
 ]
@@ -121,7 +122,7 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
         'USER': 'postgres',
-        'NAME': 'farmery1',
+        'NAME': 'farmery',
         'PASSWORD':'1234',
         'HOST': 'localhost'
     }
@@ -163,3 +164,4 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+AUTH_USER_MODEL="farmeryyapp.CustomUser"
