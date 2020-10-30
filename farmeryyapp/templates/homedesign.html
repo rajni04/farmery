@@ -25,6 +25,7 @@
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
+
 <div id="carousel-example" class="carousel slide" data-ride="carousel">
 
 
@@ -104,17 +105,17 @@
            {% endfor %}   
         </div>
 
-       <div class="row">
+      <div class="row">
 
-       <div class=" col-12 col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
+        <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
 
-         {% for r in content %}
+       <!---->  {% for r in content %}
         
-           <div class="col-md-12 col-sm-12" style="background: #ca370a; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px; transition-property:1s,3s; transition-timing-function: ease-in;">
-               
+       <div class="col-md-12 col-sm-12" style="background: #fe3ea8; border-radius: 38%; padding: 40px 10px 10px 10px; margin: 25px 0px 0px 0px; height: 400px;">
+        <img alt="" src="/img/media/wysiwyg/no-chemical1.jpg">
                <h3>{{r.cheading}}</h3>
                <hr>
-               <p>{{r.cdesc}} eavily processed for consistency. We have no middleman, and source directly from co-managed farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br><br></p>
+               <p >{{r.cdesc}}naged farms. This helps control the bacterial count 4-5 times better than traditional collection center milk.<br><br></p>
            </div>
            {% endfor %}
 
@@ -133,11 +134,11 @@
          <div class="col-lg-4 col-md-4 col-sm-4 wow fadeInUp animated animated" >
             {% for r in content %}
         
-           <div class="col-md-12 col-sm-12" style="background: #fe3ea8; border-radius: 38%; padding: 40px; margin: 25px 0px 0px 0px; height: 400px;">
+           <div class="col-md-12 col-sm-12" style="background: #fe3ea8; border-radius: 38%; padding: 40px 10px 10px 10px; margin: 25px 0px 0px 0px; height: 400px;">
                <img alt="" src="/img/media/wysiwyg/no-chemical1.jpg">
                <h3>{{r.che}}</h3>
                <hr>
-               <p>{{r.cdesc2}}tttttttttttttm the cows is unadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
+               <p>{{r.cdesc2}}nadulterated and does not have any preservatives (such as formalin), which is widely used by local dairy vendors. We ensure the milk stays safe by using cold supply chain processes.</p>
                &nbsp;
            </div>
            {% endfor %}

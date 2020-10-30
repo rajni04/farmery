@@ -120,8 +120,8 @@ class Productview(models.Model):
 class Work(models.Model):
     headng=models.CharField(max_length=30)
     headng2=models.CharField(max_length=30)
-    workdesc=models.CharField(max_length=255)
-    workdesc2=models.CharField(max_length=255)
+    workdesc=models.CharField(max_length=500)
+    workdesc2=models.CharField(max_length=500)
     wimg=models.ImageField(null=True, blank=True)
     wimg2=models.ImageField(null=True, blank=True)
 

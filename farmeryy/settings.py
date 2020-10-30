@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_otp',
     'django_otp.plugins.otp_totp',
     'farmeryyapp', 
+    'post',
    # 'corsheaders', 
     
 ]
@@ -122,7 +123,7 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
         'USER': 'postgres',
-        'NAME': 'farmery',
+        'NAME': 'farmeryy',
         'PASSWORD':'1234',
         'HOST': 'localhost'
     }

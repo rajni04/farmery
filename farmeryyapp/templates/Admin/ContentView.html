@@ -30,7 +30,7 @@
         <thead>
         <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">CATEGORY</th>
           
-         <th>ACTION</th>
+          <th>ACTION</th> <th>ACTION</th><th>ACTION</th> <th>ACTION</th>
         </th></tr>
         </thead>
         <tbody>
@@ -43,14 +43,15 @@
          
             <td>{{content.cheading}}</td>
             <td>{{content.cdesc}}</td>
-                        
+            <td>{{content.che}}</td>
+            <td>{{content.cdesc2}}</td>
                        
                       
                         
                        
                      
             <td><a href="/edit_category/{{category.id }}"  button type="button" class="btn btn-primary mx-2">EDIT </button> </a>
-                <a href="/delete_content/{{content.id}}"  button type="button"  class="btn btn-danger mx-2">DELETE</span></a></td>
+                <a href="/delete_content/{{circl.id}}"  button type="button"  class="btn btn-danger mx-2">DELETE</span></a></td>
           </tr>
         {% endfor %}
            

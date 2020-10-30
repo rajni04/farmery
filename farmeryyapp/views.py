@@ -15,12 +15,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django_otp.admin import OTPAdminSite
 from .models import *
+from post.models import Post
 from django.http import HttpResponse,HttpResponseRedirect
 from math import ceil
 from django.core.paginator import Paginator
 from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from django.contrib.auth import get_user_model
-
+from django.db.models import Q
 from django.contrib import messages
 
 class InfoViewSet(viewsets.ModelViewSet):
@@ -121,9 +122,52 @@ def teamHome(request):
 
 
 def blog(request):
+    most_recent = Post.objects.order_by('-timestamp')[:3]
+    post_list=Post.objects.all()
+    paginator = Paginator(post_list, 6)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    try:
+        paginated_queryset = paginator.page(page)
+    except PageNotAnInteger:
+        paginated_queryset = paginator.page(1)
+    except EmptyPage:
+        paginated_queryset = paginator.page(paginator.num_pages)
+
+
+    context={
+        'queryset':paginated_queryset,
+        'most_recent': most_recent,
+        'page_request_var': page_request_var,
+
+
+    }
     #team =Team.objects.all()
    # context={'team':team}
-    return render(request,'blog.html')
+    return render(request,'blog1.html',context)
+
+
+def post(request,pk):
+    #team =Team.objects.all()
+   # context={'team':team}
+    return render(request,'post.html')
+
+
+def search(request):
+    queryset = Post.objects.all()
+    query = request.GET.get('q')
+    if query:
+        queryset = queryset.filter(
+            Q(title__icontains=query) |
+            Q(overview__icontains=query)
+        ).distinct()
+    context = {
+        'queryset': queryset
+    }
+    return render(request, 'search_result.html', context)
+
+
+
 
 def register(request):
     return render(request,'register.html')
@@ -209,9 +253,9 @@ def mylogin(request):
         if user is not None:
             auth.login(request,user)
             if user.user_type =="1":
-                 return redirect('homeadmin_template')
-            elif user.user_type =="2":
-                 return redirect('homeadmin_template')
+                 return redirect('Admin/homeadmin_template')
+           # elif user.user_type =="2":
+            #     return redirect('homeadmin_template')
             
         else:
              messages.error(request,"Invalid Login Details")

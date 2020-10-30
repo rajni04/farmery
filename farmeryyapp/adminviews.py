@@ -349,16 +349,16 @@ def howit_work_save(request):
         filename=fs.save(wimg2.name,wimg2)
         wimg2=fs.url(filename)
            
-        try:
-            work=Work(headng=headng,workdesc=workdesc,wimg=wimg,headng2=headng2,workdesc2=workdesc2,wimg2=wimg2)
+        #try:
+        work=Work(headng=headng,workdesc=workdesc,wimg=wimg,headng2=headng2,workdesc2=workdesc2,wimg2=wimg2)
             
 
-            work.save()
-            messages.success(request,"Successfully Added ")
-            return HttpResponseRedirect("howit_work")
-        except:
-            messages.error(request,"Failed to Add ")
-            return HttpResponseRedirect("howit_work")
+        work.save()
+        messages.success(request,"Successfully Added ")
+        return HttpResponseRedirect("howit_work")
+       # except:
+           # messages.error(request,"Failed to Add ")
+           # return HttpResponseRedirect("howit_work")
 
 
 def viewworkdata(request):

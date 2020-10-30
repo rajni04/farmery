@@ -98,7 +98,9 @@ urlpatterns=[
     path('product_edit_save', adminviews.product_edit_save),
     path('delete_product/<str:product_id>/', adminviews.delete_product),
     path('team',adminviews.team, name="team"),
-    path('blog',views.blog, name="blog"),
+    path('blog/',views.blog, name="post-list"),
+    path('search/',views.search, name="search"),
+    path('post/<pk>/',views.post, name="post-detail"),
     path('team_save', adminviews.team_save),
     path('viewteam',adminviews.viewteam,name="viewteam"),
     path('teamHome',views.teamHome, name="team"),
@@ -132,9 +134,10 @@ urlpatterns=[
     path('content_save',adminviews.content_save, name="content_save"),
 
     path('contentview',adminviews.contentview, name="contentview"),
-    path('delete_content/<str:content_id>/', adminviews.delete_content),
+    path('delete_content/<str:circl_id/', adminviews.delete_content),
 
     path('homeabout',adminviews.homeabout, name="homeabout"),
+    path('homeabout_save',adminviews.homeabout_save, name="homeabout_save"),
     path('offerhomeproduct', adminviews.offerhomeproduct),
     path('offerhomeproduct_save', adminviews.offerhomeproduct_save),
 
