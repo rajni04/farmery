@@ -5,6 +5,7 @@ from django_otp.plugins.otp_totp.models import TOTPDevice
 from django.contrib.auth.models import User
 from django.urls import path
 from farmeryyapp import views
+from post.views import AddPostView
 from farmeryyapp.views import OTPAdmin
 from django.urls import path,include
 from .apiviews import user_list,product_list,user_create,category_list,producttype_list,product2_list,rating_list
@@ -101,6 +102,8 @@ urlpatterns=[
     path('blog/',views.blog, name="post-list"),
     path('search/',views.search, name="search"),
     path('post/<pk>/',views.post, name="post-detail"),
+    path('add_post/',AddPostView.as_view() ,name="add_post"),
+
     path('team_save', adminviews.team_save),
     path('viewteam',adminviews.viewteam,name="viewteam"),
     path('teamHome',views.teamHome, name="team"),

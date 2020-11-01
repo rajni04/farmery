@@ -23,6 +23,14 @@ from django.core.paginator import Paginator, EmptyPage,PageNotAnInteger
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.contrib import messages
+from django.shortcuts import  get_object_or_404, redirect, reverse
+from django.views.generic import CreateView
+
+class AddPostView(CreateView):
+    model=Post
+    template_name='Blog/post.html'
+    fields=('title','overview','content')
+
 
 class InfoViewSet(viewsets.ModelViewSet):
     authentication_classes=[TokenAuthentication] 
@@ -121,6 +129,7 @@ def teamHome(request):
     return render(request,'team1.html',context)
 
 
+
 def blog(request):
     most_recent = Post.objects.order_by('-timestamp')[:3]
     post_list=Post.objects.all()
@@ -148,9 +157,17 @@ def blog(request):
 
 
 def post(request,pk):
-    #team =Team.objects.all()
-   # context={'team':team}
-    return render(request,'post.html')
+    most_recent = Post.objects.order_by('-timestamp')[:3]
+    post = get_object_or_404(Post, pk=pk)
+
+    context={
+        'post':post,
+        'most_recent': most_recent
+        
+
+
+    }
+    return render(request,'post.html',context)
 
 
 def search(request):

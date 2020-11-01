@@ -18,6 +18,7 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from farmeryyapp import views
 from farmeryy import settings
+
 #from rest_framework import routers
 #from farmeryyapp import views
 
@@ -26,6 +27,7 @@ from farmeryy import settings
 urlpatterns = [
     path('',include('farmeryyapp.urls')),
     path('admin/', admin.site.urls),
-   # path('api/', include(router.urls)),
-
+  #  path('api/', include(router.urls)),
+    path('tinymce/', include('tinymce.urls')),
+ 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
